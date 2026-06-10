@@ -1,0 +1,1575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Morning Belle | Events & Catering Launch Plan</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green: #99C961;
+    --teal: #3c5c68;
+    --coral: #fc826d;
+    --yellow: #ffde5c;
+    --amber: #fbaf41;
+    --sage: #9bc4bc;
+    --charcoal: #4d4d4d;
+    --off-white: #f0f2f5;
+    --light-green: #eaf6d9;
+    --light-teal: #e8f0f2;
+    --glass-bg: rgba(255,255,255,0.55);
+    --glass-border: rgba(255,255,255,0.75);
+    --glass-shadow: 0 8px 32px rgba(60,92,104,0.12), 0 1.5px 6px rgba(60,92,104,0.08);
+    --glass-hover: rgba(255,255,255,0.72);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--off-white);
+    color: var(--charcoal);
+    line-height: 1.5;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  /* ── ANIMATED BACKGROUND ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 20% 10%, rgba(153,201,97,0.18) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 80% at 80% 20%, rgba(252,130,109,0.12) 0%, transparent 55%),
+      radial-gradient(ellipse 70% 50% at 50% 80%, rgba(60,92,104,0.10) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 70% at 90% 70%, rgba(255,222,92,0.10) 0%, transparent 50%);
+    animation: bgShift 18s ease-in-out infinite alternate;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  @keyframes bgShift {
+    0%   { opacity: 1; transform: scale(1) rotate(0deg); }
+    33%  { opacity: 0.85; transform: scale(1.04) rotate(0.5deg); }
+    66%  { opacity: 0.95; transform: scale(0.98) rotate(-0.5deg); }
+    100% { opacity: 1; transform: scale(1.02) rotate(0.3deg); }
+  }
+
+  /* ── ANIMATED RAINBOW BAR ── */
+  .rainbow-bar {
+    position: relative;
+    height: 5px;
+    overflow: hidden;
+    z-index: 10;
+  }
+  .rainbow-bar::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      #99C961, #ffde5c, #fc826d, #fbaf41, #9bc4bc, #fc826d, #99C961, #ffde5c, #99C961
+    );
+    background-size: 300% 100%;
+    animation: rainbowSlide 12s linear infinite;
+  }
+  @keyframes rainbowSlide {
+    0%   { background-position: 0% 50%; }
+    100% { background-position: 300% 50%; }
+  }
+
+  /* ── HEADER ── */
+  .header {
+    position: relative;
+    z-index: 5;
+    background: linear-gradient(135deg, rgba(30,50,60,0.92) 0%, rgba(60,92,104,0.88) 60%, rgba(40,70,60,0.90) 100%);
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    padding: 52px 40px 44px;
+    overflow: hidden;
+  }
+
+  .header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 80% at 90% -10%, rgba(153,201,97,0.22) 0%, transparent 55%),
+      radial-gradient(ellipse 40% 60% at 5% 110%, rgba(252,130,109,0.18) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  /* floating orbs */
+  .header::after {
+    content: '';
+    position: absolute;
+    width: 320px; height: 320px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(153,201,97,0.15) 0%, transparent 70%);
+    top: -80px; right: -60px;
+    animation: orbFloat 8s ease-in-out infinite alternate;
+    pointer-events: none;
+  }
+
+  @keyframes orbFloat {
+    0%   { transform: translate(0,0) scale(1); }
+    100% { transform: translate(-20px, 30px) scale(1.1); }
+  }
+
+  .header-inner { max-width: 960px; margin: 0 auto; position: relative; z-index: 2; }
+
+  .brand-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 14px;
+    opacity: 0.9;
+  }
+
+  .header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(30px, 5.5vw, 54px);
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.05;
+    margin-bottom: 6px;
+    letter-spacing: -0.5px;
+    text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+  }
+
+  .header h1 span {
+    background: linear-gradient(90deg, var(--yellow), var(--amber));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .header-sub {
+    font-size: 14px;
+    color: rgba(255,255,255,0.5);
+    font-weight: 300;
+    margin-bottom: 24px;
+    letter-spacing: 0.3px;
+  }
+
+  .header-meta { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 8px; }
+
+  .meta-pill {
+    background: rgba(255,255,255,0.10);
+    border: 1px solid rgba(255,255,255,0.22);
+    border-radius: 100px;
+    padding: 6px 16px;
+    font-size: 11.5px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.85);
+    backdrop-filter: blur(8px);
+    letter-spacing: 0.2px;
+  }
+  .meta-pill strong { color: var(--yellow); font-weight: 600; }
+
+  /* ── OVERVIEW STRIP (glass) ── */
+  .overview {
+    position: relative;
+    z-index: 5;
+    background: rgba(153,201,97,0.82);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+  }
+
+  .overview-grid { max-width: 960px; margin: 0 auto; display: grid; grid-template-columns: repeat(4,1fr); }
+
+  .overview-item {
+    padding: 22px 20px;
+    text-align: center;
+    border-right: 1px solid rgba(255,255,255,0.35);
+    transition: background 0.2s;
+  }
+  .overview-item:last-child { border-right: none; }
+  .overview-item:hover { background: rgba(255,255,255,0.15); }
+
+  .overview-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 900;
+    color: var(--teal);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .overview-label {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: rgba(255,255,255,0.9);
+  }
+
+  /* ── MAIN ── */
+  .main { max-width: 960px; margin: 0 auto; padding: 32px 20px 80px; position: relative; z-index: 2; }
+
+  /* ── ACCORDION (Liquid Glass) ── */
+  .accordion { display: flex; flex-direction: column; gap: 12px; }
+
+  .acc-item {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
+    border-radius: 18px;
+    border: 1px solid var(--glass-border);
+    overflow: hidden;
+    box-shadow: var(--glass-shadow);
+    transition: box-shadow 0.25s, transform 0.2s;
+  }
+
+  .acc-item:hover {
+    box-shadow: 0 12px 40px rgba(60,92,104,0.16), 0 2px 8px rgba(60,92,104,0.10);
+    transform: translateY(-1px);
+  }
+
+  .acc-trigger {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 20px 22px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    text-align: left;
+    transition: background 0.2s;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .acc-trigger:hover {
+    background: rgba(255,255,255,0.3);
+  }
+
+  .acc-trigger.open {
+    background: linear-gradient(135deg, rgba(60,92,104,0.90) 0%, rgba(40,70,65,0.88) 100%);
+    backdrop-filter: blur(24px);
+  }
+
+  .acc-num {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    font-weight: 700;
+    background: rgba(60,92,104,0.12);
+    color: var(--teal);
+    border: 1px solid rgba(60,92,104,0.15);
+    transition: all 0.2s;
+  }
+
+  .acc-trigger.open .acc-num {
+    background: rgba(255,255,255,0.18);
+    border-color: rgba(255,255,255,0.3);
+    color: #fff;
+  }
+
+  .acc-num.coral-bg {
+    background: rgba(252,130,109,0.15);
+    color: var(--coral);
+    border-color: rgba(252,130,109,0.2);
+  }
+
+  .acc-labels { flex: 1; }
+
+  .acc-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--teal);
+    line-height: 1.2;
+    transition: color 0.2s;
+    letter-spacing: -0.2px;
+  }
+
+  .acc-trigger.open .acc-title { color: #fff; }
+
+  .acc-sub {
+    font-size: 11.5px;
+    color: rgba(77,77,77,0.55);
+    margin-top: 2px;
+    font-weight: 400;
+    transition: color 0.2s;
+    letter-spacing: 0.1px;
+  }
+
+  .acc-trigger.open .acc-sub { color: rgba(255,255,255,0.55); }
+
+  .acc-chevron {
+    width: 28px; height: 28px;
+    flex-shrink: 0;
+    background: rgba(60,92,104,0.08);
+    border: 1px solid rgba(60,92,104,0.12);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1), background 0.2s;
+  }
+
+  .acc-chevron svg {
+    width: 13px; height: 13px;
+    stroke: rgba(60,92,104,0.5);
+    fill: none;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: stroke 0.2s;
+  }
+
+  .acc-trigger.open .acc-chevron {
+    transform: rotate(180deg);
+    background: rgba(255,255,255,0.15);
+    border-color: rgba(255,255,255,0.25);
+  }
+
+  .acc-trigger.open .acc-chevron svg { stroke: rgba(255,255,255,0.75); }
+
+  .acc-body { max-height: 0; overflow: hidden; transition: max-height 0.45s cubic-bezier(0.4,0,0.2,1); }
+  .acc-body.open { max-height: 6000px; }
+
+  .acc-inner {
+    padding: 6px 22px 26px;
+    background: rgba(255,255,255,0.25);
+    border-top: 1px solid rgba(255,255,255,0.5);
+  }
+
+  /* ── INNER COMPONENTS ── */
+
+  .voice-box {
+    background: linear-gradient(135deg, rgba(30,50,60,0.88) 0%, rgba(40,70,65,0.85) 100%);
+    backdrop-filter: blur(20px);
+    border-radius: 16px;
+    padding: 28px 32px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    border: 1px solid rgba(255,255,255,0.12);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  }
+
+  .voice-col h4 {
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 10px;
+    opacity: 0.9;
+  }
+
+  .voice-line {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 12px;
+    line-height: 1.2;
+    text-shadow: 0 1px 8px rgba(0,0,0,0.2);
+  }
+
+  .voice-stage {
+    font-size: 12px;
+    color: rgba(255,255,255,0.62);
+    margin-bottom: 5px;
+    display: flex;
+    gap: 10px;
+    align-items: baseline;
+  }
+
+  .voice-stage strong {
+    font-size: 9.5px;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: var(--yellow);
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  /* TIMELINE */
+  .timeline { position: relative; padding-left: 28px; border-left: 2px solid rgba(153,201,97,0.4); }
+
+  .timeline-block { position: relative; margin-bottom: 20px; }
+
+  .timeline-block::before {
+    content: '';
+    position: absolute;
+    left: -36px; top: 14px;
+    width: 12px; height: 12px;
+    background: var(--green);
+    border-radius: 50%;
+    border: 2.5px solid rgba(240,242,245,1);
+    box-shadow: 0 0 0 3px rgba(153,201,97,0.3);
+  }
+
+  .timeline-date {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--coral);
+    margin-bottom: 6px;
+    opacity: 0.85;
+  }
+
+  .timeline-card {
+    background: rgba(255,255,255,0.55);
+    backdrop-filter: blur(12px);
+    border-radius: 12px;
+    padding: 16px 18px;
+    border: 1px solid rgba(255,255,255,0.8);
+    box-shadow: 0 2px 12px rgba(60,92,104,0.07);
+  }
+
+  .timeline-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--teal);
+    margin-bottom: 8px;
+  }
+
+  .timeline-tasks { list-style: none; display: flex; flex-direction: column; gap: 5px; }
+
+  .timeline-tasks li {
+    font-size: 13px;
+    color: var(--charcoal);
+    padding-left: 16px;
+    position: relative;
+    line-height: 1.45;
+  }
+
+  .timeline-tasks li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--green);
+    font-weight: 600;
+  }
+
+  /* CHANNEL CARDS */
+  .channel-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 14px; }
+
+  .channel-card {
+    background: rgba(255,255,255,0.55);
+    backdrop-filter: blur(14px);
+    border-radius: 14px;
+    padding: 20px;
+    border: 1px solid rgba(255,255,255,0.8);
+    box-shadow: 0 2px 12px rgba(60,92,104,0.07);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .channel-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(60,92,104,0.13);
+  }
+
+  .channel-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+  }
+
+  .channel-card.google::before { background: linear-gradient(90deg, var(--amber), var(--yellow)); }
+  .channel-card.meta::before   { background: linear-gradient(90deg, var(--teal), var(--sage)); }
+  .channel-card.social::before { background: linear-gradient(90deg, var(--green), #c5e88a); }
+  .channel-card.email::before  { background: linear-gradient(90deg, var(--yellow), var(--amber)); }
+
+  .channel-icon {
+    width: 36px; height: 36px;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 17px;
+    margin-bottom: 10px;
+    font-weight: 700;
+    border: 1px solid rgba(255,255,255,0.7);
+  }
+
+  .channel-card.google .channel-icon { background: rgba(251,175,65,0.15); }
+  .channel-card.meta .channel-icon   { background: rgba(60,92,104,0.10); }
+  .channel-card.social .channel-icon { background: rgba(153,201,97,0.15); }
+  .channel-card.email .channel-icon  { background: rgba(255,222,92,0.18); }
+
+  .channel-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--teal);
+    margin-bottom: 3px;
+  }
+
+  .channel-hook { font-size: 11.5px; color: rgba(77,77,77,0.5); margin-bottom: 12px; font-style: italic; }
+
+  .channel-tasks { list-style: none; display: flex; flex-direction: column; gap: 5px; }
+
+  .channel-tasks li {
+    font-size: 12.5px;
+    color: var(--charcoal);
+    padding-left: 13px;
+    position: relative;
+    line-height: 1.4;
+  }
+
+  .channel-tasks li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--green);
+    font-weight: 700;
+  }
+
+  .channel-badge {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 4px 12px;
+    border-radius: 100px;
+    font-size: 10.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    border: 1px solid transparent;
+  }
+
+  .channel-card.google .channel-badge { background: rgba(251,175,65,0.15); color: #b87a00; border-color: rgba(251,175,65,0.3); }
+  .channel-card.meta .channel-badge   { background: rgba(60,92,104,0.10); color: var(--teal); border-color: rgba(60,92,104,0.2); }
+  .channel-card.social .channel-badge { background: rgba(153,201,97,0.15); color: #4a8a1a; border-color: rgba(153,201,97,0.3); }
+  .channel-card.email .channel-badge  { background: rgba(255,222,92,0.18); color: #8a6600; border-color: rgba(255,222,92,0.35); }
+
+  /* IN-STORE GRID */
+  .instore-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; }
+
+  .instore-card {
+    background: rgba(255,255,255,0.55);
+    backdrop-filter: blur(12px);
+    border-radius: 14px;
+    padding: 18px 16px;
+    border: 1px solid rgba(255,255,255,0.8);
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(60,92,104,0.06);
+    transition: transform 0.2s;
+  }
+
+  .instore-card:hover { transform: translateY(-2px); }
+
+  .instore-icon { font-size: 26px; margin-bottom: 10px; }
+
+  .instore-card h5 {
+    font-family: 'Playfair Display', serif;
+    font-size: 13.5px;
+    font-weight: 700;
+    color: var(--teal);
+    margin-bottom: 6px;
+  }
+
+  .instore-card p { font-size: 12px; color: rgba(77,77,77,0.75); line-height: 1.5; }
+
+  /* METRICS */
+  .metric-row { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; }
+
+  .metric-card {
+    background: rgba(255,255,255,0.55);
+    backdrop-filter: blur(14px);
+    border-radius: 16px;
+    padding: 22px 14px;
+    border: 1px solid rgba(255,255,255,0.8);
+    text-align: center;
+    box-shadow: 0 2px 12px rgba(60,92,104,0.07);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s;
+  }
+
+  .metric-card:hover { transform: translateY(-2px); }
+
+  .metric-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--green), var(--sage));
+    border-radius: 0 0 16px 16px;
+  }
+
+  .metric-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 900;
+    color: var(--teal);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .metric-label { font-size: 11.5px; color: rgba(77,77,77,0.6); font-weight: 500; line-height: 1.3; }
+
+  /* FOOTER */
+  .footer {
+    background: linear-gradient(135deg, rgba(25,42,50,0.95) 0%, rgba(60,92,104,0.92) 100%);
+    backdrop-filter: blur(20px);
+    text-align: center;
+    padding: 28px;
+    color: rgba(255,255,255,0.45);
+    font-size: 11.5px;
+    position: relative;
+    z-index: 5;
+  }
+
+  .footer strong { color: var(--green); }
+
+  /* NOTE BOXES */
+  .note-box {
+    padding: 13px 17px;
+    border-radius: 10px;
+    font-size: 13px;
+    line-height: 1.6;
+    margin-bottom: 14px;
+    backdrop-filter: blur(8px);
+  }
+
+  .note-pitch {
+    background: rgba(255,255,255,0.6);
+    border: 1px solid rgba(252,130,109,0.3);
+    border-left: 3px solid var(--coral);
+  }
+
+  .note-print {
+    background: rgba(155,196,188,0.2);
+    border: 1px solid rgba(155,196,188,0.4);
+    color: var(--teal);
+  }
+
+  .note-start {
+    background: rgba(153,201,97,0.15);
+    border: 1px solid rgba(153,201,97,0.3);
+    border-left: 3px solid var(--green);
+    color: var(--teal);
+    font-weight: 600;
+    font-size: 12.5px;
+  }
+
+  /* LOCATION TABS */
+  .loc-tabs { display: flex; gap: 8px; margin-bottom: 14px; flex-wrap: wrap; }
+
+  .loc-tab {
+    padding: 7px 16px;
+    border-radius: 100px;
+    border: 1.5px solid rgba(60,92,104,0.3);
+    background: rgba(255,255,255,0.5);
+    color: var(--teal);
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    transition: all 0.2s;
+    backdrop-filter: blur(8px);
+  }
+
+  .loc-tab:hover { background: rgba(255,255,255,0.75); }
+
+  .loc-tab.active {
+    background: linear-gradient(135deg, var(--teal), #2a4a55);
+    color: #fff;
+    border-color: transparent;
+    box-shadow: 0 4px 12px rgba(60,92,104,0.25);
+  }
+
+  .loc-header {
+    margin-bottom: 10px;
+    padding: 10px 16px;
+    background: linear-gradient(135deg, rgba(60,92,104,0.88), rgba(40,70,65,0.85));
+    backdrop-filter: blur(12px);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid rgba(255,255,255,0.12);
+  }
+
+  .loc-name { font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--green); }
+  .loc-addr { font-size: 11px; color: rgba(255,255,255,0.55); }
+  .loc-count { margin-left: auto; font-size: 11px; color: var(--yellow); font-weight: 600; }
+
+  .target-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+
+  .target-card {
+    background: rgba(255,255,255,0.62);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 14px 15px;
+    border: 1px solid rgba(255,255,255,0.85);
+    box-shadow: 0 1px 6px rgba(60,92,104,0.06);
+    transition: transform 0.18s, box-shadow 0.18s;
+  }
+
+  .target-card:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 16px rgba(60,92,104,0.12);
+  }
+
+  .target-type { font-size: 9.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px; }
+  .target-name { font-size: 13.5px; font-weight: 700; color: var(--teal); margin-bottom: 2px; }
+  .target-meta { font-size: 11px; color: rgba(77,77,77,0.5); margin-bottom: 6px; }
+  .target-body { font-size: 12px; color: var(--charcoal); margin-bottom: 8px; line-height: 1.45; }
+
+  .target-leave {
+    font-size: 10.5px;
+    font-weight: 600;
+    color: var(--teal);
+    padding: 4px 10px;
+    border-radius: 100px;
+    display: inline-block;
+    border: 1px solid transparent;
+  }
+
+  .leave-corp  { background: rgba(155,196,188,0.2); border-color: rgba(155,196,188,0.4); }
+  .leave-event { background: rgba(153,201,97,0.15); border-color: rgba(153,201,97,0.3); }
+  .leave-org   { background: rgba(155,196,188,0.2); border-color: rgba(155,196,188,0.4); }
+
+  .border-corp    { border-top: 2.5px solid var(--amber); }
+  .border-event   { border-top: 2.5px solid var(--green); }
+  .border-org     { border-top: 2.5px solid var(--sage); }
+  .border-partner { border: 2px solid rgba(153,201,97,0.5); border-top: 2.5px solid var(--green); box-shadow: 0 0 0 3px rgba(153,201,97,0.1); }
+
+  /* OWNER GRID */
+  .owner-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+  .owner-card {
+    background: rgba(255,255,255,0.55);
+    backdrop-filter: blur(12px);
+    border-radius: 14px;
+    padding: 18px;
+    border: 1px solid rgba(255,255,255,0.8);
+    box-shadow: 0 2px 10px rgba(60,92,104,0.06);
+  }
+
+  .owner-label {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--coral);
+    margin-bottom: 10px;
+  }
+
+  .owner-list { list-style: none; display: flex; flex-direction: column; gap: 5px; }
+
+  .owner-list li {
+    font-size: 12.5px;
+    color: var(--charcoal);
+    padding-left: 14px;
+    position: relative;
+    line-height: 1.4;
+  }
+
+  .owner-list li::before { content: '•'; position: absolute; left: 0; color: var(--green); font-weight: 700; }
+
+  /* RESPONSIVE */
+  @media (max-width: 640px) {
+    .overview-grid { grid-template-columns: repeat(2,1fr); }
+    .channel-grid, .target-grid, .owner-grid { grid-template-columns: 1fr; }
+    .instore-grid { grid-template-columns: 1fr; }
+    .metric-row { grid-template-columns: repeat(2,1fr); }
+    .voice-box { grid-template-columns: 1fr; }
+    .header { padding: 36px 20px 32px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-inner">
+    <div class="brand-label">Morning Belle</div>
+    <h1>Events &amp; Catering<br><span>Launch Playbook</span></h1>
+    <div class="header-sub">morningbellebrunch.com &nbsp;·&nbsp; Four Locations &nbsp;·&nbsp; Launch June 16, 2026</div>
+    <div class="header-meta">
+      <div class="meta-pill">Launch <strong>June 16, 2026</strong></div>
+      <div class="meta-pill"><strong>4</strong> Locations</div>
+      <div class="meta-pill">Events + Catering</div>
+      <div class="meta-pill">Morning Belle Operations</div>
+    </div>
+  </div>
+</div>
+
+<div class="overview">
+  <div class="overview-grid">
+    <div class="overview-item"><div class="overview-num">4</div><div class="overview-label">Channels</div></div>
+    <div class="overview-item"><div class="overview-num">7</div><div class="overview-label">Weeks</div></div>
+    <div class="overview-item"><div class="overview-num">2</div><div class="overview-label">Campaigns</div></div>
+    <div class="overview-item"><div class="overview-num">$861K</div><div class="overview-label">Annual Revenue Goal</div></div>
+  </div>
+</div>
+
+<div class="rainbow-bar"></div>
+
+<div class="main">
+<div class="accordion">
+
+  <!-- ── 0: CAMPAIGNS ── -->
+  <div class="acc-item">
+    <button class="acc-trigger open" onclick="toggle(this)">
+      <div class="acc-num coral-bg">✦</div>
+      <div class="acc-labels">
+        <div class="acc-title">The Two Campaigns</div>
+        <div class="acc-sub">Never mix these. Two separate emotional plays.</div>
+      </div>
+      <div class="acc-chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+    </button>
+    <div class="acc-body open">
+      <div class="acc-inner">
+        <div class="voice-box">
+          <div class="voice-col">
+            <h4>Private Events</h4>
+            <div class="voice-line">"Your people. Your Morning Belle."</div>
+            <div class="voice-stage"><strong>Awareness</strong> Your Belle. Reserved for you.</div>
+            <div class="voice-stage"><strong>Consider</strong> Celebrate together. Every detail, every dish, every mimosa. Yours.</div>
+            <div class="voice-stage"><strong>Convert</strong> We will take care of everything but the guest list.</div>
+          </div>
+          <div class="voice-col">
+            <h4>Catering</h4>
+            <div class="voice-line">"Bring the Belle."</div>
+            <div class="voice-stage"><strong>Corporate</strong> The only office lunch that starts with Cinnamon Roll French Toast.</div>
+            <div class="voice-stage"><strong>Host</strong> The only catering spread that begins with Banana Pudding French Toast.</div>
+            <div class="voice-stage"><strong>Close</strong> Everyday luxury. Delivered.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── 1: TIMELINE ── -->
+  <div class="acc-item">
+    <button class="acc-trigger" onclick="toggle(this)">
+      <div class="acc-num">1</div>
+      <div class="acc-labels">
+        <div class="acc-title">3-Week Rollout Timeline</div>
+        <div class="acc-sub">Pre-launch through week two</div>
+      </div>
+      <div class="acc-chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+    </button>
+    <div class="acc-body">
+      <div class="acc-inner">
+        <div class="timeline">
+          <div class="timeline-block">
+            <div class="timeline-date">June 9–15 — Pre-Launch Week</div>
+            <div class="timeline-card">
+              <h4>Build the Runway</h4>
+              <ul class="timeline-tasks">
+                <li>Website pages live on morningbellebrunch.com (Leverage delivers)</li>
+                <li>In-store materials printed and placed at all four locations</li>
+                <li>Google P-Max campaigns loaded, budgets set, ready to activate</li>
+                <li>Meta ad sets built, creative uploaded, ready to activate</li>
+                <li>Local business drop materials printed and routes planned by GM</li>
+                <li>Gardeners briefed on both programs at pre-shift</li>
+                <li>Email teaser drafted and scheduled for June 15 send</li>
+              </ul>
+            </div>
+          </div>
+          <div class="timeline-block">
+            <div class="timeline-date">June 16 — Launch Day</div>
+            <div class="timeline-card">
+              <h4>Everything Goes Live Simultaneously</h4>
+              <ul class="timeline-tasks">
+                <li>Google P-Max goes live, all four locations</li>
+                <li>Meta ads go live, all four locations</li>
+                <li>Instagram launch post published at 8am</li>
+                <li>Facebook announcement published at 8am</li>
+                <li>Email blast to full list at 9am</li>
+                <li>Local business drops begin, GM-led, week of June 16</li>
+              </ul>
+            </div>
+          </div>
+          <div class="timeline-block">
+            <div class="timeline-date">June 17–30 — Week One and Two</div>
+            <div class="timeline-card">
+              <h4>Sustain and Amplify</h4>
+              <ul class="timeline-tasks">
+                <li>2 social posts per week across Instagram and Facebook (events and catering alternating)</li>
+                <li>GM completes local business drops within their 5-mile radius</li>
+                <li>Monitor Google and Meta performance, adjust spend toward top-performing location</li>
+                <li>First inquiry recap from Catering Coordinator to Mike by June 23</li>
+                <li>Instagram Story series: behind the scenes of event-ready spaces</li>
+              </ul>
+            </div>
+          </div>
+          <div class="timeline-block">
+            <div class="timeline-date">July 1+ — Steady State</div>
+            <div class="timeline-card">
+              <h4>Operate the Machine</h4>
+              <ul class="timeline-tasks">
+                <li>Paid media runs continuously, Ops reviews weekly performance</li>
+                <li>1 social post per week dedicated to events or catering</li>
+                <li>Catering Coordinator tracks inquiries and closed bookings weekly</li>
+                <li>Ops pulls first 30-day revenue report by July 18</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── 4: LOCAL DROPS ── -->
+  <div class="acc-item">
+    <button class="acc-trigger" onclick="toggle(this)">
+      <div class="acc-num">2</div>
+      <div class="acc-labels">
+        <div class="acc-title">Local Business Drops</div>
+        <div class="acc-sub">40 specific targets, 10 per location, 4-week program</div>
+      </div>
+      <div class="acc-chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+    </button>
+    <div class="acc-body">
+      <div class="acc-inner">
+        <p style="font-size:13.5px; color:#666; margin-bottom:10px; line-height:1.6;">Each GM owns their list. 10 targets, 4 weeks, roughly 2-3 drops per week. One visit per business. Leave the right materials. Follow up by phone within 5 days. <strong style="color:var(--teal);">Start with Southside Floral at Breton — that relationship is already warm.</strong></p>
+        <div class="note-box note-pitch">
+          <strong style="color:var(--teal);">The pitch, spoken:</strong> "We just launched private events and catering at Morning Belle. We thought you might love having us for your next team lunch or company celebration. Here is the menu." Then stop talking.
+        </div>
+
+        <div class="loc-tabs">
+          <button class="loc-tab active" id="tab-standale" onclick="showLoc('standale')">Standale (1004)</button>
+          <button class="loc-tab" id="tab-bridge" onclick="showLoc('bridge')">Bridge Street (1002)</button>
+          <button class="loc-tab" id="tab-breton" onclick="showLoc('breton')">Breton Village (1003)</button>
+          <button class="loc-tab" id="tab-beltline" onclick="showLoc('beltline')">East Beltline (1001)</button>
+        </div>
+
+        <!-- STANDALE -->
+        <div id="loc-standale">
+          <div class="loc-header"><span class="loc-name">Standale (1004)</span><span class="loc-addr">355 Wilson Ave NW, Walker</span><span class="loc-count">10 targets</span></div>
+          <div class="target-grid">
+            <div class="target-card border-corp">
+              <div class="target-type" style="color:var(--amber);">Corporate</div>
+              <div class="target-name">Hendrik Meijer Corporate Office</div>
+              <div class="target-meta">2727 Walker Ave NW &nbsp;·&nbsp; (616) 453-6711 &nbsp;·&nbsp; M–F 8am–5pm</div>
+              <div class="target-body">Large team, HR on-site. Ask for the office manager or events coordinator.</div>
+              <span class="target-leave leave-corp">Leave: Catering menu + events one-pager</span>
+            </div>
+            <div class="target-card border-corp">
+              <div class="target-type" style="color:var(--amber);">Corporate</div>
+              <div class="target-name">H.B. Fuller</div>
+              <div class="target-meta">2727 Kinney Ave NW &nbsp;·&nbsp; (616) 453-8271 &nbsp;·&nbsp; M–F 8am–5pm</div>
+              <div class="target-body">Manufacturing HQ. Staff appreciation and team events are common. Ask for HR.</div>
+              <span class="target-leave leave-corp">Leave: Catering menu</span>
+            </div>
+            <div class="target-card border-corp">
+              <div class="target-type" style="color:var(--amber);">Corporate</div>
+              <div class="target-name">H&amp;S Companies</div>
+              <div class="target-meta">4575 Lake Michigan Dr NW &nbsp;·&nbsp; (616) 453-8551 &nbsp;·&nbsp; M–F 8am–5pm</div>
+              <div class="target-body">Financial services firm. Partners are the decision makers. Catering and private dining.</div>
+              <span class="target-leave leave-corp">Leave: Catering menu + events one-pager</span>
+            </div>
+            <div class="target-card border-corp">
+              <div class="target-type" style="color:var(--amber);">Professional Services</div>
+              <div class="target-name">Edward Jones (Craig Taetsch)</div>
+              <div class="target-meta">4328 3 Mile Rd NW #100 &nbsp;·&nbsp; (616) 453-2009 &nbsp;·&nbsp; M–F 8:30am–5pm</div>
+              <div class="target-body">Financial advisor office. Client appreciation events and team lunches are part of their business model. High-value catering lead.</div>
+              <span class="target-leave leave-corp">Leave: Catering menu + events one-pager</span>
+            </div>
+            <div class="target-card border-corp">
+              <div class="target-type" style="color:var(--amber);">Professional Services</div>
+              <div class="target-name">Steenland Insurance Agency</div>
+              <div class="target-meta">975 3 Mile Rd NW &nbsp;·&nbsp; (616) 784-3322 &nbsp;·&nbsp; M–Th 9am–5pm, F until 4pm</div>
+              <div class="target-body">Family-owned insurance agency, 89 reviews. Staff events and client appreciation. Owner-operated means fast decisions.</div>
+              <span class="target-leave leave-corp">Leave: Catering menu + events one-pager</span>
+            </div>
+            <div class="target-card border-corp">
+              <div class="target-type" style="color:var(--amber);">Healthcare</div>
+              <div class="target-name">Carroll Family and Cosmetic Dentistry</div>
+              <div class="target-meta">4310 Leonard St NW #202 &nbsp;·&nbsp; (616) 453-6323 &nbsp;·&nbsp; M–Th 8am–5pm</div>
+              <div class="target-body">5-star dental practice, 376 reviews. Staff team lunches, holiday parties. Office manager is the contact. Ask for them by name.</div>
+              <span class="target-leave leave-corp">Leave: Catering menu</span>
+            </div>
+            <div class="target-card border-corp">
+              <div class="target-type" style="color:var(--amber);">Healthcare</div>
+              <div class="target-name">Walker Dental Care</div>
+              <div class="target-meta">348 Wilson Ave NW &nbsp;·&nbsp; (616) 898-3452 &nbsp;·&nbsp; M–F varies</div>
+              <div class="target-body">High-traffic dental practice, 289 reviews, same street as MB Standale. Staff lunches and team events. Ask for the office manager.</div>
+              <span class="target-leave leave-corp">Leave: Catering menu</span>
+            </div>
+            <div class="target-card border-event">
+              <div class="target-type" style="color:var(--green);">Event Partner</div>
+              <div class="target-name">The Riverbird Events</div>
+              <div class="target-meta">3585 River Hill Dr &nbsp;·&nbsp; (269) 492-5365 &nbsp;·&nbsp; M–F 10am–6pm</div>
+              <div class="target-body">5-star wedding venue. Their couples need rehearsal dinner options. Offer a referral relationship.</div>
+              <span class="target-leave leave-event">Leave: Events one-pager + business card</span>
+            </div>
+            <div class="target-card border-org">
+              <div class="target-type" style="color:#3a8070;">Nonprofit</div>
+              <div class="target-name">Land Conservancy of West Michigan</div>
+              <div class="target-meta">237 Steele St &nbsp;·&nbsp; (616) 451-9476 &nbsp;·&nbsp; M–Th 8:30am–5pm</div>
+              <div class="target-body">Mission-driven staff. Fundraiser events and team lunches.</div>
+              <span class="target-leave leave-org">Leave: Catering menu + events one-pager</span>
+            </div>
+            <div class="target-card border-org">
+              <div class="target-type" style="color:#3a8070;">Nonprofit</div>
+              <div class="target-name">Hope for Single Moms</div>
+              <div class="target-meta">2130 Blueberry Dr NW &nbsp;·&nbsp; (616) 485-7594 &nbsp;·&nbsp; M–Th 10am–6pm</div>
+              <div class="target-body">Advocacy nonprofit with a warm community team. Fundraisers and community events.</div>
+              <span class="target-leave leave-org">Leave: Catering menu + events one-pager</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- BRIDGE STREET -->
+        <div id="loc-bridge" style="display:none;">
+          <div class="loc-header"><span class="loc-name">Bridge Street (1002)</span><span class="loc-addr">434 Bridge St NW</span><span class="loc-count">10 targets</span></div>
+          <div class="target-grid">
+            <div class="target-card border-event">
+              <div class="target-type" style="color:var(--green);">Event Partner &nbsp;·&nbsp; Same Street</div>
+              <div class="target-name">Posh Petals</div>
+              <div class="target-meta">806 Bridge St NW &nbsp;·&nbsp; (616) 363-3337</div>
+              <div class="target-body">On the same street as MB. High-volume wedding florist, 81 reviews. Every client is a bridal shower or rehearsal dinner prospect. Drop in personally.</div>
+              <span class="target-leave leave-event">Leave: Events one-pager + business card</span>
+            </div>
+            <div class="target-card border-event">
+              <div class="target-type" style="color:var(--green);">Event Partner</div>
+              <div class="target-name">All Buttoned Up Events</div>
+              <div class="target-meta">317 Bristol Ave NW &nbsp;·&nbsp; (248) 770-7548 &nbsp;·&nbsp; M–F 9am–5pm</div>
+              <div class="target-body">5-star wedding coordinator, 72 reviews. Her clients are exactly MB's private events audience. Propose a referral relationship.</div>
+              <span class="target-leave leave-event">Leave: Events one-pager + business card</span>
+            </div>
+            <div class="target-card border-event">
+              <div class="target-type" style="color:var(--green);">Event Partner</div>
+              <div class="target-name">Futtitinni Events</div>
+              <div class="target-meta">538 Bond Ave NW &nbsp;·&nbsp; (248) 303-7537 &nbsp;·&nbsp; M–Sa 9am–6pm</div>
+              <div class="target-body">5-star GR wedding planner. Same referral pitch as All Buttoned Up.</div>
+              <span class="target-leave leave-event">Leave: Events one-pager + business card</span>
+            </div>
+            <div class="target-card border-event">
+              <div class="target-type" style="color:var(--green);">Event Partner</div>
+              <div class="target-name">Crowned Creative Studio</div>
+              <div class="target-meta">240 Front Ave SW &nbsp;·&nbsp; (616) 328-4208 &nbsp;·&nbsp; M–F 9am–8pm, Sa 8am–9pm</div>
+              <div class="target-body">5-star wedding and events photography studio, 29 reviews. Their clients are celebrating — bridal showers, engagement parties, anniversaries. Strong referral fit.</div>
+              <span class="target-leave leave-event">Leave: Events one-pager + business card</span>
+            </div>
+            <div class="target-card border-corp">
+              <div class="target-type" style="color:var(--amber);">Professional Services</div>
+              <div class="target-name">Varnum LLP</div>
+              <div class="target-meta">333 Bridge St NW #1700 &nbsp;·&nbsp; (616) 336-6000 &nbsp;·&nbsp; M–F 8am–5pm</div>
+              <div class="target-body">Large law firm in the Bridge St office building. Associate events, client entertainment, staff appreciation. Ask for the office administrator.</div>
+              <span class="target-leave leave-corp">Leave: Catering menu + events one-pager</span>
+            </div>
+            <div class="target-card border-corp">
+              <div class="target-type" style="color:var(--amber);">Professional Services</div>
+              <div class="target-name">Stuart Law, PLC</div>
+              <div class="target-meta">429 Turner Ave NW &nbsp;·&nbsp; (616) 450-9885</div>
+              <div class="target-body">4.8-star boutique law firm, 96 reviews. Small professional team. Staff lunches and client appreciation events. Owner is the decision maker.</div>
+              <span class="target-leave leave-corp">Leave: Catering menu + events one-pager</span>
+            </div>
+            <div class="target-card border-corp">
+              <div class="target-type" style="color:var(--amber);">Healthcare</div>
+              <div class="target-name">Trinity Chiropractic</div>
+              <div class="target-meta">448 Leonard St NW &nbsp;·&nbsp; (616) 805-4478 &nbsp;·&nbsp; Tu–F varied</div>
+              <div class="target-body">5-star chiropractic practice, 32 reviews. Owner-operated. Staff lunches and patient appreciation events. Warm community practice.</div>
+              <span class="target-leave leave-corp">Leave: Catering menu</span>
+            </div>
+            <div class="target-card border-org">
+              <div class="target-type" style="color:#3a8070;">Nonprofit &nbsp;·&nbsp; Same Corridor</div>
+              <div class="target-name">Gilda's Club Grand Rapids</div>
+              <div class="target-meta">1806 Bridge St NW &nbsp;·&nbsp; (616) 453-8300 &nbsp;·&nbsp; M–Th 9am–9pm, F until 1pm</div>
+              <div class="target-body">On Bridge St corridor, 145 reviews. Staff catering and fundraiser event potential.</div>
+              <span class="target-leave leave-org">Leave: Catering menu + events one-pager</span>
+            </div>
+            <div class="target-card border-org">
+              <div class="target-type" style="color:#3a8070;">Community &nbsp;·&nbsp; Same Corridor</div>
+              <div class="target-name">John Ball Area Neighbors</div>
+              <div class="target-meta">1120 Bridge St NW &nbsp;·&nbsp; (616) 456-9190 &nbsp;·&nbsp; M–F 9am–3pm</div>
+              <div class="target-body">Neighborhood association on Bridge St corridor. Community events and gatherings. Very warm pitch.</div>
+              <span class="target-leave leave-org">Leave: Catering menu + events one-pager</span>
+            </div>
+            <div class="target-card border-org">
+              <div class="target-type" style="color:#3a8070;">Community &nbsp;·&nbsp; Same Corridor</div>
+              <div class="target-name">Bridge Street Ministries</div>
+              <div class="target-meta">1034 Bridge St NW &nbsp;·&nbsp; M–Sa 8am–5pm</div>
+              <div class="target-body">Community center and nonprofit on the same street. Staff catering and community event potential.</div>
+              <span class="target-leave leave-org">Leave: Catering menu + events one-pager</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- BRETON VILLAGE -->
+        <div id="loc-breton" style="display:none;">
+          <div class="loc-header"><span class="loc-name">Breton Village (1003)</span><span class="loc-addr">1962 Breton Rd SE</span><span class="loc-count">10 targets</span></div>
+          <div class="note-box note-start" style="margin-bottom:10px;">🌱 Start here first. Southside Flower Market is an existing partner, literally next door. This is the warmest lead across all four locations.</div>
+          <div class="target-grid">
+            <div class="target-card border-partner">
+              <div class="target-type" style="color:var(--green);">Existing Partner &nbsp;·&nbsp; Next Door</div>
+              <div class="target-name">Southside Flower Market</div>
+              <div class="target-meta">1842 Breton Rd SE &nbsp;·&nbsp; (616) 427-0599 &nbsp;·&nbsp; M–F 10am–6pm, Sa 10am–4pm</div>
+              <div class="target-body">322 reviews, wedding florist, immediate neighbor. Bridal shower and rehearsal dinner referrals. Deepen this relationship first.</div>
+              <span class="target-leave leave-event">Conversation, not just a drop. Propose mutual referral.</span>
+            </div>
+            <div class="target-card border-event">
+              <div class="target-type" style="color:var(--green);">Event Partner &nbsp;·&nbsp; Highest Value</div>
+              <div class="target-name">The Best Day Details</div>
+              <div class="target-meta">77 Monroe Center St NW &nbsp;·&nbsp; (616) 558-9144</div>
+              <div class="target-body">GR's highest-rated wedding coordinator, 316 reviews. Her clients are MB's private events guests. Worth a dedicated in-person visit, not just a drop.</div>
+              <span class="target-leave leave-event">Leave: Events one-pager + business card</span>
+            </div>
+            <div class="target-card border-corp">
+              <div class="target-type" style="color:var(--amber);">Professional Services</div>
+              <div class="target-name">The Brouwers Agency</div>
+              <div class="target-meta">1925 Breton Rd SE Ste 110 &nbsp;·&nbsp; (616) 891-0123 &nbsp;·&nbsp; M–F 9am–5pm</div>
+              <div class="target-body">5-star insurance agency, 888 reviews, literally in Breton Village. Large team, client appreciation events. Owner and staff are decision makers. Very warm proximity lead.</div>
+              <span class="target-leave leave-corp">Leave: Catering menu + events one-pager</span>
+            </div>
+            <div class="target-card border-corp">
+              <div class="target-type" style="color:var(--amber);">Professional Services</div>
+              <div class="target-name">Darrell DeWard Real Estate Group</div>
+              <div class="target-meta">815 Bridge St NW #1 &nbsp;·&nbsp; (616) 537-6890 &nbsp;·&nbsp; M–F 9am–10pm</div>
+              <div class="target-body">5-star real estate team, 90 reviews. Closing dinners, client appreciation, agent team events. Real estate teams celebrate constantly.</div>
+              <span class="target-leave leave-corp">Leave: Catering menu + events one-pager</span>
+            </div>
+            <div class="target-card border-corp">
+              <div class="target-type" style="color:var(--amber);">Healthcare</div>
+              <div class="target-name">Contemporary Family Dental</div>
+              <div class="target-meta">2005 Breton Rd SE &nbsp;·&nbsp; (616) 726-1271 &nbsp;·&nbsp; M–F varies</div>
+              <div class="target-body">4.7-star dental practice, 489 reviews, on Breton Rd. Staff lunches and team events. Ask for the office manager.</div>
+              <span class="target-leave leave-corp">Leave: Catering menu</span>
+            </div>
+            <div class="target-card border-corp">
+              <div class="target-type" style="color:var(--amber);">Salon &nbsp;·&nbsp; Celebration Audience</div>
+              <div class="target-name">JP Studios</div>
+              <div class="target-meta">1870 Breton Rd SE Suite F &nbsp;·&nbsp; M–Sa 9am–8pm</div>
+              <div class="target-body">5-star hair salon, same street as MB Breton. Their clients are the bridal shower and celebration audience. Drop a stack of cards for them to share.</div>
+              <span class="target-leave leave-event">Leave: Events one-pager + business cards to share</span>
+            </div>
+            <div class="target-card border-corp">
+              <div class="target-type" style="color:var(--amber);">Spa &nbsp;·&nbsp; Celebration Audience</div>
+              <div class="target-name">Beauty By K Salon &amp; Head Spa</div>
+              <div class="target-meta">2516 Burton St SE &nbsp;·&nbsp; (616) 901-7594 &nbsp;·&nbsp; M–Su varies</div>
+              <div class="target-body">5-star spa, 163 reviews. Their clients are celebrating life moments. Bridal parties, birthday treatments, girls' days. Drop cards they can hand to clients.</div>
+              <span class="target-leave leave-event">Leave: Events one-pager + cards to share</span>
+            </div>
+            <div class="target-card border-corp">
+              <div class="target-type" style="color:var(--amber);">Healthcare</div>
+              <div class="target-name">OAM Physical Therapy Southeast</div>
+              <div class="target-meta">2520 Burton St SE &nbsp;·&nbsp; (616) 459-7101 &nbsp;·&nbsp; M–F 7am–6pm</div>
+              <div class="target-body">4.9-star PT clinic, 95 reviews, same block. Staff lunches and team appreciation events. Ask for the office manager.</div>
+              <span class="target-leave leave-corp">Leave: Catering menu</span>
+            </div>
+            <div class="target-card border-org">
+              <div class="target-type" style="color:#3a8070;">Community Org</div>
+              <div class="target-name">Local First</div>
+              <div class="target-meta">1209 Kalamazoo Ave SE &nbsp;·&nbsp; (616) 808-3788 &nbsp;·&nbsp; M–F 9am–5pm</div>
+              <div class="target-body">Local business advocacy org. Members hold events and order catering. Good community connection and shared values.</div>
+              <span class="target-leave leave-org">Leave: Catering menu + events one-pager</span>
+            </div>
+            <div class="target-card border-org">
+              <div class="target-type" style="color:#3a8070;">Nonprofit</div>
+              <div class="target-name">Revive and Thrive</div>
+              <div class="target-meta">1815 Hall St SE &nbsp;·&nbsp; (616) 606-3314 &nbsp;·&nbsp; Tu 10am–6pm, W 10am–7pm only</div>
+              <div class="target-body">5-star nonprofit. Staff lunches and volunteer appreciation events. Visit on Tuesday or Wednesday only.</div>
+              <span class="target-leave leave-org">Leave: Catering menu + events one-pager</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- EAST BELTLINE -->
+        <div id="loc-beltline" style="display:none;">
+          <div class="loc-header"><span class="loc-name">East Beltline (1001)</span><span class="loc-addr">1600 E Beltline Ave NE</span><span class="loc-count">10 targets</span></div>
+          <div class="target-grid">
+            <div class="target-card border-corp">
+              <div class="target-type" style="color:var(--amber);">Corporate &nbsp;·&nbsp; Best Efficiency</div>
+              <div class="target-name">Eagle Crest Office Park</div>
+              <div class="target-meta">3312 Eagle Park Dr NE &nbsp;·&nbsp; Walking distance from MB</div>
+              <div class="target-body">Multi-tenant professional park. One stop, multiple businesses. Ask the building manager who the largest tenants are and start there.</div>
+              <span class="target-leave leave-corp">Leave: Catering menu at each suite</span>
+            </div>
+            <div class="target-card border-corp">
+              <div class="target-type" style="color:var(--amber);">Corporate</div>
+              <div class="target-name">The Pines Office Park</div>
+              <div class="target-meta">4829 E Beltline Ave NE &nbsp;·&nbsp; Three buildings</div>
+              <div class="target-body">Three professional buildings in one visit. Multiple catering contacts in one stop.</div>
+              <span class="target-leave leave-corp">Leave: Catering menu at each suite</span>
+            </div>
+            <div class="target-card border-corp">
+              <div class="target-type" style="color:var(--amber);">Professional Services</div>
+              <div class="target-name">Riley Planning &amp; Investments</div>
+              <div class="target-meta">1600 E Beltline Ave NE Ste 114 &nbsp;·&nbsp; (616) 486-6174 &nbsp;·&nbsp; M–Th 9am–5pm</div>
+              <div class="target-body">5-star women-owned financial planning firm, in the same building as MB East Beltline. Client appreciation events and team lunches. Drop by in person.</div>
+              <span class="target-leave leave-corp">Leave: Catering menu + events one-pager</span>
+            </div>
+            <div class="target-card border-corp">
+              <div class="target-type" style="color:var(--amber);">Professional Services</div>
+              <div class="target-name">Rinvelt &amp; David LLC</div>
+              <div class="target-meta">1700 E Beltline Ave NE #150 &nbsp;·&nbsp; (616) 957-0022 &nbsp;·&nbsp; M–F 8am–5pm</div>
+              <div class="target-body">5-star financial firm, 3 glowing reviews emphasizing personal relationships. Client events, team lunches. Adjacent to MB Beltline.</div>
+              <span class="target-leave leave-corp">Leave: Catering menu + events one-pager</span>
+            </div>
+            <div class="target-card border-corp">
+              <div class="target-type" style="color:var(--amber);">Professional Services</div>
+              <div class="target-name">Waypointe Wealth Advisors</div>
+              <div class="target-meta">1600 E Beltline Ave NE #216 &nbsp;·&nbsp; (616) 600-9905 &nbsp;·&nbsp; M–F 9am–5pm</div>
+              <div class="target-body">Same building as MB East Beltline. Financial advisor team. Client appreciation events and team lunches. One elevator ride.</div>
+              <span class="target-leave leave-corp">Leave: Catering menu + events one-pager</span>
+            </div>
+            <div class="target-card border-corp">
+              <div class="target-type" style="color:var(--amber);">Healthcare &nbsp;·&nbsp; Best Fit</div>
+              <div class="target-name">Woodhouse Spa</div>
+              <div class="target-meta">2060 E Beltline Ave NE &nbsp;·&nbsp; (616) 216-2077 &nbsp;·&nbsp; M–Su varies</div>
+              <div class="target-body">4.6-star luxury spa, 486 reviews. Their clients celebrate every life moment. Bridal parties, birthdays, girls' days. Drop events cards for them to share with clients.</div>
+              <span class="target-leave leave-event">Leave: Events one-pager + cards to share</span>
+            </div>
+            <div class="target-card border-corp">
+              <div class="target-type" style="color:var(--amber);">Healthcare</div>
+              <div class="target-name">Advent Physical Therapy – East Beltline</div>
+              <div class="target-meta">1471 E Beltline Ave NE Ste 104 &nbsp;·&nbsp; (616) 577-8341 &nbsp;·&nbsp; M–F 7am–7pm</div>
+              <div class="target-body">4.9-star PT clinic, 119 reviews, on the Beltline. Staff team lunches and appreciation events. Ask for the clinic director.</div>
+              <span class="target-leave leave-corp">Leave: Catering menu</span>
+            </div>
+            <div class="target-card border-corp">
+              <div class="target-type" style="color:var(--amber);">Healthcare &nbsp;·&nbsp; Med Spa</div>
+              <div class="target-name">Urban You Medical Aesthetics</div>
+              <div class="target-meta">3152 Peregrine Dr NE Ste 100 &nbsp;·&nbsp; (616) 570-0228 &nbsp;·&nbsp; M–Sa varies</div>
+              <div class="target-body">4.8-star med spa, 338 reviews. Bachelorette and girls' day clients constantly. Drop events cards at the front desk for them to share.</div>
+              <span class="target-leave leave-event">Leave: Events one-pager + cards to share</span>
+            </div>
+            <div class="target-card border-corp">
+              <div class="target-type" style="color:var(--amber);">Government &nbsp;·&nbsp; Neighbor</div>
+              <div class="target-name">Grand Rapids Charter Township Hall</div>
+              <div class="target-meta">1836 E Beltline Ave NE &nbsp;·&nbsp; (616) 361-7391 &nbsp;·&nbsp; M–F 8am–5pm</div>
+              <div class="target-body">Right next to the East Beltline location. Staff events and community gatherings.</div>
+              <span class="target-leave leave-corp">Leave: Catering menu + events one-pager</span>
+            </div>
+            <div class="target-card border-org">
+              <div class="target-type" style="color:#3a8070;">Nonprofit</div>
+              <div class="target-name">Storehouse of Community Resources</div>
+              <div class="target-meta">4411 Plainfield Ave NE &nbsp;·&nbsp; (616) 855-1700 &nbsp;·&nbsp; M–Tu 9am–2pm, W–Th 9am–noon</div>
+              <div class="target-body">Nonprofit serving nonprofits. Staff catering and fundraiser event potential. Limited hours, plan ahead.</div>
+              <span class="target-leave leave-org">Leave: Catering menu + events one-pager</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="note-box note-print" style="margin-top:14px;">
+          <strong>What to print per location:</strong> 25 catering menus, 15 events one-pagers, 40 business cards. GM tracks every drop: business name, contact name, date visited, follow-up date. Target 2-3 drops per week over 4 weeks.
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ── 5: HOSTED PROGRAMS ── -->
+  <div class="acc-item">
+    <button class="acc-trigger" onclick="toggle(this)">
+      <div class="acc-num">3</div>
+      <div class="acc-labels">
+        <div class="acc-title">Hosted Programs</div>
+        <div class="acc-sub">Catering Tasting + Business Mix and Mingle</div>
+      </div>
+      <div class="acc-chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+    </button>
+    <div class="acc-body">
+      <div class="acc-inner">
+
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:4px;">
+
+          <!-- PROGRAM A -->
+          <div style="background:var(--off-white); border-radius:12px; padding:20px; border:1px solid #e8e8e4; border-top:4px solid var(--green);">
+            <div style="font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:1.5px; color:var(--green); margin-bottom:8px;">Program A</div>
+            <div style="font-family:'Playfair Display',serif; font-size:18px; font-weight:700; color:var(--teal); margin-bottom:4px;">Catering Tasting Event</div>
+            <div style="font-size:12px; color:#999; margin-bottom:14px; font-style:italic;">Invite them in. Let the food close it.</div>
+            <div style="font-size:13px; color:var(--charcoal); line-height:1.6; margin-bottom:12px;">A complimentary hosted tasting inside Morning Belle, available at any of the four locations before 10am or after close. Invitees are the business owners, office managers, and admin assistants from your local drop list — the people who actually place the orders. No sales pitch. Just food, coffee, and a walkthrough of what catering looks like.</div>
+            <div style="font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:var(--teal); margin-bottom:6px;">The Details</div>
+            <ul style="list-style:none; display:flex; flex-direction:column; gap:5px; margin-bottom:14px;">
+              <li style="font-size:12.5px; color:var(--charcoal); padding-left:14px; position:relative;"><span style="position:absolute;left:0;color:var(--green);font-weight:700;">•</span>12–20 invitees per event. Intimate enough to be a real conversation.</li>
+              <li style="font-size:12.5px; color:var(--charcoal); padding-left:14px; position:relative;"><span style="position:absolute;left:0;color:var(--green);font-weight:700;">•</span>45-minute format. Arrive, eat, see the menu, ask questions, leave with materials.</li>
+              <li style="font-size:12.5px; color:var(--charcoal); padding-left:14px; position:relative;"><span style="position:absolute;left:0;color:var(--green);font-weight:700;">•</span>GM hosts. Wes or a senior Gardener runs the food. No outside speaker needed.</li>
+              <li style="font-size:12.5px; color:var(--charcoal); padding-left:14px; position:relative;"><span style="position:absolute;left:0;color:var(--green);font-weight:700;">•</span>Serve 4-5 catering menu items. Include the Cinnamon Roll French Toast. Always.</li>
+              <li style="font-size:12.5px; color:var(--charcoal); padding-left:14px; position:relative;"><span style="position:absolute;left:0;color:var(--green);font-weight:700;">•</span>Every attendee leaves with a catering menu, events one-pager, and a 10% off first order card.</li>
+              <li style="font-size:12.5px; color:var(--charcoal); padding-left:14px; position:relative;"><span style="position:absolute;left:0;color:var(--green);font-weight:700;">•</span>Target: one tasting per location within the first 60 days of launch.</li>
+            </ul>
+            <div style="font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:var(--teal); margin-bottom:6px;">Invite Language</div>
+            <div style="background:var(--teal); border-radius:8px; padding:14px 16px; font-size:12.5px; color:#fff; line-height:1.6; font-style:italic;">"We are hosting a complimentary catering tasting at Morning Belle for a small group of local businesses. Come try the menu, meet the team, and see what it looks like to bring the Belle to your office. No agenda. Just really good food."</div>
+          </div>
+
+          <!-- PROGRAM B -->
+          <div style="background:var(--off-white); border-radius:12px; padding:20px; border:1px solid #e8e8e4; border-top:4px solid var(--coral);">
+            <div style="font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:1.5px; color:var(--coral); margin-bottom:8px;">Program B</div>
+            <div style="font-family:'Playfair Display',serif; font-size:18px; font-weight:700; color:var(--teal); margin-bottom:4px;">Business Mix and Mingle</div>
+            <div style="font-size:12px; color:#999; margin-bottom:14px; font-style:italic;">After hours. Spouses welcome. No agenda.</div>
+            <div style="font-size:13px; color:var(--charcoal); line-height:1.6; margin-bottom:12px;">An after-hours social hosted inside Morning Belle. Invitees are business owners, managers, and influencers from the local drop list — and they can bring their spouse or partner. This is not a sales event. It is an experience. They see the space, they enjoy the food and drink, they meet other local business owners. Morning Belle becomes the backdrop for community. Every attendee leaves having experienced what a private event actually feels like.</div>
+            <div style="font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:var(--teal); margin-bottom:6px;">The Details</div>
+            <ul style="list-style:none; display:flex; flex-direction:column; gap:5px; margin-bottom:14px;">
+              <li style="font-size:12.5px; color:var(--charcoal); padding-left:14px; position:relative;"><span style="position:absolute;left:0;color:var(--green);font-weight:700;">•</span>30–50 attendees. Couples welcome. Casual dress.</li>
+              <li style="font-size:12.5px; color:var(--charcoal); padding-left:14px; position:relative;"><span style="position:absolute;left:0;color:var(--green);font-weight:700;">•</span>6:30–8:30pm, after regular close. Weeknight preferred.</li>
+              <li style="font-size:12.5px; color:var(--charcoal); padding-left:14px; position:relative;"><span style="position:absolute;left:0;color:var(--green);font-weight:700;">•</span>Passed appetizers and a Belle Mimosa bar. Full catering spread on display.</li>
+              <li style="font-size:12.5px; color:var(--charcoal); padding-left:14px; position:relative;"><span style="position:absolute;left:0;color:var(--green);font-weight:700;">•</span>No formal program. Mike or the GM welcomes everyone briefly — 2 minutes max.</li>
+              <li style="font-size:12.5px; color:var(--charcoal); padding-left:14px; position:relative;"><span style="position:absolute;left:0;color:var(--green);font-weight:700;">•</span>Every attendee leaves with an events and catering packet plus a private event inquiry card.</li>
+              <li style="font-size:12.5px; color:var(--charcoal); padding-left:14px; position:relative;"><span style="position:absolute;left:0;color:var(--green);font-weight:700;">•</span>Target: one Mix and Mingle per location within the first 90 days of launch.</li>
+              <li style="font-size:12.5px; color:var(--charcoal); padding-left:14px; position:relative;"><span style="position:absolute;left:0;color:var(--green);font-weight:700;">•</span>Build the invite list from the local drop contacts. Priority: anyone who already received a drop.</li>
+            </ul>
+            <div style="font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:var(--teal); margin-bottom:6px;">Invite Language</div>
+            <div style="background:var(--teal); border-radius:8px; padding:14px 16px; font-size:12.5px; color:#fff; line-height:1.6; font-style:italic;">"You and your spouse are invited to an after-hours evening at Morning Belle. Local business owners, good food, a mimosa bar, and great company. No agenda. No pitch. Just a chance to connect — inside the restaurant you already love."</div>
+          </div>
+
+        </div>
+
+        <div style="margin-top:14px; padding:14px 18px; background:var(--light-green); border-radius:8px; font-size:13px; color:var(--teal); line-height:1.6;">
+          <strong>Sequencing:</strong> Run the Catering Tasting first (weeks 3–4 post-launch). Run the Mix and Mingle second (weeks 6–8). By the time invitees arrive at the Mix and Mingle, they have already received a drop, possibly attended the tasting, and seen the ads. The event converts a warm audience, not a cold one.
+        </div>
+
+      </div>
+    </div>
+
+  <!-- ── 6: IN-STORE ── -->
+  <div class="acc-item">
+    <button class="acc-trigger" onclick="toggle(this)">
+      <div class="acc-num">4</div>
+      <div class="acc-labels">
+        <div class="acc-title">In-Store Activation</div>
+        <div class="acc-sub">Every table, every shift, every guest</div>
+      </div>
+      <div class="acc-chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+    </button>
+    <div class="acc-body">
+      <div class="acc-inner">
+        <div class="instore-grid">
+          <div class="instore-card"><div class="instore-icon">🪧</div><h5>Table Tents</h5><p>One per table at all four locations. Events on one side, Catering on the other. QR code to inquiry form (Events) and Toast order (Catering).</p></div>
+          <div class="instore-card"><div class="instore-icon">📋</div><h5>Server Mention</h5><p>Gardeners mention events or catering once per table. One line: "We just launched private events and catering if you ever need us for a group." That is it.</p></div>
+          <div class="instore-card"><div class="instore-icon">🪟</div><h5>Window Cling or A-Frame</h5><p>"Private Events Now Available. After Hours. Reserve Your Date." One per location, visible from outside. Drives walk-by awareness with existing brand trust.</p></div>
+          <div class="instore-card"><div class="instore-icon">🧾</div><h5>Receipt Insert or Check Presenter</h5><p>Small card in every check presenter at launch. Events front. Catering back. QR codes both sides. Headline and link, no pitch copy needed.</p></div>
+          <div class="instore-card"><div class="instore-icon">📺</div><h5>Digital Display (if applicable)</h5><p>If any location has a digital screen, add a rotating slide for Events and one for Catering. Campaign headline + QR code.</p></div>
+          <div class="instore-card"><div class="instore-icon">🎯</div><h5>Pre-Shift Brief</h5><p>GMs cover Events and Catering at pre-shift for the first two weeks. Gardeners need the basics: what is available, where to send guests, and the one-line mention script.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── 7: EMAIL ── -->
+  <div class="acc-item">
+    <button class="acc-trigger" onclick="toggle(this)">
+      <div class="acc-num">5</div>
+      <div class="acc-labels">
+        <div class="acc-title">Email to Loyalty List</div>
+        <div class="acc-sub">Warm audience, highest conversion potential</div>
+      </div>
+      <div class="acc-chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+    </button>
+    <div class="acc-body">
+      <div class="acc-inner">
+        <div class="channel-card email" style="margin-bottom:0;">
+          <div class="channel-icon">✉</div>
+          <div class="channel-name">Two Emails at Launch</div>
+          <div class="channel-hook">Your loyalty guests already love you. Tell them first.</div>
+          <ul class="channel-tasks">
+            <li><strong>Email 1 — June 15 (teaser):</strong> Subject: "Something new is coming to Morning Belle." One image, two lines of copy, no CTA yet. Build curiosity.</li>
+            <li><strong>Email 2 — June 16 (launch):</strong> Subject: "Your Morning Belle is now available after hours." Two sections: Events (Reserve Your Date CTA) and Catering (Order Now CTA). Keep it short.</li>
+            <li>Send through Toast loyalty platform to full list.</li>
+            <li>July: one email per month featuring an events or catering story or milestone.</li>
+          </ul>
+          <div class="channel-badge">Toast Platform</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── 2: PAID MEDIA ── -->
+  <div class="acc-item">
+    <button class="acc-trigger" onclick="toggle(this)">
+      <div class="acc-num">6</div>
+      <div class="acc-labels">
+        <div class="acc-title">Paid Media</div>
+        <div class="acc-sub">Google + Meta, hyperlocal, always on</div>
+      </div>
+      <div class="acc-chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+    </button>
+    <div class="acc-body">
+      <div class="acc-inner">
+        <div class="channel-grid">
+          <div class="channel-card google">
+            <div class="channel-icon">G</div>
+            <div class="channel-name">Google P-Max</div>
+            <div class="channel-hook">Capture the people already searching for it</div>
+            <ul class="channel-tasks">
+              <li>One campaign per location, 5-mile hyperlocal radius</li>
+              <li>Separate asset groups for Events and Catering. Never mix.</li>
+              <li>Events headline: "Private Events at Morning Belle"</li>
+              <li>Catering headline: "Morning Belle Catering, Delivered"</li>
+              <li>CTA: Reserve Your Date (Events), Order Now (Catering)</li>
+              <li>Landing pages: the two new website pages</li>
+              <li>Run continuously. Review weekly. Shift budget to top performers.</li>
+            </ul>
+            <div class="channel-badge">Always On</div>
+          </div>
+          <div class="channel-card meta">
+            <div class="channel-icon">M</div>
+            <div class="channel-name">Meta Ads (Facebook + Instagram)</div>
+            <div class="channel-hook">Visual-first, audience-targeted, occasion-driven</div>
+            <ul class="channel-tasks">
+              <li>One campaign per location, 5-8 mile radius</li>
+              <li>Events audience: women 25-54, life events targeting (engaged, new job, birthday)</li>
+              <li>Catering audience: small business owners, HR decision makers, 25-50</li>
+              <li>Creative: food-forward, event-space photo, bright and MB-branded</li>
+              <li>Events copy: "Your Belle. Reserved for you." with inquiry CTA</li>
+              <li>Catering copy: "Bring the Belle." with Order Now CTA</li>
+              <li>Run 2-week flights. Refresh creative monthly.</li>
+            </ul>
+            <div class="channel-badge">Always On</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── 3: SOCIAL ── -->
+  <div class="acc-item">
+    <button class="acc-trigger" onclick="toggle(this)">
+      <div class="acc-num">7</div>
+      <div class="acc-labels">
+        <div class="acc-title">Social Media Plan</div>
+        <div class="acc-sub">Instagram + Facebook, owned and organic</div>
+      </div>
+      <div class="acc-chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+    </button>
+    <div class="acc-body">
+      <div class="acc-inner">
+        <div class="channel-grid">
+          <div class="channel-card social">
+            <div class="channel-icon">📸</div>
+            <div class="channel-name">Launch Week Posts (June 16-22)</div>
+            <div class="channel-hook">One idea per post. Lead with the moment, not the logistics.</div>
+            <ul class="channel-tasks">
+              <li><strong>June 16:</strong> Launch announcement. Events. "Your Belle. Reserved for you." Space photo, inquiry CTA.</li>
+              <li><strong>June 18:</strong> Catering. "Bring the Belle." Food flatlay, Order Now CTA.</li>
+              <li><strong>June 19-22:</strong> Instagram Stories, four days. One location per day. Show the space after hours.</li>
+              <li>All posts: use 🌱 not 🌿. Tag location. #MorningBelle always included.</li>
+            </ul>
+            <div class="channel-badge">Marketing Team</div>
+          </div>
+          <div class="channel-card social">
+            <div class="channel-icon">📅</div>
+            <div class="channel-name">Ongoing Cadence (July+)</div>
+            <div class="channel-hook">One events or catering post per week, minimum</div>
+            <ul class="channel-tasks">
+              <li>Alternate: Events one week, Catering the next</li>
+              <li>Events posts: space photos, occasion language, "Reserve your date" CTA</li>
+              <li>Catering posts: food delivery moments, corporate audience copy, Order CTA</li>
+              <li>Milestone posts: "First event booked," "First catering drop delivered"</li>
+              <li>Repost any tagged guest events with permission</li>
+            </ul>
+            <div class="channel-badge">Weekly</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── 7: METRICS ── -->
+  <div class="acc-item">
+    <button class="acc-trigger" onclick="toggle(this)">
+      <div class="acc-num">8</div>
+      <div class="acc-labels">
+        <div class="acc-title">How We Measure Success</div>
+        <div class="acc-sub">30-day targets. Ops team tracks weekly.</div>
+      </div>
+      <div class="acc-chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+    </button>
+    <div class="acc-body">
+      <div class="acc-inner">
+        <div class="metric-row">
+          <div class="metric-card"><div class="metric-num">10+</div><div class="metric-label">Event inquiries in 30 days</div></div>
+          <div class="metric-card"><div class="metric-num">3+</div><div class="metric-label">Events booked in 30 days</div></div>
+          <div class="metric-card"><div class="metric-num">15+</div><div class="metric-label">Catering orders in 30 days</div></div>
+          <div class="metric-card"><div class="metric-num">$6K+</div><div class="metric-label">Combined revenue, 30 days</div></div>
+        </div>
+        <div style="margin-top:14px; padding:14px 18px; background:var(--light-green); border-radius:8px; font-size:13px; color:var(--teal); line-height:1.6;">
+          <strong>Ops team pulls the first report on July 18.</strong> Review: website page visits, form submissions, catering orders placed, events confirmed, paid media click volume, and first-month revenue vs. target. Adjust paid spend based on what location is converting fastest.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── 9: WHO OWNS WHAT ── -->
+  <div class="acc-item">
+    <button class="acc-trigger" onclick="toggle(this)">
+      <div class="acc-num">9</div>
+      <div class="acc-labels">
+        <div class="acc-title">Who Owns What</div>
+        <div class="acc-sub">Clear lanes, no handoffs</div>
+      </div>
+      <div class="acc-chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+    </button>
+    <div class="acc-body">
+      <div class="acc-inner">
+        <div class="owner-grid">
+          <div class="owner-card">
+            <div class="owner-label">Mike</div>
+            <ul class="owner-list">
+              <li>Approves all paid media before launch</li>
+              <li>Reviews weekly ops performance report</li>
+              <li>Final approval on social posts</li>
+              <li>LinkedIn announcement post (launch day)</li>
+            </ul>
+          </div>
+          <div class="owner-card">
+            <div class="owner-label">GMs (All Four Locations)</div>
+            <ul class="owner-list">
+              <li>Place all in-store materials before June 16</li>
+              <li>Lead local business drop in their radius</li>
+              <li>Brief Gardeners on Events and Catering at pre-shift</li>
+              <li>Route all inquiries to Catering Coordinator same day</li>
+            </ul>
+          </div>
+          <div class="owner-card">
+            <div class="owner-label">Marketing Team (Mike + Caitie)</div>
+            <ul class="owner-list">
+              <li>Build and schedule all social posts</li>
+              <li>Write and schedule email sends</li>
+              <li>Manage paid media campaigns and creative direction</li>
+              <li>Write local business drop collateral copy</li>
+            </ul>
+          </div>
+          <div class="owner-card">
+            <div class="owner-label">Operations (Mike + Shelby)</div>
+            <ul class="owner-list">
+              <li>Weekly paid media performance check</li>
+              <li>First 30-day revenue report July 18</li>
+              <li>Track events booked vs. catering orders weekly</li>
+              <li>Flag any location underperforming by week 2</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+</div>
+
+<div class="footer">
+  <strong>Morning Belle</strong> &nbsp;|&nbsp; morningbellebrunch.com &nbsp;|&nbsp; @morningbellebrunch &nbsp;|&nbsp; Launch June 16, 2026 &nbsp;|&nbsp; Morning Belle Operations
+</div>
+
+<script>
+function toggle(btn) {
+  var body = btn.nextElementSibling;
+  var isOpen = btn.classList.contains('open');
+  btn.classList.toggle('open', !isOpen);
+  body.classList.toggle('open', !isOpen);
+}
+
+function showLoc(id) {
+  ['standale','bridge','breton','beltline'].forEach(function(loc) {
+    var el = document.getElementById('loc-' + loc);
+    var tab = document.getElementById('tab-' + loc);
+    if (el) el.style.display = loc === id ? 'block' : 'none';
+    if (tab) tab.classList.toggle('active', loc === id);
+  });
+}
+</script>
+
+</body>
+</html>
