@@ -14,20 +14,20 @@
     --amber: #fbaf41;
     --sage: #9bc4bc;
     --charcoal: #4d4d4d;
-    --off-white: #f0f2f5;
+    --off-white: #e8edf2;
     --light-green: #eaf6d9;
     --light-teal: #e8f0f2;
-    --glass-bg: rgba(255,255,255,0.55);
-    --glass-border: rgba(255,255,255,0.75);
-    --glass-shadow: 0 8px 32px rgba(60,92,104,0.12), 0 1.5px 6px rgba(60,92,104,0.08);
-    --glass-hover: rgba(255,255,255,0.72);
+    --glass-bg: rgba(255,255,255,0.45);
+    --glass-border: rgba(255,255,255,0.7);
+    --glass-shadow: 0 8px 32px rgba(60,92,104,0.14), 0 1.5px 6px rgba(60,92,104,0.08);
+    --glass-hover: rgba(255,255,255,0.65);
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
   body {
     font-family: 'DM Sans', sans-serif;
-    background: var(--off-white);
+    background: #ccd8e0;
     color: var(--charcoal);
     line-height: 1.5;
     min-height: 100vh;
@@ -41,10 +41,11 @@
     position: fixed;
     inset: 0;
     background:
-      radial-gradient(ellipse 80% 60% at 20% 10%, rgba(153,201,97,0.18) 0%, transparent 60%),
-      radial-gradient(ellipse 60% 80% at 80% 20%, rgba(252,130,109,0.12) 0%, transparent 55%),
-      radial-gradient(ellipse 70% 50% at 50% 80%, rgba(60,92,104,0.10) 0%, transparent 60%),
-      radial-gradient(ellipse 50% 70% at 90% 70%, rgba(255,222,92,0.10) 0%, transparent 50%);
+      radial-gradient(ellipse 90% 70% at 15% 5%,  rgba(153,201,97,0.55)  0%, transparent 55%),
+      radial-gradient(ellipse 70% 80% at 85% 15%,  rgba(252,130,109,0.35) 0%, transparent 50%),
+      radial-gradient(ellipse 80% 60% at 50% 85%,  rgba(60,92,104,0.45)   0%, transparent 55%),
+      radial-gradient(ellipse 60% 70% at 90% 65%,  rgba(255,222,92,0.30)  0%, transparent 50%),
+      radial-gradient(ellipse 50% 50% at 10% 70%,  rgba(155,196,188,0.40) 0%, transparent 50%);
     animation: bgShift 18s ease-in-out infinite alternate;
     z-index: 0;
     pointer-events: none;
@@ -52,9 +53,9 @@
 
   @keyframes bgShift {
     0%   { opacity: 1; transform: scale(1) rotate(0deg); }
-    33%  { opacity: 0.85; transform: scale(1.04) rotate(0.5deg); }
-    66%  { opacity: 0.95; transform: scale(0.98) rotate(-0.5deg); }
-    100% { opacity: 1; transform: scale(1.02) rotate(0.3deg); }
+    33%  { opacity: 0.9; transform: scale(1.06) rotate(0.6deg); }
+    66%  { opacity: 0.95; transform: scale(0.97) rotate(-0.6deg); }
+    100% { opacity: 1; transform: scale(1.03) rotate(0.4deg); }
   }
 
   /* ── ANIMATED RAINBOW BAR ── */
@@ -213,22 +214,32 @@
   .main { max-width: 960px; margin: 0 auto; padding: 32px 20px 80px; position: relative; z-index: 2; }
 
   /* ── ACCORDION (Liquid Glass) ── */
-  .accordion { display: flex; flex-direction: column; gap: 12px; }
+  .accordion { display: flex; flex-direction: column; gap: 14px; }
 
   .acc-item {
-    background: var(--glass-bg);
-    backdrop-filter: blur(20px) saturate(160%);
-    -webkit-backdrop-filter: blur(20px) saturate(160%);
+    background: rgba(235,242,246,0.82);
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
     border-radius: 18px;
-    border: 1px solid var(--glass-border);
-    overflow: hidden;
-    box-shadow: var(--glass-shadow);
+    border: 1.5px solid rgba(255,255,255,0.85);
+    box-shadow:
+      0 6px 24px rgba(60,92,104,0.16),
+      0 1px 0 rgba(255,255,255,0.9) inset,
+      0 -1px 0 rgba(60,92,104,0.06) inset;
     transition: box-shadow 0.25s, transform 0.2s;
+    overflow: hidden;
+    isolation: isolate;
+    position: relative;
+    z-index: 1;
   }
 
   .acc-item:hover {
-    box-shadow: 0 12px 40px rgba(60,92,104,0.16), 0 2px 8px rgba(60,92,104,0.10);
-    transform: translateY(-1px);
+    background: rgba(242,247,250,0.88);
+    box-shadow:
+      0 10px 32px rgba(60,92,104,0.2),
+      0 1px 0 rgba(255,255,255,0.9) inset;
+    transform: translateY(-2px);
+    z-index: 2;
   }
 
   .acc-trigger {
@@ -243,15 +254,17 @@
     text-align: left;
     transition: background 0.2s;
     font-family: 'DM Sans', sans-serif;
+    border-radius: 17px;
   }
 
   .acc-trigger:hover {
-    background: rgba(255,255,255,0.3);
+    background: rgba(255,255,255,0.2);
   }
 
   .acc-trigger.open {
-    background: linear-gradient(135deg, rgba(60,92,104,0.90) 0%, rgba(40,70,65,0.88) 100%);
-    backdrop-filter: blur(24px);
+    background: linear-gradient(135deg, rgba(60,92,104,0.92) 0%, rgba(40,70,65,0.90) 100%);
+    backdrop-filter: blur(28px);
+    border-radius: 18px 18px 0 0;
   }
 
   .acc-num {
@@ -262,9 +275,9 @@
     font-family: 'Playfair Display', serif;
     font-size: 15px;
     font-weight: 700;
-    background: rgba(60,92,104,0.12);
+    background: rgba(255,255,255,0.35);
     color: var(--teal);
-    border: 1px solid rgba(60,92,104,0.15);
+    border: 1px solid rgba(255,255,255,0.6);
     transition: all 0.2s;
   }
 
@@ -275,9 +288,9 @@
   }
 
   .acc-num.coral-bg {
-    background: rgba(252,130,109,0.15);
+    background: rgba(252,130,109,0.25);
     color: var(--coral);
-    border-color: rgba(252,130,109,0.2);
+    border-color: rgba(252,130,109,0.35);
   }
 
   .acc-labels { flex: 1; }
@@ -333,13 +346,13 @@
 
   .acc-trigger.open .acc-chevron svg { stroke: rgba(255,255,255,0.75); }
 
-  .acc-body { max-height: 0; overflow: hidden; transition: max-height 0.45s cubic-bezier(0.4,0,0.2,1); }
+  .acc-body { max-height: 0; overflow: hidden; transition: max-height 0.45s cubic-bezier(0.4,0,0.2,1); border-radius: 0 0 18px 18px; }
   .acc-body.open { max-height: 6000px; }
 
   .acc-inner {
     padding: 6px 22px 26px;
-    background: rgba(255,255,255,0.25);
-    border-top: 1px solid rgba(255,255,255,0.5);
+    background: rgba(255,255,255,0.12);
+    border-top: 1px solid rgba(255,255,255,0.4);
   }
 
   /* ── INNER COMPONENTS ── */
@@ -834,6 +847,11 @@
             <div class="voice-stage"><strong>Awareness</strong> Your Belle. Reserved for you.</div>
             <div class="voice-stage"><strong>Consider</strong> Celebrate together. Every detail, every dish, every mimosa. Yours.</div>
             <div class="voice-stage"><strong>Convert</strong> We will take care of everything but the guest list.</div>
+            <div style="margin-top:14px; display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); border-radius:100px; padding:5px 14px;">
+              <span style="font-size:9px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--green);">RED Score</span>
+              <span style="font-family:'Playfair Display',serif; font-size:18px; font-weight:900; color:#fff; line-height:1;">29</span>
+              <span style="font-size:11px; color:rgba(255,255,255,0.4);">/30</span>
+            </div>
           </div>
           <div class="voice-col">
             <h4>Catering</h4>
@@ -841,6 +859,11 @@
             <div class="voice-stage"><strong>Corporate</strong> The only office lunch that starts with Cinnamon Roll French Toast.</div>
             <div class="voice-stage"><strong>Host</strong> The only catering spread that begins with Banana Pudding French Toast.</div>
             <div class="voice-stage"><strong>Close</strong> Everyday luxury. Delivered.</div>
+            <div style="margin-top:14px; display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); border-radius:100px; padding:5px 14px;">
+              <span style="font-size:9px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--green);">RED Score</span>
+              <span style="font-family:'Playfair Display',serif; font-size:18px; font-weight:900; color:#fff; line-height:1;">28</span>
+              <span style="font-size:11px; color:rgba(255,255,255,0.4);">/30</span>
+            </div>
           </div>
         </div>
       </div>
@@ -1322,6 +1345,7 @@
 
       </div>
     </div>
+  </div>
 
   <!-- ── 6: IN-STORE ── -->
   <div class="acc-item">
