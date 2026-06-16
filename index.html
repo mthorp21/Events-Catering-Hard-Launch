@@ -833,7 +833,7 @@
 
   <!-- ── 0: CAMPAIGNS ── -->
   <div class="acc-item">
-    <button class="acc-trigger open" onclick="toggle(this)">
+    <button class="acc-trigger" onclick="toggle(this)">
       <div class="acc-num coral-bg">✦</div>
       <div class="acc-labels">
         <div class="acc-title">The Two Campaigns</div>
@@ -841,7 +841,7 @@
       </div>
       <div class="acc-chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
     </button>
-    <div class="acc-body open">
+    <div class="acc-body">
       <div class="acc-inner">
         <div class="voice-box">
           <div class="voice-col">
@@ -1100,7 +1100,7 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body {
   font-family: 'DM Sans', sans-serif;
-  background: transparent;
+  background: #f0f4f7;
   color: var(--charcoal);
   line-height: 1.5;
   min-height: 100vh;
@@ -1125,21 +1125,21 @@ body {
 
 .header {
   position: relative; z-index: 5;
-  background: linear-gradient(135deg, rgba(30,50,60,0.93) 0%, rgba(60,92,104,0.90) 60%, rgba(40,70,60,0.92) 100%);
-  backdrop-filter: blur(24px) saturate(180%);
-  padding: 44px 40px 36px;
+  background: rgba(235,242,246,0.95);
+  border-bottom: 1.5px solid rgba(255,255,255,0.7);
+  padding: 16px 20px;
 }
-.header-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
-.brand-label { font-size: 10px; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: var(--green); margin-bottom: 10px; }
-.header h1 { font-family: 'Playfair Display', serif; font-size: clamp(26px, 4.5vw, 44px); font-weight: 900; color: #fff; line-height: 1.08; }
-.header h1 span { background: linear-gradient(90deg, var(--yellow), var(--amber)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-.header-sub { font-size: 13px; color: rgba(255,255,255,0.45); margin-top: 6px; }
-.stats-row { display: flex; gap: 12px; flex-wrap: wrap; }
-.stat-pill { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 100px; padding: 8px 18px; text-align: center; }
-.stat-num { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 900; color: var(--yellow); display: block; line-height: 1; }
-.stat-lbl { font-size: 9.5px; text-transform: uppercase; letter-spacing: 1.5px; color: rgba(255,255,255,0.55); }
+.header-inner { max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; text-align: center; }
+.brand-label { font-size: 10px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--green); margin-bottom: 4px; text-align: center; }
+.header h1 { font-family: 'Playfair Display', serif; font-size: clamp(18px, 3vw, 26px); font-weight: 900; color: var(--teal); line-height: 1.1; }
+.header h1 span { color: var(--coral); }
+.header-sub { font-size: 11px; color: rgba(77,77,77,0.55); margin-top: 3px; }
+.stats-row { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
+.stat-pill { background: rgba(255,255,255,0.8); border: 1.5px solid rgba(60,92,104,0.15); border-radius: 100px; padding: 6px 14px; text-align: center; }
+.stat-num { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 900; color: var(--teal); display: block; line-height: 1; }
+.stat-lbl { font-size: 9px; text-transform: uppercase; letter-spacing: 1.2px; color: rgba(77,77,77,0.6); }
 
-.main { max-width: 1100px; margin: 0 auto; padding: 12px 20px 32px; position: relative; z-index: 2; }
+.main { max-width: 100%; margin: 0 auto; padding: 10px 16px 32px; position: relative; z-index: 2; }
 
 /* CONTROLS */
 .controls {
@@ -1248,7 +1248,8 @@ body {
 .loc-header-bar.open .loc-chevron { transform: rotate(180deg); background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.25); }
 .loc-header-bar.open .loc-chevron svg { stroke: rgba(255,255,255,0.75); }
 
-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+table { width: 100%; min-width: 820px; border-collapse: collapse; font-size: 13px; }
 thead tr { background: rgba(60,92,104,0.08); }
 th {
   padding: 10px 14px; text-align: left; font-size: 10px; font-weight: 700;
@@ -1328,13 +1329,14 @@ tr.dropped td { opacity: 0.7; }
 .contact-input.filled { background: rgba(153,201,97,0.1); border-color: rgba(153,201,97,0.4); }
 
 .notes-input {
-  font-size: 12px; padding: 5px 9px; border-radius: 7px;
-  border: 1.5px solid rgba(60,92,104,0.15); background: rgba(255,255,255,0.55);
+  font-size: 12px; padding: 6px 9px; border-radius: 7px;
+  border: 1.5px solid rgba(60,92,104,0.2); background: #fff;
   color: var(--charcoal); outline: none; font-family: 'DM Sans', sans-serif;
-  transition: border-color 0.15s; width: 100%; resize: none; height: 40px;
+  transition: border-color 0.15s, background 0.15s; width: 100%; resize: none; height: 52px;
 }
-.notes-input:focus { border-color: var(--amber); background: rgba(255,255,255,0.9); }
-.notes-input.filled { background: rgba(251,175,65,0.08); border-color: rgba(251,175,65,0.35); }
+.notes-input::placeholder { color: rgba(77,77,77,0.5); font-style: italic; }
+.notes-input:focus { border-color: var(--amber); background: #fffdf5; }
+.notes-input.filled { background: rgba(251,175,65,0.06); border-color: rgba(251,175,65,0.4); }
 
 .week-select {
   font-size: 12px; padding: 5px 9px; border-radius: 7px;
@@ -1369,12 +1371,97 @@ th.sortable:hover { color: var(--coral); }
 
 .tooltip-note { font-size: 11.5px; color: rgba(77,77,77,0.6); font-style: italic; line-height: 1.4; max-width: 180px; }
 
+/* DETAIL TOGGLE BUTTON */
+.detail-toggle {
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 5px 10px; border-radius: 100px;
+  font-size: 11px; font-weight: 600; cursor: pointer;
+  border: 1.5px solid rgba(60,92,104,0.2);
+  background: rgba(255,255,255,0.7); color: var(--teal);
+  font-family: 'DM Sans', sans-serif;
+  transition: all 0.15s; white-space: nowrap;
+}
+.detail-toggle:hover { background: rgba(255,255,255,0.95); border-color: var(--teal); }
+.detail-toggle.has-data { background: rgba(153,201,97,0.15); border-color: rgba(153,201,97,0.5); color: #3a7010; }
+.detail-toggle.open { background: var(--teal); color: #fff; border-color: var(--teal); }
+
+/* DETAIL ROW */
+.detail-row td { padding: 0 !important; border-bottom: 2px solid rgba(153,201,97,0.3) !important; }
+.detail-panel {
+  padding: 14px 20px 16px;
+  background: linear-gradient(135deg, rgba(234,246,217,0.6) 0%, rgba(235,242,246,0.8) 100%);
+  border-top: 1px solid rgba(153,201,97,0.25);
+}
+.detail-hint {
+  font-size: 12px; color: var(--teal); line-height: 1.5;
+  margin-bottom: 12px; font-style: italic;
+  padding: 8px 12px; background: rgba(255,255,255,0.6);
+  border-radius: 8px; border-left: 3px solid var(--green);
+}
+.detail-fields {
+  display: grid; grid-template-columns: 1fr 1fr 2fr; gap: 12px; align-items: start;
+}
+.detail-field label {
+  display: block; font-size: 9.5px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 1.2px;
+  color: var(--teal); margin-bottom: 4px; opacity: 0.8;
+}
+.detail-field-wide { grid-column: span 1; }
+@media (max-width: 700px) {
+  .detail-fields { grid-template-columns: 1fr 1fr; }
+  .detail-field-wide { grid-column: span 2; }
+  .detail-hint { font-size: 11px; }
+}
+@media (max-width: 480px) {
+  .detail-fields { grid-template-columns: 1fr; }
+  .detail-field-wide { grid-column: span 1; }
+  .detail-panel { padding: 10px 14px 12px; }
+}
+.note-hint { font-size: 10.5px; color: rgba(60,92,104,0.7); line-height: 1.4; margin-bottom: 4px; font-style: italic; }
+
 @media (max-width: 900px) {
-  .header { padding: 32px 20px 28px; }
-  .progress-grid { grid-template-columns: repeat(2,1fr); }
-  table { font-size: 12px; }
-  th, td { padding: 8px 10px; }
-  .contact-cell { min-width: 120px; }
+  .header { padding: 12px 16px; }
+  .header h1 { font-size: 16px; }
+  .header-inner { gap: 8px; }
+  .stats-row { gap: 6px; }
+  .stat-pill { padding: 5px 10px; }
+  .stat-num { font-size: 15px; }
+  .stat-lbl { font-size: 8px; }
+  .progress-grid { grid-template-columns: repeat(2,1fr); gap: 10px; }
+  .progress-section { padding: 12px 14px; }
+  .prog-counts { font-size: 16px; }
+  .controls { padding: 12px 14px; gap: 10px; flex-direction: column; align-items: stretch; }
+  .filter-row { flex-wrap: wrap; gap: 6px; }
+  .filter-btn { font-size: 11px; padding: 5px 10px; }
+  .search-box { width: 100%; min-width: unset; font-size: 12px; }
+  .export-btn { font-size: 11px; padding: 6px 12px; }
+  table { font-size: 11px; min-width: 700px; }
+  th { padding: 7px 8px; font-size: 9px; }
+  td { padding: 7px 8px; }
+  .biz-name { font-size: 12px; }
+  .biz-address, .biz-phone, .biz-hours { font-size: 10px; }
+  .contact-cell { min-width: 100px; }
+  .contact-input { font-size: 11px; padding: 4px 7px; }
+  .notes-input { font-size: 11px; height: 34px; }
+  .loc-header-bar { padding: 12px 14px; }
+  .loc-title { font-size: 15px; }
+  .loc-addr { font-size: 10px; }
+  .loc-count-badge { font-size: 10px; padding: 3px 10px; }
+  .export-bar { padding: 10px 14px; gap: 8px; }
+  .main { padding: 10px 12px 24px; }
+  .score-bar-wrap { min-width: 60px; }
+  .score-num { font-size: 12px; }
+}
+@media (max-width: 500px) {
+  .stats-row { display: none; }
+  .header-sub { display: none; }
+  .progress-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
+  table { min-width: 600px; font-size: 10.5px; }
+  th { font-size: 8.5px; padding: 6px 6px; }
+  td { padding: 6px 6px; }
+  .loc-title { font-size: 13px; }
+  .cat-badge { font-size: 9px; padding: 2px 7px; }
+  .leave-badge { font-size: 9px; padding: 2px 6px; }
 }
 </style>
 </head>
@@ -1447,7 +1534,7 @@ th.sortable:hover { color: var(--coral); }
 
     <!-- STANDALE 1004 -->
     <div class=&quot;loc-section&quot; id=&quot;loc-1004&quot;>
-      <div class=&quot;loc-header-bar open&quot; id=&quot;hdr-1004&quot; onclick=&quot;toggleSection('1004')&quot;>
+      <div class=&quot;loc-header-bar&quot; id=&quot;hdr-1004&quot; onclick=&quot;toggleSection('1004')&quot;>
         <div>
           <div class=&quot;loc-title&quot;>Standale (1004) &amp;nbsp;·&amp;nbsp; <span style=&quot;font-size:14px; color:var(--coral); font-family:'DM Sans',sans-serif; font-weight:600;&quot;>Priority Location</span></div>
           <div class=&quot;loc-addr&quot;>355 Wilson Ave NW, Walker, MI 49534 &amp;nbsp;·&amp;nbsp; (616) 591-9806 &amp;nbsp;·&amp;nbsp; 3–5 mile radius</div>
@@ -1457,13 +1544,13 @@ th.sortable:hover { color: var(--coral); }
           <div class=&quot;loc-chevron&quot;><svg viewBox=&quot;0 0 24 24&quot;><polyline points=&quot;6 9 12 15 18 9&quot;/></svg></div>
         </div>
       </div>
-      <div class=&quot;loc-body open&quot; id=&quot;body-1004&quot;>
-        <table>
+      <div class=&quot;loc-body&quot; id=&quot;body-1004&quot;>
+        <div class=&quot;table-scroll&quot;><table>
           <thead><tr>
-            <th class=&quot;center&quot;>#</th><th>Business</th><th>Category</th><th>Score</th><th>Leave</th><th class=&quot;center&quot;>Week</th><th class=&quot;center&quot;>Dropped</th><th>Contact Name &amp;amp; Phone</th><th>Notes</th>
+            <th class=&quot;center&quot;>#</th><th>Business</th><th class=&quot;center&quot;>Notes</th><th>Category</th><th>Score</th><th>Leave</th><th class=&quot;center&quot;>Wk</th><th class=&quot;center&quot;>✓</th>
           </tr></thead>
           <tbody id=&quot;tbody-1004&quot;></tbody>
-        </table>
+        </table></div>
         <div class=&quot;export-bar&quot;>
           <span class=&quot;export-note&quot;>Standale (1004)</span>
           <button class=&quot;export-btn btn-outline&quot; onclick=&quot;exportCSV('1004')&quot;>Export CSV</button>
@@ -1474,7 +1561,7 @@ th.sortable:hover { color: var(--coral); }
 
     <!-- BRIDGE STREET 1002 -->
     <div class=&quot;loc-section&quot; id=&quot;loc-1002&quot;>
-      <div class=&quot;loc-header-bar open&quot; id=&quot;hdr-1002&quot; onclick=&quot;toggleSection('1002')&quot;>
+      <div class=&quot;loc-header-bar&quot; id=&quot;hdr-1002&quot; onclick=&quot;toggleSection('1002')&quot;>
         <div>
           <div class=&quot;loc-title&quot;>Bridge Street (1002) &amp;nbsp;·&amp;nbsp; <span style=&quot;font-size:14px; color:var(--coral); font-family:'DM Sans',sans-serif; font-weight:600;&quot;>Priority Location</span></div>
           <div class=&quot;loc-addr&quot;>434 Bridge St NW, Grand Rapids, MI 49504 &amp;nbsp;·&amp;nbsp; (616) 855-6907 &amp;nbsp;·&amp;nbsp; 3–5 mile radius</div>
@@ -1484,13 +1571,13 @@ th.sortable:hover { color: var(--coral); }
           <div class=&quot;loc-chevron&quot;><svg viewBox=&quot;0 0 24 24&quot;><polyline points=&quot;6 9 12 15 18 9&quot;/></svg></div>
         </div>
       </div>
-      <div class=&quot;loc-body open&quot; id=&quot;body-1002&quot;>
-        <table>
+      <div class=&quot;loc-body&quot; id=&quot;body-1002&quot;>
+        <div class=&quot;table-scroll&quot;><table>
           <thead><tr>
-            <th class=&quot;center&quot;>#</th><th>Business</th><th>Category</th><th>Score</th><th>Leave</th><th class=&quot;center&quot;>Week</th><th class=&quot;center&quot;>Dropped</th><th>Contact Name &amp;amp; Phone</th><th>Notes</th>
+            <th class=&quot;center&quot;>#</th><th>Business</th><th class=&quot;center&quot;>Notes</th><th>Category</th><th>Score</th><th>Leave</th><th class=&quot;center&quot;>Wk</th><th class=&quot;center&quot;>✓</th>
           </tr></thead>
           <tbody id=&quot;tbody-1002&quot;></tbody>
-        </table>
+        </table></div>
         <div class=&quot;export-bar&quot;>
           <span class=&quot;export-note&quot;>Bridge Street (1002)</span>
           <button class=&quot;export-btn btn-outline&quot; onclick=&quot;exportCSV('1002')&quot;>Export CSV</button>
@@ -1501,7 +1588,7 @@ th.sortable:hover { color: var(--coral); }
 
     <!-- BRETON VILLAGE 1003 -->
     <div class=&quot;loc-section&quot; id=&quot;loc-1003&quot;>
-      <div class=&quot;loc-header-bar open&quot; id=&quot;hdr-1003&quot; onclick=&quot;toggleSection('1003')&quot;>
+      <div class=&quot;loc-header-bar&quot; id=&quot;hdr-1003&quot; onclick=&quot;toggleSection('1003')&quot;>
         <div>
           <div class=&quot;loc-title&quot;>Breton Village (1003)</div>
           <div class=&quot;loc-addr&quot;>1962 Breton Rd SE, Grand Rapids, MI 49506 &amp;nbsp;·&amp;nbsp; (616) 202-1385 &amp;nbsp;·&amp;nbsp; 3–5 mile radius</div>
@@ -1511,13 +1598,13 @@ th.sortable:hover { color: var(--coral); }
           <div class=&quot;loc-chevron&quot;><svg viewBox=&quot;0 0 24 24&quot;><polyline points=&quot;6 9 12 15 18 9&quot;/></svg></div>
         </div>
       </div>
-      <div class=&quot;loc-body open&quot; id=&quot;body-1003&quot;>
-        <table>
+      <div class=&quot;loc-body&quot; id=&quot;body-1003&quot;>
+        <div class=&quot;table-scroll&quot;><table>
           <thead><tr>
-            <th class=&quot;center&quot;>#</th><th>Business</th><th>Category</th><th>Score</th><th>Leave</th><th class=&quot;center&quot;>Week</th><th class=&quot;center&quot;>Dropped</th><th>Contact Name &amp;amp; Phone</th><th>Notes</th>
+            <th class=&quot;center&quot;>#</th><th>Business</th><th class=&quot;center&quot;>Notes</th><th>Category</th><th>Score</th><th>Leave</th><th class=&quot;center&quot;>Wk</th><th class=&quot;center&quot;>✓</th>
           </tr></thead>
           <tbody id=&quot;tbody-1003&quot;></tbody>
-        </table>
+        </table></div>
         <div class=&quot;export-bar&quot;>
           <span class=&quot;export-note&quot;>Breton Village (1003)</span>
           <button class=&quot;export-btn btn-outline&quot; onclick=&quot;exportCSV('1003')&quot;>Export CSV</button>
@@ -1528,7 +1615,7 @@ th.sortable:hover { color: var(--coral); }
 
     <!-- EAST BELTLINE 1001 -->
     <div class=&quot;loc-section&quot; id=&quot;loc-1001&quot;>
-      <div class=&quot;loc-header-bar open&quot; id=&quot;hdr-1001&quot; onclick=&quot;toggleSection('1001')&quot;>
+      <div class=&quot;loc-header-bar&quot; id=&quot;hdr-1001&quot; onclick=&quot;toggleSection('1001')&quot;>
         <div>
           <div class=&quot;loc-title&quot;>East Beltline (1001)</div>
           <div class=&quot;loc-addr&quot;>1600 E Beltline Ave NE, Grand Rapids, MI 49525 &amp;nbsp;·&amp;nbsp; (616) 301-8171 &amp;nbsp;·&amp;nbsp; 3–5 mile radius</div>
@@ -1538,13 +1625,13 @@ th.sortable:hover { color: var(--coral); }
           <div class=&quot;loc-chevron&quot;><svg viewBox=&quot;0 0 24 24&quot;><polyline points=&quot;6 9 12 15 18 9&quot;/></svg></div>
         </div>
       </div>
-      <div class=&quot;loc-body open&quot; id=&quot;body-1001&quot;>
-        <table>
+      <div class=&quot;loc-body&quot; id=&quot;body-1001&quot;>
+        <div class=&quot;table-scroll&quot;><table>
           <thead><tr>
-            <th class=&quot;center&quot;>#</th><th>Business</th><th>Category</th><th>Score</th><th>Leave</th><th class=&quot;center&quot;>Week</th><th class=&quot;center&quot;>Dropped</th><th>Contact Name &amp;amp; Phone</th><th>Notes</th>
+            <th class=&quot;center&quot;>#</th><th>Business</th><th class=&quot;center&quot;>Notes</th><th>Category</th><th>Score</th><th>Leave</th><th class=&quot;center&quot;>Wk</th><th class=&quot;center&quot;>✓</th>
           </tr></thead>
           <tbody id=&quot;tbody-1001&quot;></tbody>
-        </table>
+        </table></div>
         <div class=&quot;export-bar&quot;>
           <span class=&quot;export-note&quot;>East Beltline (1001)</span>
           <button class=&quot;export-btn btn-outline&quot; onclick=&quot;exportCSV('1001')&quot;>Export CSV</button>
@@ -1814,6 +1901,8 @@ function renderTable(locId) {
     const filterPass = checkFilter(row, item);
     const searchPass = checkSearch(item);
     const hidden = (!filterPass || !searchPass) ? 'hidden-row' : '';
+    const hasContact = row.contactName || row.contactPhone || row.notes;
+    const detailId = `detail-${locId}-${i}`;
     html += `<tr class=&quot;${droppedClass} ${hidden}&quot; data-loc=&quot;${locId}&quot; data-idx=&quot;${i}&quot;>
       <td><div class=&quot;rank-num ${rankClass}&quot;>${i+1}</div></td>
       <td>
@@ -1821,6 +1910,11 @@ function renderTable(locId) {
         <div class=&quot;biz-address&quot;>${item.address}</div>
         <div class=&quot;biz-phone&quot;>${item.phone}</div>
         <div class=&quot;biz-hours&quot;>${item.hours}</div>
+      </td>
+      <td class=&quot;center&quot;>
+        <button class=&quot;detail-toggle ${hasContact ? 'has-data' : ''}&quot; onclick=&quot;toggleDetail('${detailId}')&quot;>
+          ${hasContact ? '✎' : '+'} <span>Notes</span>
+        </button>
       </td>
       <td>${catBadge(item.cat, item.catClass)}</td>
       <td>
@@ -1830,20 +1924,32 @@ function renderTable(locId) {
         </div>
       </td>
       <td>${leaveLabel(item.leave)}</td>
-      <td class=&quot;center&quot; style=&quot;white-space:nowrap; font-size:12px; color:var(--teal); font-weight:600;&quot;>Wk ${item.week}</td>
+      <td class=&quot;center&quot; style=&quot;white-space:nowrap; font-size:12px; color:var(--teal); font-weight:600;&quot;>${item.week}</td>
       <td class=&quot;center&quot;>
         <div class=&quot;drop-check ${row.dropped ? 'checked' : ''}&quot; onclick=&quot;toggleDrop('${locId}',${i})&quot;>
           <svg viewBox=&quot;0 0 24 24&quot;><polyline points=&quot;20 6 9 18 4 13&quot;/></svg>
         </div>
       </td>
-      <td>
-        <div class=&quot;contact-cell&quot;>
-          <input class=&quot;contact-input ${row.contactName ? 'filled' : ''}&quot; type=&quot;text&quot; placeholder=&quot;Contact name&quot; value=&quot;${esc(row.contactName)}&quot; onchange=&quot;saveContact('${locId}',${i},'contactName',this.value)&quot;>
-          <input class=&quot;contact-input ${row.contactPhone ? 'filled' : ''}&quot; type=&quot;text&quot; placeholder=&quot;Phone number&quot; value=&quot;${esc(row.contactPhone)}&quot; onchange=&quot;saveContact('${locId}',${i},'contactPhone',this.value)&quot;>
+    </tr>
+    <tr class=&quot;detail-row ${hidden}&quot; id=&quot;${detailId}&quot; style=&quot;display:none;&quot;>
+      <td colspan=&quot;8&quot;>
+        <div class=&quot;detail-panel&quot;>
+          <div class=&quot;detail-hint&quot;>${item.note}</div>
+          <div class=&quot;detail-fields&quot;>
+            <div class=&quot;detail-field&quot;>
+              <label>Contact Name</label>
+              <input class=&quot;contact-input ${row.contactName ? 'filled' : ''}&quot; type=&quot;text&quot; placeholder=&quot;Contact name&quot; value=&quot;${esc(row.contactName)}&quot; onchange=&quot;saveContact('${locId}',${i},'contactName',this.value)&quot;>
+            </div>
+            <div class=&quot;detail-field&quot;>
+              <label>Phone</label>
+              <input class=&quot;contact-input ${row.contactPhone ? 'filled' : ''}&quot; type=&quot;text&quot; placeholder=&quot;Phone number&quot; value=&quot;${esc(row.contactPhone)}&quot; onchange=&quot;saveContact('${locId}',${i},'contactPhone',this.value)&quot;>
+            </div>
+            <div class=&quot;detail-field detail-field-wide&quot;>
+              <label>Notes</label>
+              <textarea class=&quot;notes-input ${row.notes ? 'filled' : ''}&quot; placeholder=&quot;Your notes after the visit...&quot; onchange=&quot;saveContact('${locId}',${i},'notes',this.value)&quot;>${esc(row.notes)}</textarea>
+            </div>
+          </div>
         </div>
-      </td>
-      <td>
-        <textarea class=&quot;notes-input ${row.notes ? 'filled' : ''}&quot; placeholder=&quot;${item.note.substring(0,60)}...&quot; onchange=&quot;saveContact('${locId}',${i},'notes',this.value)&quot;>${esc(row.notes)}</textarea>
       </td>
     </tr>`;
   });
@@ -1892,6 +1998,12 @@ function saveContact(loc, idx, field, val) {
       ta.classList.toggle('filled', !!ta.value);
     });
     if (!checkFilter(row, DATA[loc][idx])) tr.classList.add('hidden-row');
+    // Update detail toggle has-data indicator
+    var btn = tr.querySelector('.detail-toggle');
+    if (btn) {
+      var r = getRow(loc, idx);
+      btn.classList.toggle('has-data', !!(r.contactName || r.contactPhone || r.notes));
+    }
   }
   updateProgress();
 }
@@ -1899,6 +2011,16 @@ function saveContact(loc, idx, field, val) {
 // ══════════════════════════════════════════════════════
 // NAVIGATION + FILTER
 // ══════════════════════════════════════════════════════
+function toggleDetail(id) {
+  var row = document.getElementById(id);
+  if (!row) return;
+  var isOpen = row.style.display !== 'none';
+  row.style.display = isOpen ? 'none' : 'table-row';
+  // Update button state
+  var btn = row.previousElementSibling &amp;&amp; row.previousElementSibling.querySelector('.detail-toggle');
+  if (btn) btn.classList.toggle('open', !isOpen);
+}
+
 function toggleSection(id) {
   const hdr = document.getElementById('hdr-' + id);
   const body = document.getElementById('body-' + id);
@@ -1932,6 +2054,8 @@ function doSearch(val) {
 function rerenderAll() {
   ['1001','1002','1003','1004'].forEach(renderTable);
 }
+// After renderTable, detail rows are re-created so no extra sync needed.
+// toggleDetail handles visibility directly on the element.
 
 // ══════════════════════════════════════════════════════
 // PROGRESS
