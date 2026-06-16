@@ -347,7 +347,7 @@
   .acc-trigger.open .acc-chevron svg { stroke: rgba(255,255,255,0.75); }
 
   .acc-body { max-height: 0; overflow: hidden; transition: max-height 0.45s cubic-bezier(0.4,0,0.2,1); border-radius: 0 0 18px 18px; }
-  .acc-body.open { max-height: 6000px; }
+  .acc-body.open { max-height: 99999px; overflow: visible; }
 
   .acc-inner {
     padding: 6px 22px 26px;
@@ -1069,336 +1069,959 @@
       <div class="acc-num">2</div>
       <div class="acc-labels">
         <div class="acc-title">Local Business Drops</div>
-        <div class="acc-sub">40 specific targets, 10 per location, 4-week program</div>
+        <div class="acc-sub">160 targets ranked by catering potential &nbsp;·&nbsp; 40 per location &nbsp;·&nbsp; 4-week program</div>
       </div>
       <div class="acc-chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
     </button>
     <div class="acc-body">
-      <div class="acc-inner">
-        <p style="font-size:13.5px; color:#666; margin-bottom:10px; line-height:1.6;">Each GM owns their list. 10 targets, 4 weeks, roughly 2-3 drops per week. One visit per business. Leave the right materials. Follow up by phone within 5 days. <strong style="color:var(--teal);">Start with Southside Floral at Breton — that relationship is already warm.</strong></p>
-        <div class="note-box note-pitch">
-          <strong style="color:var(--teal);">The pitch, spoken:</strong> "We just launched private events and catering at Morning Belle. We thought you might love having us for your next team lunch or company celebration. Here is the menu." Then stop talking.
-        </div>
+      <div class="acc-inner" style="padding:0; overflow:visible;">
+        <iframe
+          id="tracker-iframe"
+          srcdoc="<!DOCTYPE html>
+<html lang=&quot;en&quot;>
+<head>
+<meta charset=&quot;UTF-8&quot;>
+<meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;>
+<title>Morning Belle | Local Business Drop Tracker</title>
+<link href=&quot;https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&amp;family=DM+Sans:wght@300;400;500;600;700&amp;display=swap&quot; rel=&quot;stylesheet&quot;>
+<style>
+:root {
+  --green: #99C961;
+  --teal: #3c5c68;
+  --coral: #fc826d;
+  --yellow: #ffde5c;
+  --amber: #fbaf41;
+  --sage: #9bc4bc;
+  --charcoal: #4d4d4d;
+  --off-white: #f0f4f7;
+  --light-green: #eaf6d9;
+  --light-teal: #e8f0f2;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: transparent;
+  color: var(--charcoal);
+  line-height: 1.5;
+  min-height: 100vh;
+  position: relative;
+}
 
-        <div class="loc-tabs">
-          <button class="loc-tab active" id="tab-standale" onclick="showLoc('standale')">Standale (1004)</button>
-          <button class="loc-tab" id="tab-bridge" onclick="showLoc('bridge')">Bridge Street (1002)</button>
-          <button class="loc-tab" id="tab-breton" onclick="showLoc('breton')">Breton Village (1003)</button>
-          <button class="loc-tab" id="tab-beltline" onclick="showLoc('beltline')">East Beltline (1001)</button>
-        </div>
 
-        <!-- STANDALE -->
-        <div id="loc-standale">
-          <div class="loc-header"><span class="loc-name">Standale (1004)</span><span class="loc-addr">355 Wilson Ave NW, Walker</span><span class="loc-count">10 targets</span></div>
-          <div class="target-grid">
-            <div class="target-card border-corp">
-              <div class="target-type" style="color:var(--amber);">Corporate</div>
-              <div class="target-name">Hendrik Meijer Corporate Office</div>
-              <div class="target-meta">2727 Walker Ave NW &nbsp;·&nbsp; (616) 453-6711 &nbsp;·&nbsp; M–F 8am–5pm</div>
-              <div class="target-body">Large team, HR on-site. Ask for the office manager or events coordinator.</div>
-              <span class="target-leave leave-corp">Leave: Catering menu + events one-pager</span>
-            </div>
-            <div class="target-card border-corp">
-              <div class="target-type" style="color:var(--amber);">Corporate</div>
-              <div class="target-name">H.B. Fuller</div>
-              <div class="target-meta">2727 Kinney Ave NW &nbsp;·&nbsp; (616) 453-8271 &nbsp;·&nbsp; M–F 8am–5pm</div>
-              <div class="target-body">Manufacturing HQ. Staff appreciation and team events are common. Ask for HR.</div>
-              <span class="target-leave leave-corp">Leave: Catering menu</span>
-            </div>
-            <div class="target-card border-corp">
-              <div class="target-type" style="color:var(--amber);">Corporate</div>
-              <div class="target-name">H&amp;S Companies</div>
-              <div class="target-meta">4575 Lake Michigan Dr NW &nbsp;·&nbsp; (616) 453-8551 &nbsp;·&nbsp; M–F 8am–5pm</div>
-              <div class="target-body">Financial services firm. Partners are the decision makers. Catering and private dining.</div>
-              <span class="target-leave leave-corp">Leave: Catering menu + events one-pager</span>
-            </div>
-            <div class="target-card border-corp">
-              <div class="target-type" style="color:var(--amber);">Professional Services</div>
-              <div class="target-name">Edward Jones (Craig Taetsch)</div>
-              <div class="target-meta">4328 3 Mile Rd NW #100 &nbsp;·&nbsp; (616) 453-2009 &nbsp;·&nbsp; M–F 8:30am–5pm</div>
-              <div class="target-body">Financial advisor office. Client appreciation events and team lunches are part of their business model. High-value catering lead.</div>
-              <span class="target-leave leave-corp">Leave: Catering menu + events one-pager</span>
-            </div>
-            <div class="target-card border-corp">
-              <div class="target-type" style="color:var(--amber);">Professional Services</div>
-              <div class="target-name">Steenland Insurance Agency</div>
-              <div class="target-meta">975 3 Mile Rd NW &nbsp;·&nbsp; (616) 784-3322 &nbsp;·&nbsp; M–Th 9am–5pm, F until 4pm</div>
-              <div class="target-body">Family-owned insurance agency, 89 reviews. Staff events and client appreciation. Owner-operated means fast decisions.</div>
-              <span class="target-leave leave-corp">Leave: Catering menu + events one-pager</span>
-            </div>
-            <div class="target-card border-corp">
-              <div class="target-type" style="color:var(--amber);">Healthcare</div>
-              <div class="target-name">Carroll Family and Cosmetic Dentistry</div>
-              <div class="target-meta">4310 Leonard St NW #202 &nbsp;·&nbsp; (616) 453-6323 &nbsp;·&nbsp; M–Th 8am–5pm</div>
-              <div class="target-body">5-star dental practice, 376 reviews. Staff team lunches, holiday parties. Office manager is the contact. Ask for them by name.</div>
-              <span class="target-leave leave-corp">Leave: Catering menu</span>
-            </div>
-            <div class="target-card border-corp">
-              <div class="target-type" style="color:var(--amber);">Healthcare</div>
-              <div class="target-name">Walker Dental Care</div>
-              <div class="target-meta">348 Wilson Ave NW &nbsp;·&nbsp; (616) 898-3452 &nbsp;·&nbsp; M–F varies</div>
-              <div class="target-body">High-traffic dental practice, 289 reviews, same street as MB Standale. Staff lunches and team events. Ask for the office manager.</div>
-              <span class="target-leave leave-corp">Leave: Catering menu</span>
-            </div>
-            <div class="target-card border-event">
-              <div class="target-type" style="color:var(--green);">Event Partner</div>
-              <div class="target-name">The Riverbird Events</div>
-              <div class="target-meta">3585 River Hill Dr &nbsp;·&nbsp; (269) 492-5365 &nbsp;·&nbsp; M–F 10am–6pm</div>
-              <div class="target-body">5-star wedding venue. Their couples need rehearsal dinner options. Offer a referral relationship.</div>
-              <span class="target-leave leave-event">Leave: Events one-pager + business card</span>
-            </div>
-            <div class="target-card border-org">
-              <div class="target-type" style="color:#3a8070;">Nonprofit</div>
-              <div class="target-name">Land Conservancy of West Michigan</div>
-              <div class="target-meta">237 Steele St &nbsp;·&nbsp; (616) 451-9476 &nbsp;·&nbsp; M–Th 8:30am–5pm</div>
-              <div class="target-body">Mission-driven staff. Fundraiser events and team lunches.</div>
-              <span class="target-leave leave-org">Leave: Catering menu + events one-pager</span>
-            </div>
-            <div class="target-card border-org">
-              <div class="target-type" style="color:#3a8070;">Nonprofit</div>
-              <div class="target-name">Hope for Single Moms</div>
-              <div class="target-meta">2130 Blueberry Dr NW &nbsp;·&nbsp; (616) 485-7594 &nbsp;·&nbsp; M–Th 10am–6pm</div>
-              <div class="target-body">Advocacy nonprofit with a warm community team. Fundraisers and community events.</div>
-              <span class="target-leave leave-org">Leave: Catering menu + events one-pager</span>
-            </div>
-          </div>
-        </div>
+  50%  { opacity: 0.9; transform: scale(1.04); }
+  100% { opacity: 1; transform: scale(1.02); }
+}
+.rainbow-bar {
+  position: relative; height: 5px; overflow: hidden; z-index: 10;
+}
+.rainbow-bar::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(90deg, #99C961, #ffde5c, #fc826d, #fbaf41, #9bc4bc, #fc826d, #99C961, #ffde5c, #99C961);
+  background-size: 300% 100%;
+  animation: rainbowSlide 12s linear infinite;
+}
+@keyframes rainbowSlide { 0% { background-position: 0% 50%; } 100% { background-position: 300% 50%; } }
 
-        <!-- BRIDGE STREET -->
-        <div id="loc-bridge" style="display:none;">
-          <div class="loc-header"><span class="loc-name">Bridge Street (1002)</span><span class="loc-addr">434 Bridge St NW</span><span class="loc-count">10 targets</span></div>
-          <div class="target-grid">
-            <div class="target-card border-event">
-              <div class="target-type" style="color:var(--green);">Event Partner &nbsp;·&nbsp; Same Street</div>
-              <div class="target-name">Posh Petals</div>
-              <div class="target-meta">806 Bridge St NW &nbsp;·&nbsp; (616) 363-3337</div>
-              <div class="target-body">On the same street as MB. High-volume wedding florist, 81 reviews. Every client is a bridal shower or rehearsal dinner prospect. Drop in personally.</div>
-              <span class="target-leave leave-event">Leave: Events one-pager + business card</span>
-            </div>
-            <div class="target-card border-event">
-              <div class="target-type" style="color:var(--green);">Event Partner</div>
-              <div class="target-name">All Buttoned Up Events</div>
-              <div class="target-meta">317 Bristol Ave NW &nbsp;·&nbsp; (248) 770-7548 &nbsp;·&nbsp; M–F 9am–5pm</div>
-              <div class="target-body">5-star wedding coordinator, 72 reviews. Her clients are exactly MB's private events audience. Propose a referral relationship.</div>
-              <span class="target-leave leave-event">Leave: Events one-pager + business card</span>
-            </div>
-            <div class="target-card border-event">
-              <div class="target-type" style="color:var(--green);">Event Partner</div>
-              <div class="target-name">Futtitinni Events</div>
-              <div class="target-meta">538 Bond Ave NW &nbsp;·&nbsp; (248) 303-7537 &nbsp;·&nbsp; M–Sa 9am–6pm</div>
-              <div class="target-body">5-star GR wedding planner. Same referral pitch as All Buttoned Up.</div>
-              <span class="target-leave leave-event">Leave: Events one-pager + business card</span>
-            </div>
-            <div class="target-card border-event">
-              <div class="target-type" style="color:var(--green);">Event Partner</div>
-              <div class="target-name">Crowned Creative Studio</div>
-              <div class="target-meta">240 Front Ave SW &nbsp;·&nbsp; (616) 328-4208 &nbsp;·&nbsp; M–F 9am–8pm, Sa 8am–9pm</div>
-              <div class="target-body">5-star wedding and events photography studio, 29 reviews. Their clients are celebrating — bridal showers, engagement parties, anniversaries. Strong referral fit.</div>
-              <span class="target-leave leave-event">Leave: Events one-pager + business card</span>
-            </div>
-            <div class="target-card border-corp">
-              <div class="target-type" style="color:var(--amber);">Professional Services</div>
-              <div class="target-name">Varnum LLP</div>
-              <div class="target-meta">333 Bridge St NW #1700 &nbsp;·&nbsp; (616) 336-6000 &nbsp;·&nbsp; M–F 8am–5pm</div>
-              <div class="target-body">Large law firm in the Bridge St office building. Associate events, client entertainment, staff appreciation. Ask for the office administrator.</div>
-              <span class="target-leave leave-corp">Leave: Catering menu + events one-pager</span>
-            </div>
-            <div class="target-card border-corp">
-              <div class="target-type" style="color:var(--amber);">Professional Services</div>
-              <div class="target-name">Stuart Law, PLC</div>
-              <div class="target-meta">429 Turner Ave NW &nbsp;·&nbsp; (616) 450-9885</div>
-              <div class="target-body">4.8-star boutique law firm, 96 reviews. Small professional team. Staff lunches and client appreciation events. Owner is the decision maker.</div>
-              <span class="target-leave leave-corp">Leave: Catering menu + events one-pager</span>
-            </div>
-            <div class="target-card border-corp">
-              <div class="target-type" style="color:var(--amber);">Healthcare</div>
-              <div class="target-name">Trinity Chiropractic</div>
-              <div class="target-meta">448 Leonard St NW &nbsp;·&nbsp; (616) 805-4478 &nbsp;·&nbsp; Tu–F varied</div>
-              <div class="target-body">5-star chiropractic practice, 32 reviews. Owner-operated. Staff lunches and patient appreciation events. Warm community practice.</div>
-              <span class="target-leave leave-corp">Leave: Catering menu</span>
-            </div>
-            <div class="target-card border-org">
-              <div class="target-type" style="color:#3a8070;">Nonprofit &nbsp;·&nbsp; Same Corridor</div>
-              <div class="target-name">Gilda's Club Grand Rapids</div>
-              <div class="target-meta">1806 Bridge St NW &nbsp;·&nbsp; (616) 453-8300 &nbsp;·&nbsp; M–Th 9am–9pm, F until 1pm</div>
-              <div class="target-body">On Bridge St corridor, 145 reviews. Staff catering and fundraiser event potential.</div>
-              <span class="target-leave leave-org">Leave: Catering menu + events one-pager</span>
-            </div>
-            <div class="target-card border-org">
-              <div class="target-type" style="color:#3a8070;">Community &nbsp;·&nbsp; Same Corridor</div>
-              <div class="target-name">John Ball Area Neighbors</div>
-              <div class="target-meta">1120 Bridge St NW &nbsp;·&nbsp; (616) 456-9190 &nbsp;·&nbsp; M–F 9am–3pm</div>
-              <div class="target-body">Neighborhood association on Bridge St corridor. Community events and gatherings. Very warm pitch.</div>
-              <span class="target-leave leave-org">Leave: Catering menu + events one-pager</span>
-            </div>
-            <div class="target-card border-org">
-              <div class="target-type" style="color:#3a8070;">Community &nbsp;·&nbsp; Same Corridor</div>
-              <div class="target-name">Bridge Street Ministries</div>
-              <div class="target-meta">1034 Bridge St NW &nbsp;·&nbsp; M–Sa 8am–5pm</div>
-              <div class="target-body">Community center and nonprofit on the same street. Staff catering and community event potential.</div>
-              <span class="target-leave leave-org">Leave: Catering menu + events one-pager</span>
-            </div>
-          </div>
-        </div>
+.header {
+  position: relative; z-index: 5;
+  background: linear-gradient(135deg, rgba(30,50,60,0.93) 0%, rgba(60,92,104,0.90) 60%, rgba(40,70,60,0.92) 100%);
+  backdrop-filter: blur(24px) saturate(180%);
+  padding: 44px 40px 36px;
+}
+.header-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+.brand-label { font-size: 10px; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: var(--green); margin-bottom: 10px; }
+.header h1 { font-family: 'Playfair Display', serif; font-size: clamp(26px, 4.5vw, 44px); font-weight: 900; color: #fff; line-height: 1.08; }
+.header h1 span { background: linear-gradient(90deg, var(--yellow), var(--amber)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.header-sub { font-size: 13px; color: rgba(255,255,255,0.45); margin-top: 6px; }
+.stats-row { display: flex; gap: 12px; flex-wrap: wrap; }
+.stat-pill { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 100px; padding: 8px 18px; text-align: center; }
+.stat-num { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 900; color: var(--yellow); display: block; line-height: 1; }
+.stat-lbl { font-size: 9.5px; text-transform: uppercase; letter-spacing: 1.5px; color: rgba(255,255,255,0.55); }
 
-        <!-- BRETON VILLAGE -->
-        <div id="loc-breton" style="display:none;">
-          <div class="loc-header"><span class="loc-name">Breton Village (1003)</span><span class="loc-addr">1962 Breton Rd SE</span><span class="loc-count">10 targets</span></div>
-          <div class="note-box note-start" style="margin-bottom:10px;">🌱 Start here first. Southside Flower Market is an existing partner, literally next door. This is the warmest lead across all four locations.</div>
-          <div class="target-grid">
-            <div class="target-card border-partner">
-              <div class="target-type" style="color:var(--green);">Existing Partner &nbsp;·&nbsp; Next Door</div>
-              <div class="target-name">Southside Flower Market</div>
-              <div class="target-meta">1842 Breton Rd SE &nbsp;·&nbsp; (616) 427-0599 &nbsp;·&nbsp; M–F 10am–6pm, Sa 10am–4pm</div>
-              <div class="target-body">322 reviews, wedding florist, immediate neighbor. Bridal shower and rehearsal dinner referrals. Deepen this relationship first.</div>
-              <span class="target-leave leave-event">Conversation, not just a drop. Propose mutual referral.</span>
-            </div>
-            <div class="target-card border-event">
-              <div class="target-type" style="color:var(--green);">Event Partner &nbsp;·&nbsp; Highest Value</div>
-              <div class="target-name">The Best Day Details</div>
-              <div class="target-meta">77 Monroe Center St NW &nbsp;·&nbsp; (616) 558-9144</div>
-              <div class="target-body">GR's highest-rated wedding coordinator, 316 reviews. Her clients are MB's private events guests. Worth a dedicated in-person visit, not just a drop.</div>
-              <span class="target-leave leave-event">Leave: Events one-pager + business card</span>
-            </div>
-            <div class="target-card border-corp">
-              <div class="target-type" style="color:var(--amber);">Professional Services</div>
-              <div class="target-name">The Brouwers Agency</div>
-              <div class="target-meta">1925 Breton Rd SE Ste 110 &nbsp;·&nbsp; (616) 891-0123 &nbsp;·&nbsp; M–F 9am–5pm</div>
-              <div class="target-body">5-star insurance agency, 888 reviews, literally in Breton Village. Large team, client appreciation events. Owner and staff are decision makers. Very warm proximity lead.</div>
-              <span class="target-leave leave-corp">Leave: Catering menu + events one-pager</span>
-            </div>
-            <div class="target-card border-corp">
-              <div class="target-type" style="color:var(--amber);">Professional Services</div>
-              <div class="target-name">Darrell DeWard Real Estate Group</div>
-              <div class="target-meta">815 Bridge St NW #1 &nbsp;·&nbsp; (616) 537-6890 &nbsp;·&nbsp; M–F 9am–10pm</div>
-              <div class="target-body">5-star real estate team, 90 reviews. Closing dinners, client appreciation, agent team events. Real estate teams celebrate constantly.</div>
-              <span class="target-leave leave-corp">Leave: Catering menu + events one-pager</span>
-            </div>
-            <div class="target-card border-corp">
-              <div class="target-type" style="color:var(--amber);">Healthcare</div>
-              <div class="target-name">Contemporary Family Dental</div>
-              <div class="target-meta">2005 Breton Rd SE &nbsp;·&nbsp; (616) 726-1271 &nbsp;·&nbsp; M–F varies</div>
-              <div class="target-body">4.7-star dental practice, 489 reviews, on Breton Rd. Staff lunches and team events. Ask for the office manager.</div>
-              <span class="target-leave leave-corp">Leave: Catering menu</span>
-            </div>
-            <div class="target-card border-corp">
-              <div class="target-type" style="color:var(--amber);">Salon &nbsp;·&nbsp; Celebration Audience</div>
-              <div class="target-name">JP Studios</div>
-              <div class="target-meta">1870 Breton Rd SE Suite F &nbsp;·&nbsp; M–Sa 9am–8pm</div>
-              <div class="target-body">5-star hair salon, same street as MB Breton. Their clients are the bridal shower and celebration audience. Drop a stack of cards for them to share.</div>
-              <span class="target-leave leave-event">Leave: Events one-pager + business cards to share</span>
-            </div>
-            <div class="target-card border-corp">
-              <div class="target-type" style="color:var(--amber);">Spa &nbsp;·&nbsp; Celebration Audience</div>
-              <div class="target-name">Beauty By K Salon &amp; Head Spa</div>
-              <div class="target-meta">2516 Burton St SE &nbsp;·&nbsp; (616) 901-7594 &nbsp;·&nbsp; M–Su varies</div>
-              <div class="target-body">5-star spa, 163 reviews. Their clients are celebrating life moments. Bridal parties, birthday treatments, girls' days. Drop cards they can hand to clients.</div>
-              <span class="target-leave leave-event">Leave: Events one-pager + cards to share</span>
-            </div>
-            <div class="target-card border-corp">
-              <div class="target-type" style="color:var(--amber);">Healthcare</div>
-              <div class="target-name">OAM Physical Therapy Southeast</div>
-              <div class="target-meta">2520 Burton St SE &nbsp;·&nbsp; (616) 459-7101 &nbsp;·&nbsp; M–F 7am–6pm</div>
-              <div class="target-body">4.9-star PT clinic, 95 reviews, same block. Staff lunches and team appreciation events. Ask for the office manager.</div>
-              <span class="target-leave leave-corp">Leave: Catering menu</span>
-            </div>
-            <div class="target-card border-org">
-              <div class="target-type" style="color:#3a8070;">Community Org</div>
-              <div class="target-name">Local First</div>
-              <div class="target-meta">1209 Kalamazoo Ave SE &nbsp;·&nbsp; (616) 808-3788 &nbsp;·&nbsp; M–F 9am–5pm</div>
-              <div class="target-body">Local business advocacy org. Members hold events and order catering. Good community connection and shared values.</div>
-              <span class="target-leave leave-org">Leave: Catering menu + events one-pager</span>
-            </div>
-            <div class="target-card border-org">
-              <div class="target-type" style="color:#3a8070;">Nonprofit</div>
-              <div class="target-name">Revive and Thrive</div>
-              <div class="target-meta">1815 Hall St SE &nbsp;·&nbsp; (616) 606-3314 &nbsp;·&nbsp; Tu 10am–6pm, W 10am–7pm only</div>
-              <div class="target-body">5-star nonprofit. Staff lunches and volunteer appreciation events. Visit on Tuesday or Wednesday only.</div>
-              <span class="target-leave leave-org">Leave: Catering menu + events one-pager</span>
-            </div>
-          </div>
-        </div>
+.main { max-width: 1100px; margin: 0 auto; padding: 12px 20px 32px; position: relative; z-index: 2; }
 
-        <!-- EAST BELTLINE -->
-        <div id="loc-beltline" style="display:none;">
-          <div class="loc-header"><span class="loc-name">East Beltline (1001)</span><span class="loc-addr">1600 E Beltline Ave NE</span><span class="loc-count">10 targets</span></div>
-          <div class="target-grid">
-            <div class="target-card border-corp">
-              <div class="target-type" style="color:var(--amber);">Corporate &nbsp;·&nbsp; Best Efficiency</div>
-              <div class="target-name">Eagle Crest Office Park</div>
-              <div class="target-meta">3312 Eagle Park Dr NE &nbsp;·&nbsp; Walking distance from MB</div>
-              <div class="target-body">Multi-tenant professional park. One stop, multiple businesses. Ask the building manager who the largest tenants are and start there.</div>
-              <span class="target-leave leave-corp">Leave: Catering menu at each suite</span>
-            </div>
-            <div class="target-card border-corp">
-              <div class="target-type" style="color:var(--amber);">Corporate</div>
-              <div class="target-name">The Pines Office Park</div>
-              <div class="target-meta">4829 E Beltline Ave NE &nbsp;·&nbsp; Three buildings</div>
-              <div class="target-body">Three professional buildings in one visit. Multiple catering contacts in one stop.</div>
-              <span class="target-leave leave-corp">Leave: Catering menu at each suite</span>
-            </div>
-            <div class="target-card border-corp">
-              <div class="target-type" style="color:var(--amber);">Professional Services</div>
-              <div class="target-name">Riley Planning &amp; Investments</div>
-              <div class="target-meta">1600 E Beltline Ave NE Ste 114 &nbsp;·&nbsp; (616) 486-6174 &nbsp;·&nbsp; M–Th 9am–5pm</div>
-              <div class="target-body">5-star women-owned financial planning firm, in the same building as MB East Beltline. Client appreciation events and team lunches. Drop by in person.</div>
-              <span class="target-leave leave-corp">Leave: Catering menu + events one-pager</span>
-            </div>
-            <div class="target-card border-corp">
-              <div class="target-type" style="color:var(--amber);">Professional Services</div>
-              <div class="target-name">Rinvelt &amp; David LLC</div>
-              <div class="target-meta">1700 E Beltline Ave NE #150 &nbsp;·&nbsp; (616) 957-0022 &nbsp;·&nbsp; M–F 8am–5pm</div>
-              <div class="target-body">5-star financial firm, 3 glowing reviews emphasizing personal relationships. Client events, team lunches. Adjacent to MB Beltline.</div>
-              <span class="target-leave leave-corp">Leave: Catering menu + events one-pager</span>
-            </div>
-            <div class="target-card border-corp">
-              <div class="target-type" style="color:var(--amber);">Professional Services</div>
-              <div class="target-name">Waypointe Wealth Advisors</div>
-              <div class="target-meta">1600 E Beltline Ave NE #216 &nbsp;·&nbsp; (616) 600-9905 &nbsp;·&nbsp; M–F 9am–5pm</div>
-              <div class="target-body">Same building as MB East Beltline. Financial advisor team. Client appreciation events and team lunches. One elevator ride.</div>
-              <span class="target-leave leave-corp">Leave: Catering menu + events one-pager</span>
-            </div>
-            <div class="target-card border-corp">
-              <div class="target-type" style="color:var(--amber);">Healthcare &nbsp;·&nbsp; Best Fit</div>
-              <div class="target-name">Woodhouse Spa</div>
-              <div class="target-meta">2060 E Beltline Ave NE &nbsp;·&nbsp; (616) 216-2077 &nbsp;·&nbsp; M–Su varies</div>
-              <div class="target-body">4.6-star luxury spa, 486 reviews. Their clients celebrate every life moment. Bridal parties, birthdays, girls' days. Drop events cards for them to share with clients.</div>
-              <span class="target-leave leave-event">Leave: Events one-pager + cards to share</span>
-            </div>
-            <div class="target-card border-corp">
-              <div class="target-type" style="color:var(--amber);">Healthcare</div>
-              <div class="target-name">Advent Physical Therapy – East Beltline</div>
-              <div class="target-meta">1471 E Beltline Ave NE Ste 104 &nbsp;·&nbsp; (616) 577-8341 &nbsp;·&nbsp; M–F 7am–7pm</div>
-              <div class="target-body">4.9-star PT clinic, 119 reviews, on the Beltline. Staff team lunches and appreciation events. Ask for the clinic director.</div>
-              <span class="target-leave leave-corp">Leave: Catering menu</span>
-            </div>
-            <div class="target-card border-corp">
-              <div class="target-type" style="color:var(--amber);">Healthcare &nbsp;·&nbsp; Med Spa</div>
-              <div class="target-name">Urban You Medical Aesthetics</div>
-              <div class="target-meta">3152 Peregrine Dr NE Ste 100 &nbsp;·&nbsp; (616) 570-0228 &nbsp;·&nbsp; M–Sa varies</div>
-              <div class="target-body">4.8-star med spa, 338 reviews. Bachelorette and girls' day clients constantly. Drop events cards at the front desk for them to share.</div>
-              <span class="target-leave leave-event">Leave: Events one-pager + cards to share</span>
-            </div>
-            <div class="target-card border-corp">
-              <div class="target-type" style="color:var(--amber);">Government &nbsp;·&nbsp; Neighbor</div>
-              <div class="target-name">Grand Rapids Charter Township Hall</div>
-              <div class="target-meta">1836 E Beltline Ave NE &nbsp;·&nbsp; (616) 361-7391 &nbsp;·&nbsp; M–F 8am–5pm</div>
-              <div class="target-body">Right next to the East Beltline location. Staff events and community gatherings.</div>
-              <span class="target-leave leave-corp">Leave: Catering menu + events one-pager</span>
-            </div>
-            <div class="target-card border-org">
-              <div class="target-type" style="color:#3a8070;">Nonprofit</div>
-              <div class="target-name">Storehouse of Community Resources</div>
-              <div class="target-meta">4411 Plainfield Ave NE &nbsp;·&nbsp; (616) 855-1700 &nbsp;·&nbsp; M–Tu 9am–2pm, W–Th 9am–noon</div>
-              <div class="target-body">Nonprofit serving nonprofits. Staff catering and fundraiser event potential. Limited hours, plan ahead.</div>
-              <span class="target-leave leave-org">Leave: Catering menu + events one-pager</span>
-            </div>
-          </div>
-        </div>
+/* CONTROLS */
+.controls {
+  background: rgba(235,242,246,0.85);
+  backdrop-filter: blur(20px);
+  border-radius: 16px;
+  border: 1.5px solid rgba(255,255,255,0.85);
+  padding: 18px 22px;
+  margin-bottom: 22px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  box-shadow: 0 4px 16px rgba(60,92,104,0.12);
+}
+.controls label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; color: var(--teal); }
+.loc-tabs { display: flex; gap: 8px; flex-wrap: wrap; flex: 1; }
+.loc-tab {
+  padding: 8px 18px; border-radius: 100px;
+  font-size: 13px; font-weight: 600; cursor: pointer;
+  border: 1.5px solid rgba(60,92,104,0.18);
+  background: rgba(255,255,255,0.6);
+  color: var(--teal);
+  transition: all 0.18s;
+}
+.loc-tab:hover { background: rgba(255,255,255,0.85); }
+.loc-tab.active {
+  background: var(--teal); color: #fff; border-color: var(--teal);
+  box-shadow: 0 2px 8px rgba(60,92,104,0.25);
+}
+.filter-row { display: flex; gap: 8px; align-items: center; }
+.filter-btn {
+  padding: 6px 14px; border-radius: 100px; font-size: 12px; font-weight: 600;
+  border: 1.5px solid rgba(60,92,104,0.2); background: rgba(255,255,255,0.6);
+  color: var(--charcoal); cursor: pointer; transition: all 0.15s;
+}
+.filter-btn.active { background: var(--green); color: #fff; border-color: var(--green); }
+.search-box {
+  padding: 8px 14px; border-radius: 100px; font-size: 13px;
+  border: 1.5px solid rgba(60,92,104,0.2); background: rgba(255,255,255,0.7);
+  color: var(--charcoal); outline: none; min-width: 180px;
+  font-family: 'DM Sans', sans-serif;
+}
+.search-box:focus { border-color: var(--green); background: #fff; }
 
-        <div class="note-box note-print" style="margin-top:14px;">
-          <strong>What to print per location:</strong> 25 catering menus, 15 events one-pagers, 40 business cards. GM tracks every drop: business name, contact name, date visited, follow-up date. Target 2-3 drops per week over 4 weeks.
+/* PROGRESS BAR */
+.progress-section {
+  background: rgba(235,242,246,0.85);
+  backdrop-filter: blur(20px);
+  border-radius: 16px;
+  border: 1.5px solid rgba(255,255,255,0.85);
+  padding: 16px 22px;
+  margin-bottom: 22px;
+  box-shadow: 0 4px 16px rgba(60,92,104,0.1);
+}
+.progress-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 14px; margin-bottom: 12px; }
+.prog-loc { text-align: center; }
+.prog-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; color: var(--teal); margin-bottom: 4px; }
+.prog-counts { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 900; color: var(--charcoal); line-height: 1; margin-bottom: 6px; }
+.prog-counts span { font-size: 13px; color: rgba(77,77,77,0.5); font-weight: 400; font-family: 'DM Sans', sans-serif; }
+.prog-bar-wrap { height: 6px; background: rgba(60,92,104,0.12); border-radius: 100px; overflow: hidden; }
+.prog-bar { height: 100%; background: var(--green); border-radius: 100px; transition: width 0.4s ease; }
+
+/* TABLE */
+.table-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.loc-section {
+  background: rgba(235,242,246,0.85);
+  backdrop-filter: blur(20px);
+  border-radius: 18px;
+  border: 1.5px solid rgba(255,255,255,0.85);
+  box-shadow: 0 6px 24px rgba(60,92,104,0.14);
+  overflow: hidden;
+}
+.loc-body { max-height: 0; overflow: hidden; transition: max-height 0.45s cubic-bezier(0.4,0,0.2,1); }
+.loc-body.open { max-height: 99999px; }
+.loc-header-bar {
+  padding: 16px 22px;
+  display: flex; align-items: center; justify-content: space-between;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.18s;
+  gap: 14px;
+}
+.loc-header-bar:hover { background: rgba(255,255,255,0.25); }
+.loc-header-bar.open {
+  background: linear-gradient(135deg, rgba(60,92,104,0.92) 0%, rgba(40,70,65,0.90) 100%);
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+.loc-header-bar.open .loc-title { color: #fff; }
+.loc-header-bar.open .loc-addr { color: rgba(255,255,255,0.45); }
+.loc-header-bar.open .loc-count-badge { background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25); }
+.loc-title { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--teal); transition: color 0.2s; }
+.loc-addr { font-size: 12px; color: rgba(77,77,77,0.55); margin-top: 2px; transition: color 0.2s; }
+.loc-count-badge { background: var(--teal); color: #fff; border-radius: 100px; padding: 4px 14px; font-size: 12px; font-weight: 600; transition: all 0.2s; white-space: nowrap; }
+.loc-chevron {
+  width: 30px; height: 30px; flex-shrink: 0;
+  background: rgba(60,92,104,0.08); border: 1px solid rgba(60,92,104,0.15); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1), background 0.2s;
+}
+.loc-chevron svg { width: 13px; height: 13px; stroke: rgba(60,92,104,0.5); fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; transition: stroke 0.2s; }
+.loc-header-bar.open .loc-chevron { transform: rotate(180deg); background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.25); }
+.loc-header-bar.open .loc-chevron svg { stroke: rgba(255,255,255,0.75); }
+
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+thead tr { background: rgba(60,92,104,0.08); }
+th {
+  padding: 10px 14px; text-align: left; font-size: 10px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 1.2px; color: var(--teal);
+  white-space: nowrap; border-bottom: 1px solid rgba(255,255,255,0.5);
+}
+th.center { text-align: center; }
+td { padding: 10px 14px; vertical-align: middle; border-bottom: 1px solid rgba(255,255,255,0.35); }
+tr:last-child td { border-bottom: none; }
+tr.dropped { background: rgba(153,201,97,0.12); }
+tr.dropped td { opacity: 0.7; }
+
+.rank-num {
+  font-family: 'Playfair Display', serif; font-size: 15px; font-weight: 700;
+  color: var(--teal); width: 28px; text-align: center;
+}
+.rank-top { color: var(--coral); }
+.rank-mid { color: var(--amber); }
+
+.biz-name { font-weight: 600; color: var(--charcoal); font-size: 13.5px; line-height: 1.3; }
+.biz-address { font-size: 11.5px; color: rgba(77,77,77,0.55); margin-top: 2px; }
+.biz-phone { font-size: 11.5px; color: var(--teal); font-weight: 500; }
+.biz-hours { font-size: 11px; color: rgba(77,77,77,0.5); }
+
+.cat-badge {
+  display: inline-block; padding: 3px 10px; border-radius: 100px;
+  font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px;
+  white-space: nowrap;
+}
+.cat-corp { background: rgba(251,175,65,0.15); color: #b07800; }
+.cat-prof { background: rgba(60,92,104,0.12); color: var(--teal); }
+.cat-health { background: rgba(155,196,188,0.25); color: #2a6558; }
+.cat-event { background: rgba(153,201,97,0.2); color: #4a8020; }
+.cat-nonprofit { background: rgba(252,130,109,0.15); color: #b04030; }
+.cat-salon { background: rgba(252,130,109,0.18); color: #9a3060; }
+.cat-real { background: rgba(251,175,65,0.12); color: #8a6000; }
+
+.score-bar-wrap { display: flex; align-items: center; gap: 8px; min-width: 90px; }
+.score-num { font-weight: 700; font-size: 14px; min-width: 28px; text-align: right; }
+.score-num.high { color: var(--coral); }
+.score-num.med { color: var(--amber); }
+.score-num.low { color: rgba(77,77,77,0.5); }
+.score-mini { height: 5px; flex: 1; background: rgba(60,92,104,0.1); border-radius: 100px; overflow: hidden; }
+.score-fill { height: 100%; border-radius: 100px; }
+.score-fill.high { background: var(--coral); }
+.score-fill.med { background: var(--amber); }
+.score-fill.low { background: var(--sage); }
+
+.leave-badge {
+  font-size: 11px; font-weight: 600; padding: 3px 9px; border-radius: 6px;
+  display: inline-block;
+}
+.leave-both { background: rgba(60,92,104,0.12); color: var(--teal); }
+.leave-cater { background: rgba(153,201,97,0.18); color: #4a8020; }
+.leave-event { background: rgba(252,130,109,0.15); color: #9a3050; }
+
+/* CHECKBOX */
+.drop-check {
+  width: 22px; height: 22px; border-radius: 6px; border: 2px solid rgba(60,92,104,0.25);
+  background: rgba(255,255,255,0.6); cursor: pointer; display: flex; align-items: center; justify-content: center;
+  transition: all 0.15s; flex-shrink: 0; margin: 0 auto;
+}
+.drop-check.checked { background: var(--green); border-color: var(--green); }
+.drop-check svg { width: 12px; height: 12px; stroke: #fff; fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; display: none; }
+.drop-check.checked svg { display: block; }
+
+/* CONTACT INPUTS */
+.contact-cell { display: flex; flex-direction: column; gap: 4px; min-width: 160px; }
+.contact-input {
+  font-size: 12px; padding: 5px 9px; border-radius: 7px;
+  border: 1.5px solid rgba(60,92,104,0.15); background: rgba(255,255,255,0.55);
+  color: var(--charcoal); outline: none; font-family: 'DM Sans', sans-serif;
+  transition: border-color 0.15s, background 0.15s; width: 100%;
+}
+.contact-input::placeholder { color: rgba(77,77,77,0.35); }
+.contact-input:focus { border-color: var(--green); background: rgba(255,255,255,0.9); }
+.contact-input.filled { background: rgba(153,201,97,0.1); border-color: rgba(153,201,97,0.4); }
+
+.notes-input {
+  font-size: 12px; padding: 5px 9px; border-radius: 7px;
+  border: 1.5px solid rgba(60,92,104,0.15); background: rgba(255,255,255,0.55);
+  color: var(--charcoal); outline: none; font-family: 'DM Sans', sans-serif;
+  transition: border-color 0.15s; width: 100%; resize: none; height: 40px;
+}
+.notes-input:focus { border-color: var(--amber); background: rgba(255,255,255,0.9); }
+.notes-input.filled { background: rgba(251,175,65,0.08); border-color: rgba(251,175,65,0.35); }
+
+.week-select {
+  font-size: 12px; padding: 5px 9px; border-radius: 7px;
+  border: 1.5px solid rgba(60,92,104,0.15); background: rgba(255,255,255,0.55);
+  color: var(--charcoal); outline: none; font-family: 'DM Sans', sans-serif;
+  cursor: pointer; width: 100%;
+}
+
+/* HIDDEN ROW */
+tr.hidden-row { display: none; }
+
+/* EXPORT */
+.export-bar {
+  display: flex; gap: 10px; justify-content: flex-end; padding: 14px 22px;
+  border-top: 1px solid rgba(255,255,255,0.5); flex-wrap: wrap; align-items: center;
+}
+.export-btn {
+  padding: 8px 20px; border-radius: 100px; font-size: 12.5px; font-weight: 600;
+  cursor: pointer; border: none; transition: all 0.15s; font-family: 'DM Sans', sans-serif;
+}
+.btn-teal { background: var(--teal); color: #fff; }
+.btn-teal:hover { background: #2e4850; }
+.btn-green { background: var(--green); color: #fff; }
+.btn-green:hover { background: #7db54e; }
+.btn-outline { background: rgba(255,255,255,0.6); color: var(--teal); border: 1.5px solid rgba(60,92,104,0.25); }
+.btn-outline:hover { background: rgba(255,255,255,0.85); }
+.export-note { font-size: 11px; color: rgba(77,77,77,0.5); }
+
+/* SORT HEADER */
+th.sortable { cursor: pointer; user-select: none; }
+th.sortable:hover { color: var(--coral); }
+
+.tooltip-note { font-size: 11.5px; color: rgba(77,77,77,0.6); font-style: italic; line-height: 1.4; max-width: 180px; }
+
+@media (max-width: 900px) {
+  .header { padding: 32px 20px 28px; }
+  .progress-grid { grid-template-columns: repeat(2,1fr); }
+  table { font-size: 12px; }
+  th, td { padding: 8px 10px; }
+  .contact-cell { min-width: 120px; }
+}
+</style>
+</head>
+<body>
+      <h1>Local Business <span>Drop Tracker</span></h1>
+      <div class=&quot;header-sub&quot;>40 targets per location &amp;nbsp;·&amp;nbsp; Ranked by catering potential &amp;nbsp;·&amp;nbsp; 4-week program &amp;nbsp;·&amp;nbsp; June 16 – July 12, 2026</div>
+    </div>
+    <div class=&quot;stats-row&quot; id=&quot;globalStats&quot;>
+      <div class=&quot;stat-pill&quot;><span class=&quot;stat-num&quot; id=&quot;statTotal&quot;>0</span><span class=&quot;stat-lbl&quot;>Total Targets</span></div>
+      <div class=&quot;stat-pill&quot;><span class=&quot;stat-num&quot; id=&quot;statDropped&quot;>0</span><span class=&quot;stat-lbl&quot;>Dropped</span></div>
+      <div class=&quot;stat-pill&quot;><span class=&quot;stat-num&quot; id=&quot;statContacted&quot;>0</span><span class=&quot;stat-lbl&quot;>With Contact</span></div>
+      <div class=&quot;stat-pill&quot;><span class=&quot;stat-num&quot; id=&quot;statPct&quot;>0%</span><span class=&quot;stat-lbl&quot;>Complete</span></div>
+    </div>
+  </div>
+</div>
+
+<div class=&quot;main&quot;>
+
+  <!-- PROGRESS -->
+  <div class=&quot;progress-section&quot;>
+    <div class=&quot;progress-grid&quot;>
+      <div class=&quot;prog-loc&quot;>
+        <div class=&quot;prog-label&quot;>Standale (1004)</div>
+        <div class=&quot;prog-counts&quot; id=&quot;prog1004&quot;>0 <span>/ 40</span></div>
+        <div class=&quot;prog-bar-wrap&quot;><div class=&quot;prog-bar&quot; id=&quot;bar1004&quot; style=&quot;width:0%&quot;></div></div>
+      </div>
+      <div class=&quot;prog-loc&quot;>
+        <div class=&quot;prog-label&quot;>Bridge St (1002)</div>
+        <div class=&quot;prog-counts&quot; id=&quot;prog1002&quot;>0 <span>/ 40</span></div>
+        <div class=&quot;prog-bar-wrap&quot;><div class=&quot;prog-bar&quot; id=&quot;bar1002&quot; style=&quot;width:0%&quot;></div></div>
+      </div>
+      <div class=&quot;prog-loc&quot;>
+        <div class=&quot;prog-label&quot;>Breton Village (1003)</div>
+        <div class=&quot;prog-counts&quot; id=&quot;prog1003&quot;>0 <span>/ 40</span></div>
+        <div class=&quot;prog-bar-wrap&quot;><div class=&quot;prog-bar&quot; id=&quot;bar1003&quot; style=&quot;width:0%&quot;></div></div>
+      </div>
+      <div class=&quot;prog-loc&quot;>
+        <div class=&quot;prog-label&quot;>East Beltline (1001)</div>
+        <div class=&quot;prog-counts&quot; id=&quot;prog1001&quot;>0 <span>/ 40</span></div>
+        <div class=&quot;prog-bar-wrap&quot;><div class=&quot;prog-bar&quot; id=&quot;bar1001&quot; style=&quot;width:0%&quot;></div></div>
+      </div>
+    </div>
+    <div style=&quot;font-size:11.5px; color:rgba(77,77,77,0.5); text-align:center;&quot;>Check the box when dropped. Enter contact name and number when you talk to someone. Data saves automatically in your browser.</div>
+  </div>
+
+  <!-- CONTROLS -->
+  <div class=&quot;controls&quot;>
+    <div style=&quot;display:flex; align-items:center; gap:10px; flex-wrap:wrap; flex:1;&quot;>
+      <div>
+        <div class=&quot;brand-label&quot; style=&quot;margin-bottom:6px;&quot;>Filter</div>
+        <div class=&quot;filter-row&quot;>
+          <button class=&quot;filter-btn active&quot; onclick=&quot;setFilter('all',this)&quot;>All</button>
+          <button class=&quot;filter-btn&quot; onclick=&quot;setFilter('pending',this)&quot;>Not Dropped</button>
+          <button class=&quot;filter-btn&quot; onclick=&quot;setFilter('dropped',this)&quot;>Dropped</button>
+          <button class=&quot;filter-btn&quot; onclick=&quot;setFilter('contacted',this)&quot;>Has Contact</button>
         </div>
+      </div>
+      <div style=&quot;margin-top:20px;&quot;>
+        <input class=&quot;search-box&quot; type=&quot;text&quot; placeholder=&quot;Search businesses...&quot; oninput=&quot;doSearch(this.value)&quot; id=&quot;searchInput&quot;>
+      </div>
+    </div>
+    <div style=&quot;display:flex; gap:8px; align-items:flex-end; flex-wrap:wrap;&quot;>
+      <button class=&quot;export-btn btn-outline&quot; style=&quot;font-size:12px;&quot; onclick=&quot;expandAll()&quot;>Expand All</button>
+      <button class=&quot;export-btn btn-outline&quot; style=&quot;font-size:12px;&quot; onclick=&quot;collapseAll()&quot;>Collapse All</button>
+    </div>
+  </div>
+
+  <!-- TABLES -->
+  <div class=&quot;table-wrap&quot;>
+
+    <!-- STANDALE 1004 -->
+    <div class=&quot;loc-section&quot; id=&quot;loc-1004&quot;>
+      <div class=&quot;loc-header-bar open&quot; id=&quot;hdr-1004&quot; onclick=&quot;toggleSection('1004')&quot;>
+        <div>
+          <div class=&quot;loc-title&quot;>Standale (1004) &amp;nbsp;·&amp;nbsp; <span style=&quot;font-size:14px; color:var(--coral); font-family:'DM Sans',sans-serif; font-weight:600;&quot;>Priority Location</span></div>
+          <div class=&quot;loc-addr&quot;>355 Wilson Ave NW, Walker, MI 49534 &amp;nbsp;·&amp;nbsp; (616) 591-9806 &amp;nbsp;·&amp;nbsp; 3–5 mile radius</div>
+        </div>
+        <div style=&quot;display:flex; align-items:center; gap:10px;&quot;>
+          <div class=&quot;loc-count-badge&quot; id=&quot;badge1004&quot;>0 / 40 dropped</div>
+          <div class=&quot;loc-chevron&quot;><svg viewBox=&quot;0 0 24 24&quot;><polyline points=&quot;6 9 12 15 18 9&quot;/></svg></div>
+        </div>
+      </div>
+      <div class=&quot;loc-body open&quot; id=&quot;body-1004&quot;>
+        <table>
+          <thead><tr>
+            <th class=&quot;center&quot;>#</th><th>Business</th><th>Category</th><th>Score</th><th>Leave</th><th class=&quot;center&quot;>Week</th><th class=&quot;center&quot;>Dropped</th><th>Contact Name &amp;amp; Phone</th><th>Notes</th>
+          </tr></thead>
+          <tbody id=&quot;tbody-1004&quot;></tbody>
+        </table>
+        <div class=&quot;export-bar&quot;>
+          <span class=&quot;export-note&quot;>Standale (1004)</span>
+          <button class=&quot;export-btn btn-outline&quot; onclick=&quot;exportCSV('1004')&quot;>Export CSV</button>
+          <button class=&quot;export-btn btn-teal&quot; onclick=&quot;clearLoc('1004')&quot;>Clear Location</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- BRIDGE STREET 1002 -->
+    <div class=&quot;loc-section&quot; id=&quot;loc-1002&quot;>
+      <div class=&quot;loc-header-bar open&quot; id=&quot;hdr-1002&quot; onclick=&quot;toggleSection('1002')&quot;>
+        <div>
+          <div class=&quot;loc-title&quot;>Bridge Street (1002) &amp;nbsp;·&amp;nbsp; <span style=&quot;font-size:14px; color:var(--coral); font-family:'DM Sans',sans-serif; font-weight:600;&quot;>Priority Location</span></div>
+          <div class=&quot;loc-addr&quot;>434 Bridge St NW, Grand Rapids, MI 49504 &amp;nbsp;·&amp;nbsp; (616) 855-6907 &amp;nbsp;·&amp;nbsp; 3–5 mile radius</div>
+        </div>
+        <div style=&quot;display:flex; align-items:center; gap:10px;&quot;>
+          <div class=&quot;loc-count-badge&quot; id=&quot;badge1002&quot;>0 / 40 dropped</div>
+          <div class=&quot;loc-chevron&quot;><svg viewBox=&quot;0 0 24 24&quot;><polyline points=&quot;6 9 12 15 18 9&quot;/></svg></div>
+        </div>
+      </div>
+      <div class=&quot;loc-body open&quot; id=&quot;body-1002&quot;>
+        <table>
+          <thead><tr>
+            <th class=&quot;center&quot;>#</th><th>Business</th><th>Category</th><th>Score</th><th>Leave</th><th class=&quot;center&quot;>Week</th><th class=&quot;center&quot;>Dropped</th><th>Contact Name &amp;amp; Phone</th><th>Notes</th>
+          </tr></thead>
+          <tbody id=&quot;tbody-1002&quot;></tbody>
+        </table>
+        <div class=&quot;export-bar&quot;>
+          <span class=&quot;export-note&quot;>Bridge Street (1002)</span>
+          <button class=&quot;export-btn btn-outline&quot; onclick=&quot;exportCSV('1002')&quot;>Export CSV</button>
+          <button class=&quot;export-btn btn-teal&quot; onclick=&quot;clearLoc('1002')&quot;>Clear Location</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- BRETON VILLAGE 1003 -->
+    <div class=&quot;loc-section&quot; id=&quot;loc-1003&quot;>
+      <div class=&quot;loc-header-bar open&quot; id=&quot;hdr-1003&quot; onclick=&quot;toggleSection('1003')&quot;>
+        <div>
+          <div class=&quot;loc-title&quot;>Breton Village (1003)</div>
+          <div class=&quot;loc-addr&quot;>1962 Breton Rd SE, Grand Rapids, MI 49506 &amp;nbsp;·&amp;nbsp; (616) 202-1385 &amp;nbsp;·&amp;nbsp; 3–5 mile radius</div>
+        </div>
+        <div style=&quot;display:flex; align-items:center; gap:10px;&quot;>
+          <div class=&quot;loc-count-badge&quot; id=&quot;badge1003&quot;>0 / 40 dropped</div>
+          <div class=&quot;loc-chevron&quot;><svg viewBox=&quot;0 0 24 24&quot;><polyline points=&quot;6 9 12 15 18 9&quot;/></svg></div>
+        </div>
+      </div>
+      <div class=&quot;loc-body open&quot; id=&quot;body-1003&quot;>
+        <table>
+          <thead><tr>
+            <th class=&quot;center&quot;>#</th><th>Business</th><th>Category</th><th>Score</th><th>Leave</th><th class=&quot;center&quot;>Week</th><th class=&quot;center&quot;>Dropped</th><th>Contact Name &amp;amp; Phone</th><th>Notes</th>
+          </tr></thead>
+          <tbody id=&quot;tbody-1003&quot;></tbody>
+        </table>
+        <div class=&quot;export-bar&quot;>
+          <span class=&quot;export-note&quot;>Breton Village (1003)</span>
+          <button class=&quot;export-btn btn-outline&quot; onclick=&quot;exportCSV('1003')&quot;>Export CSV</button>
+          <button class=&quot;export-btn btn-teal&quot; onclick=&quot;clearLoc('1003')&quot;>Clear Location</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- EAST BELTLINE 1001 -->
+    <div class=&quot;loc-section&quot; id=&quot;loc-1001&quot;>
+      <div class=&quot;loc-header-bar open&quot; id=&quot;hdr-1001&quot; onclick=&quot;toggleSection('1001')&quot;>
+        <div>
+          <div class=&quot;loc-title&quot;>East Beltline (1001)</div>
+          <div class=&quot;loc-addr&quot;>1600 E Beltline Ave NE, Grand Rapids, MI 49525 &amp;nbsp;·&amp;nbsp; (616) 301-8171 &amp;nbsp;·&amp;nbsp; 3–5 mile radius</div>
+        </div>
+        <div style=&quot;display:flex; align-items:center; gap:10px;&quot;>
+          <div class=&quot;loc-count-badge&quot; id=&quot;badge1001&quot;>0 / 40 dropped</div>
+          <div class=&quot;loc-chevron&quot;><svg viewBox=&quot;0 0 24 24&quot;><polyline points=&quot;6 9 12 15 18 9&quot;/></svg></div>
+        </div>
+      </div>
+      <div class=&quot;loc-body open&quot; id=&quot;body-1001&quot;>
+        <table>
+          <thead><tr>
+            <th class=&quot;center&quot;>#</th><th>Business</th><th>Category</th><th>Score</th><th>Leave</th><th class=&quot;center&quot;>Week</th><th class=&quot;center&quot;>Dropped</th><th>Contact Name &amp;amp; Phone</th><th>Notes</th>
+          </tr></thead>
+          <tbody id=&quot;tbody-1001&quot;></tbody>
+        </table>
+        <div class=&quot;export-bar&quot;>
+          <span class=&quot;export-note&quot;>East Beltline (1001)</span>
+          <button class=&quot;export-btn btn-outline&quot; onclick=&quot;exportCSV('1001')&quot;>Export CSV</button>
+          <button class=&quot;export-btn btn-teal&quot; onclick=&quot;clearLoc('1001')&quot;>Clear Location</button>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /table-wrap -->
+
+  
+</div>
+
+<script>
+// ══════════════════════════════════════════════════════
+// DATA: SCORED + RANKED TARGET LISTS
+// Score criteria (100 pts):
+//   Business Size (25): large corp=25, mid=18, small=10
+//   Budget Likelihood (20): financial/legal=20, corporate=16, healthcare=12, nonprofit=6
+//   Repeat Potential (20): recurring lunch=20, quarterly events=14, one-time=8
+//   Decision-Maker Access (15): owner-op=15, office mgr=11, HR dept=7
+//   Category Fit (10): professional svc=10, corporate=9, healthcare=7, nonprofit=5
+//   Proximity (10): <0.5mi=10, 0.5-1=9, 1-2=8, 2-3=6, 3-5=4
+// ══════════════════════════════════════════════════════
+const DATA = {
+
+'1004': [
+  // RANK 1-10: PRIORITY TIER (score 80+)
+  { name:'Meijer Corporate HQ', address:'2929 Walker Ave NW, Walker', phone:'(616) 453-6711', hours:'M-F 8am-5pm', cat:'Corporate', catClass:'cat-corp', score:94, leave:'both', week:1, note:'Largest employer in area. 3,000+ corporate staff. HR and events team on-site. Ask for Events Coordinator or HR Director. Highest volume catering potential in the system.' },
+  { name:'Gentex Corporation', address:'600 N Centennial St, Zeeland (Walker office at 2600 Walker Ave NW)', phone:'(616) 453-2341', hours:'M-F 7:30am-5pm', cat:'Corporate', catClass:'cat-corp', score:91, leave:'both', week:1, note:'Fortune 500 adjacent. Large Walker-area engineering and admin staff. Monthly team lunches, quarterly events. Ask for Office Services or HR.' },
+  { name:'H.B. Fuller Company', address:'2727 Kinney Ave NW, Walker', phone:'(616) 453-8271', hours:'M-F 8am-5pm', cat:'Corporate', catClass:'cat-corp', score:88, leave:'cater', week:1, note:'Manufacturing HQ. 500+ employees. Staff appreciation, holiday lunches, onboarding events. Ask for HR or Office Manager.' },
+  { name:'H&amp;S Companies', address:'4575 Lake Michigan Dr NW', phone:'(616) 453-8551', hours:'M-F 8am-5pm', cat:'Professional Services', catClass:'cat-prof', score:86, leave:'both', week:1, note:'Multi-line financial services. Partners are decision makers. Client appreciation events and team dinners. High-ticket buyer profile.' },
+  { name:'Edward Jones (Craig Taetsch)', address:'4328 3 Mile Rd NW #100', phone:'(616) 453-2009', hours:'M-F 8:30am-5pm', cat:'Professional Services', catClass:'cat-prof', score:84, leave:'both', week:1, note:'Financial advisor. Client appreciation lunches and team events are built into their business model. Owner is the buyer. Very closable.' },
+  { name:'Steenland Insurance Agency', address:'975 3 Mile Rd NW', phone:'(616) 784-3322', hours:'M-Th 9am-5pm, F until 4pm', cat:'Professional Services', catClass:'cat-prof', score:82, leave:'both', week:1, note:'Family-owned agency. 89 reviews. Owner makes all decisions. Staff and client events quarterly. Fast close cycle.' },
+  { name:'Macatawa Bank (Walker Branch)', address:'2990 Walker Ave NW', phone:'(616) 820-1444', hours:'M-F 9am-5pm, Sa 9am-noon', cat:'Corporate', catClass:'cat-corp', score:81, leave:'both', week:2, note:'Regional bank with team of 25+ branch staff. Staff lunches, client appreciation, manager meetings. Ask for Branch Manager.' },
+  { name:'United Financial Credit Union (Walker)', address:'4530 Lake Michigan Dr NW', phone:'(616) 364-9444', hours:'M-F 9am-5pm, Sa 9am-noon', cat:'Corporate', catClass:'cat-corp', score:80, leave:'cater', week:2, note:'Credit union staff team. Regular staff lunches. Ask for Branch Manager or Operations.' },
+  { name:'Walker City Hall', address:'4243 Remembrance Rd NW, Walker', phone:'(616) 791-6800', hours:'M-F 8am-5pm', cat:'Corporate', catClass:'cat-corp', score:79, leave:'both', week:2, note:'City government staff. Meetings, staff appreciations, department events. Ask for City Manager office.' },
+  { name:'Grand Valley State Univ. (Pew Campus, nearby)', address:'401 W Fulton St (GVSU event contact)', phone:'(616) 331-5000', hours:'M-F 8am-5pm', cat:'Corporate', catClass:'cat-corp', score:78, leave:'both', week:2, note:'GVSU department catering for faculty meetings, staff events, receptions. Ask for Catering and Conference Services.' },
+
+  // RANK 11-20: STRONG TIER (score 70-79)
+  { name:'Carroll Family &amp; Cosmetic Dentistry', address:'4310 Leonard St NW #202', phone:'(616) 453-6323', hours:'M-Th 8am-5pm', cat:'Healthcare', catClass:'cat-health', score:77, leave:'cater', week:2, note:'5-star, 376 reviews. Staff team lunches twice monthly. Office manager is the buyer. Very routine order potential.' },
+  { name:'Walker Dental Care', address:'348 Wilson Ave NW', phone:'(616) 898-3452', hours:'M-F varies', cat:'Healthcare', catClass:'cat-health', score:76, leave:'cater', week:2, note:'Same street as MB Standale. 289 reviews. Proximity and visibility makes this an easy drop and easy reorder.' },
+  { name:'Spectrum Health Lemmen-Holton Cancer Pavilion (nearby)', address:'145 Michigan St NE (admin contact)', phone:'(616) 391-1230', hours:'M-F 8am-5pm', cat:'Healthcare', catClass:'cat-health', score:75, leave:'both', week:2, note:'Large healthcare team. Department appreciation lunches, care team events. Ask for Volunteer Services or Department Admin.' },
+  { name:'Lighthouse Communities', address:'3910 Remembrance Rd NW', phone:'(616) 453-6642', hours:'M-F 8am-5pm', cat:'Corporate', catClass:'cat-corp', score:75, leave:'both', week:3, note:'Property management company. Staff team of 40+. Monthly staff meetings, quarterly celebrations. Ask for Office Manager.' },
+  { name:'West Michigan Mortgage (Walker area)', address:'3440 W River Dr NW', phone:'(616) 920-4000', hours:'M-F 9am-6pm', cat:'Professional Services', catClass:'cat-prof', score:74, leave:'both', week:3, note:'Mortgage team. Closing parties, agent appreciation, team events. Real estate adjacent celebratory culture.' },
+  { name:'The Riverbird Events', address:'3585 River Hill Dr', phone:'(269) 492-5365', hours:'M-F 10am-6pm', cat:'Event Partner', catClass:'cat-event', score:74, leave:'event', week:1, note:'5-star wedding venue. Their couples need rehearsal dinner venue. Referral partnership — every booked bride is a MB lead.' },
+  { name:'Sparrow Physical Therapy (Walker)', address:'4190 Lake Michigan Dr NW', phone:'(616) 884-9180', hours:'M-F 7am-6pm', cat:'Healthcare', catClass:'cat-health', score:73, leave:'cater', week:3, note:'PT clinic, 80+ staff across shifts. Team lunches, appreciation events. Ask for clinic director.' },
+  { name:'West Michigan Center for Arts &amp; Technology (WMCAT)', address:'1761 Leonard St NW', phone:'(616) 485-4585', hours:'M-F 9am-5pm', cat:'Nonprofit', catClass:'cat-nonprofit', score:72, leave:'both', week:3, note:'Education nonprofit with corporate donor base. Fundraisers, board dinners, donor appreciation events. Ask for Development Director.' },
+  { name:'Walker Area Community Center', address:'4316 Remembrance Rd NW', phone:'(616) 453-8144', hours:'M-F 8am-9pm', cat:'Nonprofit', catClass:'cat-nonprofit', score:71, leave:'both', week:3, note:'Community org with regular gatherings. Staff team lunches, volunteer appreciation, fundraisers.' },
+  { name:'Affinity Financial Group', address:'3200 Lake Michigan Dr NW #301', phone:'(616) 776-0600', hours:'M-F 9am-5pm', cat:'Professional Services', catClass:'cat-prof', score:71, leave:'both', week:3, note:'Financial planning team. Client appreciation events, team lunches. Decision-maker is the managing partner.' },
+
+  // RANK 21-30: SOLID TIER (score 60-70)
+  { name:'Covenant Eyes (Walker HQ)', address:'3920 Varsity Dr NW, Walker', phone:'(616) 837-9898', hours:'M-F 8am-5pm', cat:'Corporate', catClass:'cat-corp', score:70, leave:'cater', week:3, note:'Tech company HQ, 100+ employees. Staff lunches, team celebrations. Ask for HR or Office Manager.' },
+  { name:'Great Lakes Higher Education', address:'700 Monroe Ave NW #300', phone:'(608) 246-1800', hours:'M-F 8am-5pm', cat:'Corporate', catClass:'cat-corp', score:69, leave:'both', week:3, note:'Financial services company. 50+ staff. Team events, staff appreciation. Ask for Office Manager.' },
+  { name:'West Michigan Whitecaps (offices)', address:'4500 W River Dr NE (admin)', phone:'(616) 784-4131', hours:'M-F 9am-5pm', cat:'Corporate', catClass:'cat-corp', score:68, leave:'both', week:4, note:'Minor league baseball org. Corporate catering for staff events, sponsor lunches, front-office team meals. Ask for GM office.' },
+  { name:'Edward Jones (Walker additional branch)', address:'3175 Remembrance Rd NW #105', phone:'(616) 735-1230', hours:'M-F 8:30am-5pm', cat:'Professional Services', catClass:'cat-prof', score:67, leave:'both', week:4, note:'Second EJ branch in radius. Same buyer profile as #5. Client appreciation and team lunches.' },
+  { name:'Mary Free Bed Rehabilitation (outpatient Walker)', address:'4200 Lake Michigan Dr NW', phone:'(616) 840-8000', hours:'M-F 7am-6pm', cat:'Healthcare', catClass:'cat-health', score:67, leave:'cater', week:4, note:'Rehab clinic staff team. Team lunches, appreciation events. Ask for clinic operations.' },
+  { name:'Goodwill Industries of Greater GR (NW store office)', address:'2055 Alpine Ave NW', phone:'(616) 532-0039', hours:'M-F 8am-5pm', cat:'Nonprofit', catClass:'cat-nonprofit', score:66, leave:'both', week:4, note:'Large nonprofit with regional staff. Fundraiser catering, staff appreciation. Ask for District Manager.' },
+  { name:'Northside Christian School', address:'2601 Imlay City Dr NW', phone:'(616) 453-0700', hours:'M-F 7:30am-3:30pm', cat:'Nonprofit', catClass:'cat-nonprofit', score:65, leave:'both', week:4, note:'Private school. Faculty appreciation events, school year kickoffs, board dinners. Ask for Principal or Admin office.' },
+  { name:'Northwest Ottawa Community Credit Union', address:'4550 Lake Michigan Dr NW', phone:'(616) 842-3330', hours:'M-F 9am-5pm', cat:'Corporate', catClass:'cat-corp', score:65, leave:'cater', week:4, note:'Credit union staff. Team lunches and staff events. Ask for Branch Manager.' },
+  { name:'OAM Physical Therapy (Walker)', address:'3800 Lake Michigan Dr NW #301', phone:'(616) 459-7101', hours:'M-F 7am-6pm', cat:'Healthcare', catClass:'cat-health', score:64, leave:'cater', week:4, note:'PT clinic, same team culture as OAM Breton. Monthly team lunches. Ask for office manager.' },
+  { name:'Land Conservancy of West Michigan', address:'237 Steele St NW', phone:'(616) 451-9476', hours:'M-Th 8:30am-5pm', cat:'Nonprofit', catClass:'cat-nonprofit', score:63, leave:'both', week:4, note:'Mission-driven. Fundraiser events and team catering. Ask for Executive Director.' },
+
+  // RANK 31-40: WARM TIER (score 50-62)
+  { name:'Autism Support of Kent County', address:'1919 Boston St SE (NW office contact)', phone:'(616) 974-0947', hours:'M-F 9am-5pm', cat:'Nonprofit', catClass:'cat-nonprofit', score:62, leave:'both', week:4, note:'Advocacy nonprofit. Fundraisers and community catering. Warm audience.' },
+  { name:'Hope for Single Moms', address:'2130 Blueberry Dr NW', phone:'(616) 485-7594', hours:'M-Th 10am-6pm', cat:'Nonprofit', catClass:'cat-nonprofit', score:61, leave:'both', week:4, note:'Warm team. Fundraiser events. Small budget but high relationship value.' },
+  { name:'West Michigan Aviation Academy (admin)', address:'5100 Patterson Ave SE (contact for Walker-area events)', phone:'(616) 241-8164', hours:'M-F 8am-4pm', cat:'Nonprofit', catClass:'cat-nonprofit', score:60, leave:'both', week:4, note:'Charter school with donor events, board dinners. Ask for Administrative Director.' },
+  { name:'Studio C Salon (Walker)', address:'3450 Lake Michigan Dr NW', phone:'(616) 318-4600', hours:'Tu-Sa varies', cat:'Salon', catClass:'cat-salon', score:59, leave:'event', week:4, note:'High-end salon. Clients celebrate bridal showers, girls days. Drop event cards for them to share.' },
+  { name:'Elements Massage (Walker)', address:'4210 Lake Michigan Dr NW', phone:'(616) 735-3030', hours:'M-Su 9am-9pm', cat:'Healthcare', catClass:'cat-health', score:58, leave:'event', week:4, note:'Wellness center. Bachelorette and celebration clients. Leave event cards at front desk.' },
+  { name:'Gentle Dental Walker', address:'3205 Remembrance Rd NW #120', phone:'(616) 453-8272', hours:'M-F varies', cat:'Healthcare', catClass:'cat-health', score:57, leave:'cater', week:4, note:'Dental group practice. Staff lunches and team events. Ask for office manager.' },
+  { name:'Family Christian Academy (Walker)', address:'2959 Walker Ave NW', phone:'(616) 784-0200', hours:'M-F 8am-4pm', cat:'Nonprofit', catClass:'cat-nonprofit', score:56, leave:'cater', week:4, note:'Private school. Faculty events, year-end celebrations. Ask for admin.' },
+  { name:'Spectrum Health (Butterworth admin offices)', address:'100 Michigan St NE (admin contact)', phone:'(616) 391-1774', hours:'M-F 8am-5pm', cat:'Healthcare', catClass:'cat-health', score:55, leave:'both', week:4, note:'Large healthcare system admin team. Department catering and team lunches. Ask for Event Coordinator or Dept Admin.' },
+  { name:'John Ball Zoological Society (admin)', address:'1300 W Fulton St', phone:'(616) 336-4300', hours:'M-F 9am-5pm', cat:'Nonprofit', catClass:'cat-nonprofit', score:53, leave:'both', week:4, note:'Nonprofit events team. Fundraiser dinners, donor appreciation catering. Ask for Events Manager.' },
+  { name:'Bethany Christian Services (Walker area)', address:'901 Eastern Ave NE (area contact)', phone:'(616) 224-7610', hours:'M-F 8:30am-5pm', cat:'Nonprofit', catClass:'cat-nonprofit', score:51, leave:'both', week:4, note:'Nonprofit. Staff appreciation events, fundraisers. Ask for Development or Office Manager.' },
+],
+
+// ══════════════════════════════════════════════════════
+// BRIDGE STREET 1002 — PRIORITY LOCATION
+// ══════════════════════════════════════════════════════
+'1002': [
+  { name:'Varnum LLP', address:'333 Bridge St NW #1700', phone:'(616) 336-6000', hours:'M-F 8am-5pm', cat:'Professional Services', catClass:'cat-prof', score:92, leave:'both', week:1, note:'Grand Rapids largest law firm. 200+ attorneys and staff. Associate events, client dinners, staff appreciation. Ask for Office Administrator. Highest-value single target on Bridge St.' },
+  { name:'Lacks Enterprises (HQ)', address:'5460 Cascade Rd SE (GR corp contact for Bridge-area events)', phone:'(616) 949-6570', hours:'M-F 8am-5pm', cat:'Corporate', catClass:'cat-corp', score:89, leave:'both', week:1, note:'Major GR employer, 4,500+ employees. Corporate catering for leadership events and team lunches. Ask for HR Events.' },
+  { name:'West Michigan Works! (NW office)', address:'121 Franklin St SE', phone:'(616) 336-4100', hours:'M-F 8am-5pm', cat:'Corporate', catClass:'cat-corp', score:85, leave:'both', week:1, note:'Workforce development agency with 40+ staff. Monthly team lunches, quarterly all-hands catering. Ask for Site Manager.' },
+  { name:'All Buttoned Up Events', address:'317 Bristol Ave NW', phone:'(248) 770-7548', hours:'M-F 9am-5pm', cat:'Event Partner', catClass:'cat-event', score:84, leave:'event', week:1, note:'5-star wedding coordinator, 72 reviews. Every client is a bridal shower or rehearsal dinner lead. Propose a mutual referral — she sends clients to MB, MB sends tasting inquiries to her.' },
+  { name:'Futtitinni Events', address:'538 Bond Ave NW', phone:'(248) 303-7537', hours:'M-Sa 9am-6pm', cat:'Event Partner', catClass:'cat-event', score:84, leave:'event', week:1, note:'5-star GR wedding planner. Same referral pitch as All Buttoned Up. Two planners in the same radius doubles your referral pipeline.' },
+  { name:'The Best Day Details', address:'77 Monroe Center St NW', phone:'(616) 558-9144', hours:'M-F 9am-5pm', cat:'Event Partner', catClass:'cat-event', score:83, leave:'event', week:1, note:'GR highest-rated wedding coordinator, 316 reviews. A dedicated visit, not just a drop. This one relationship could fill the event calendar at 1002 for the year.' },
+  { name:'Posh Petals', address:'806 Bridge St NW', phone:'(616) 363-3337', hours:'M-F 9am-5pm', cat:'Event Partner', catClass:'cat-event', score:82, leave:'event', week:1, note:'High-volume wedding florist, 81 reviews, same street. Every bride she flowers is a bridal shower or rehearsal dinner MB could host.' },
+  { name:'Grand Rapids Art Museum (admin)', address:'101 Monroe Center St NW', phone:'(616) 831-1000', hours:'M-F 9am-5pm', cat:'Nonprofit', catClass:'cat-nonprofit', score:80, leave:'both', week:1, note:'Major GR institution with large donor and corporate events calendar. Staff catering and donor reception catering. Ask for Events Manager or Catering Coordinator.' },
+  { name:'Spectrum Health Corporate (Medical Mile admin)', address:'25 Michigan St NE', phone:'(616) 391-1774', hours:'M-F 8am-5pm', cat:'Corporate', catClass:'cat-corp', score:79, leave:'both', week:1, note:'Largest employer in GR. Admin and leadership team catering for department meetings and leadership events. Ask for Catering Coordinator.' },
+  { name:'Stuart Law, PLC', address:'429 Turner Ave NW', phone:'(616) 450-9885', hours:'M-F 9am-5pm', cat:'Professional Services', catClass:'cat-prof', score:78, leave:'both', week:2, note:'4.8-star boutique firm, 96 reviews. Owner is the decision maker. Monthly catering budget likely. Staff lunches and client appreciation.' },
+
+  { name:'DeVos Place Convention Center (admin catering contact)', address:'303 Monroe Ave NW', phone:'(616) 742-6000', hours:'M-F 8am-5pm', cat:'Corporate', catClass:'cat-corp', score:77, leave:'both', week:2, note:'Convention center event staff catering. Morning setup catering and staff meals. Ask for Event Operations Manager.' },
+  { name:'Grand Rapids Community Foundation', address:'185 Oakes St SW', phone:'(616) 454-1751', hours:'M-F 8:30am-5pm', cat:'Nonprofit', catClass:'cat-nonprofit', score:76, leave:'both', week:2, note:'Major GR philanthropy org. Donor events, board dinners, staff appreciation. Ask for Events Coordinator. Well-funded budget.' },
+  { name:'Crowned Creative Studio', address:'240 Front Ave SW', phone:'(616) 328-4208', hours:'M-F 9am-8pm, Sa 8am-9pm', cat:'Event Partner', catClass:'cat-event', score:75, leave:'event', week:2, note:'5-star wedding and event photography, 29 reviews. Their clients are celebrating milestones constantly. Referral partner.' },
+  { name:'Trinity Chiropractic', address:'448 Leonard St NW', phone:'(616) 805-4478', hours:'Tu-F varies', cat:'Healthcare', catClass:'cat-health', score:74, leave:'cater', week:2, note:'5-star, owner-operated, 32 reviews. Patient appreciation events and staff lunches. Owner is the buyer.' },
+  { name:'Grandville Medical (NW clinic)', address:'1000 Lake Michigan Dr NW', phone:'(616) 233-6350', hours:'M-F 8am-5pm', cat:'Healthcare', catClass:'cat-health', score:73, leave:'cater', week:2, note:'Medical group practice. Department team lunches and staff events. Ask for Practice Manager.' },
+  { name:'Grand Rapids Young Professionals', address:'111 Lyon St NW (event contact)', phone:'(616) 771-0588', hours:'M-F 9am-5pm', cat:'Nonprofit', catClass:'cat-nonprofit', score:72, leave:'both', week:2, note:'Professional org with regular events. Catering for mixers, award dinners. Ask for Events Director.' },
+  { name:'Access of West Michigan', address:'820 Monroe Ave NW #218', phone:'(616) 459-6281', hours:'M-F 8am-5pm', cat:'Nonprofit', catClass:'cat-nonprofit', score:71, leave:'both', week:2, note:'Disability advocacy nonprofit. Staff events, fundraiser catering. Warm community partner.' },
+  { name:'Gilda\'s Club Grand Rapids', address:'1806 Bridge St NW', phone:'(616) 453-8300', hours:'M-Th 9am-9pm, F until 1pm', cat:'Nonprofit', catClass:'cat-nonprofit', score:70, leave:'both', week:3, note:'On Bridge St corridor, 145 reviews. Staff catering and fundraiser events. Warm community connection.' },
+  { name:'West Michigan Hispanic Chamber', address:'100 Cesar E. Chavez Ave SW', phone:'(616) 975-5200', hours:'M-F 9am-5pm', cat:'Nonprofit', catClass:'cat-nonprofit', score:70, leave:'both', week:3, note:'Chamber with active member events calendar. Catering for luncheons, galas, mixers. Ask for Events staff.' },
+  { name:'John Ball Area Neighbors', address:'1120 Bridge St NW', phone:'(616) 456-9190', hours:'M-F 9am-3pm', cat:'Nonprofit', catClass:'cat-nonprofit', score:69, leave:'both', week:3, note:'Neighborhood association on same corridor. Community events and gatherings. Warm Bridge St pitch.' },
+
+  { name:'Perrigo Company (GR regional office)', address:'515 Eastern Ave SE', phone:'(616) 453-8950', hours:'M-F 8am-5pm', cat:'Corporate', catClass:'cat-corp', score:68, leave:'both', week:3, note:'Pharma company. Regional team catering for staff events and leadership meetings. Ask for HR or Office Services.' },
+  { name:'Autocam Corporation (HQ nearby)', address:'4436 Broadmoor Ave SE', phone:'(616) 698-0707', hours:'M-F 8am-5pm', cat:'Corporate', catClass:'cat-corp', score:67, leave:'cater', week:3, note:'Manufacturing HQ. Leadership team catering and staff appreciation events. Ask for HR.' },
+  { name:'Lighthouse Real Estate', address:'448 Bridge St NW', phone:'(616) 235-3600', hours:'M-F 9am-6pm', cat:'Professional Services', catClass:'cat-prof', score:66, leave:'both', week:3, note:'Real estate office on same street. Closing lunches, agent team events. Owner is a buyer.' },
+  { name:'Clark Retirement Community (Bridge campus)', address:'1551 Franklin St SE', phone:'(616) 452-4100', hours:'M-F 8am-5pm', cat:'Healthcare', catClass:'cat-health', score:65, leave:'cater', week:3, note:'Senior living facility. Staff team lunches and department events. Ask for Dining or Activities Director.' },
+  { name:'Mel Trotter Ministries', address:'225 Commerce Ave SW', phone:'(616) 454-8249', hours:'M-F 8am-5pm', cat:'Nonprofit', catClass:'cat-nonprofit', score:64, leave:'both', week:3, note:'Nonprofit. Staff appreciation events, volunteer recognition catering. Warm community partner.' },
+  { name:'Urban Institute for Contemporary Arts', address:'2 W Fulton St', phone:'(616) 454-7000', hours:'M-F 10am-5pm', cat:'Nonprofit', catClass:'cat-nonprofit', score:64, leave:'both', week:3, note:'Arts nonprofit. Opening events, board dinners, donor receptions. Ask for Events Manager.' },
+  { name:'Grand Rapids Ballet (admin)', address:'341 Ellsworth Ave SW', phone:'(616) 454-4771', hours:'M-F 9am-5pm', cat:'Nonprofit', catClass:'cat-nonprofit', score:63, leave:'both', week:4, note:'Performing arts org. Patron events, board meetings, gala catering. Ask for Development Director.' },
+  { name:'Aquinas College (Cascade-area events)', address:'1607 Robinson Rd SE', phone:'(616) 632-8900', hours:'M-F 8am-5pm', cat:'Corporate', catClass:'cat-corp', score:62, leave:'both', week:4, note:'Private college. Faculty events, alumni dinners, departmental catering. Ask for Conference Services.' },
+  { name:'Bridge Street Ministries', address:'1034 Bridge St NW', phone:'N/A', hours:'M-Sa 8am-5pm', cat:'Nonprofit', catClass:'cat-nonprofit', score:60, leave:'both', week:4, note:'Community center on same street. Staff catering and community events. Warm Brand Roots connection.' },
+  { name:'Grand Rapids Public Library (Main)', address:'111 Library St NE', phone:'(616) 988-5400', hours:'M-Th 9am-9pm', cat:'Nonprofit', catClass:'cat-nonprofit', score:59, leave:'both', week:4, note:'Library system admin. Staff events, community program catering. Ask for Branch Manager.' },
+
+  { name:'Priority Health (GR office)', address:'1231 E Beltline Ave NE', phone:'(616) 942-0954', hours:'M-F 8am-5pm', cat:'Corporate', catClass:'cat-corp', score:58, leave:'both', week:4, note:'Health insurance company. Corporate catering for team meetings and events. Ask for Facilities or HR.' },
+  { name:'Schupan &amp; Sons (admin offices)', address:'5580 S State Rd, Ionia (local contact GR)', phone:'(269) 349-4033', hours:'M-F 8am-5pm', cat:'Corporate', catClass:'cat-corp', score:57, leave:'cater', week:4, note:'Regional distribution company. Team lunches and staff events. Ask for HR.' },
+  { name:'Cherry Health (admin)', address:'100 Cherry St SE', phone:'(616) 965-8200', hours:'M-F 8am-5pm', cat:'Healthcare', catClass:'cat-health', score:57, leave:'cater', week:4, note:'Community health nonprofit, large staff. Department team lunches and appreciation events. Ask for HR or Office Manager.' },
+  { name:'West Michigan Academy of Arts &amp; Academics', address:'2400 Kalamazoo Ave SE', phone:'(616) 452-9225', hours:'M-F 7:30am-4pm', cat:'Nonprofit', catClass:'cat-nonprofit', score:55, leave:'both', week:4, note:'Charter school. Staff appreciation, year-end events, board dinners. Ask for Principal.' },
+  { name:'Kids\' Food Basket', address:'1300 Plymouth Ave NE', phone:'(616) 235-4582', hours:'M-F 9am-5pm', cat:'Nonprofit', catClass:'cat-nonprofit', score:54, leave:'both', week:4, note:'Food security nonprofit with active donor base. Fundraiser catering, volunteer appreciation events. Ask for Events Manager.' },
+  { name:'Steelcase (downtown showroom/event contact)', address:'901 44th St SE (corp contact)', phone:'(616) 247-2710', hours:'M-F 8am-5pm', cat:'Corporate', catClass:'cat-corp', score:53, leave:'both', week:4, note:'Fortune 500 GR employer. Large corporate events team. Staff catering for downtown meetings. Ask for Events or Workplace Services.' },
+  { name:'Dwelling Place (nonprofit, Bridge area)', address:'1140 Monroe Ave NW', phone:'(616) 235-2180', hours:'M-F 9am-5pm', cat:'Nonprofit', catClass:'cat-nonprofit', score:52, leave:'both', week:4, note:'Housing nonprofit. Staff events and community gatherings. Warm Brand Roots pitch.' },
+  { name:'Salvation Army (GR Kroc Center)', address:'2500 S Division Ave', phone:'(616) 241-5357', hours:'M-F 8am-5pm', cat:'Nonprofit', catClass:'cat-nonprofit', score:51, leave:'cater', week:4, note:'Large nonprofit. Staff appreciation, community events. Ask for Program Director.' },
+  { name:'Wedgwood Christian Services (admin)', address:'5290 Ivanrest Ave SW', phone:'(616) 942-2110', hours:'M-F 8am-5pm', cat:'Nonprofit', catClass:'cat-nonprofit', score:50, leave:'both', week:4, note:'Behavioral health nonprofit. Staff events and fundraiser catering. Ask for Development office.' },
+  { name:'GreenStone Farm Credit Services (downtown office)', address:'1200 Whitehall Rd N, Muskegon (GR contact)', phone:'(616) 847-4403', hours:'M-F 8am-5pm', cat:'Professional Services', catClass:'cat-prof', score:49, leave:'both', week:4, note:'Agricultural finance office. Client appreciation events and team lunches. Ask for Branch Manager.' },
+],
+
+// ══════════════════════════════════════════════════════
+// BRETON VILLAGE 1003 — 40 TARGETS
+// ══════════════════════════════════════════════════════
+'1003': [
+  { name:'Southside Flower Market', address:'1842 Breton Rd SE', phone:'(616) 427-0599', hours:'M-F 10am-6pm, Sa 10am-4pm', cat:'Event Partner', catClass:'cat-event', score:91, leave:'event', week:1, note:'Existing partner, next door, 322 reviews. Start here. Bridal shower and rehearsal dinner referrals are already possible. This is a conversation, not a drop.' },
+  { name:'The Brouwers Agency', address:'1925 Breton Rd SE #110', phone:'(616) 891-0123', hours:'M-F 9am-5pm', cat:'Professional Services', catClass:'cat-prof', score:88, leave:'both', week:1, note:'5-star, 888 reviews, in Breton Village. Large team, recurring client appreciation events. Owner and staff are buyers. Second warmest lead in the system.' },
+  { name:'The Best Day Details', address:'77 Monroe Center St NW', phone:'(616) 558-9144', hours:'M-F 9am-5pm', cat:'Event Partner', catClass:'cat-event', score:86, leave:'event', week:1, note:'GR highest-rated wedding coordinator, 316 reviews. In-person visit, not just a drop. This partnership alone could fill the events calendar.' },
+  { name:'Darrell DeWard Real Estate Group', address:'815 Bridge St NW #1', phone:'(616) 537-6890', hours:'M-F 9am-10pm', cat:'Professional Services', catClass:'cat-prof', score:84, leave:'both', week:1, note:'5-star real estate team, 90 reviews. Closing lunches, client appreciation dinners, agent team events. Real estate teams celebrate constantly. Easy repeat.' },
+  { name:'Spectrum Health (East Paris medical office)', address:'1975 E Paris Ave SE', phone:'(616) 267-5600', hours:'M-F 8am-5pm', cat:'Healthcare', catClass:'cat-health', score:83, leave:'cater', week:1, note:'Spectrum outpatient clinic. 50+ staff. Department lunches and team appreciation events. Ask for Practice Manager.' },
+  { name:'Priority Health (Cascade area offices)', address:'1231 E Beltline Ave NE', phone:'(616) 942-0954', hours:'M-F 8am-5pm', cat:'Corporate', catClass:'cat-corp', score:81, leave:'both', week:1, note:'Health insurance company. Corporate team catering for department meetings, leadership events. Ask for Facilities or HR.' },
+  { name:'Contemporary Family Dental', address:'2005 Breton Rd SE', phone:'(616) 726-1271', hours:'M-F varies', cat:'Healthcare', catClass:'cat-health', score:79, leave:'cater', week:1, note:'4.7-star, 489 reviews, on Breton Rd. Staff lunches and team events. Routine catering buyer. Ask for office manager.' },
+  { name:'Consumers Credit Union (SE branch)', address:'2301 28th St SE', phone:'(616) 942-8420', hours:'M-F 9am-5pm, Sa 9am-noon', cat:'Corporate', catClass:'cat-corp', score:78, leave:'both', week:2, note:'Credit union with 30+ branch staff. Team lunches, staff events. Ask for Branch Manager.' },
+  { name:'Steelcase (Kentwood design center)', address:'901 44th St SE', phone:'(616) 247-2710', hours:'M-F 8am-5pm', cat:'Corporate', catClass:'cat-corp', score:77, leave:'both', week:2, note:'Fortune 500 adjacent. Design team and admin staff. Leadership team lunches, client entertainment. Ask for Facilities or HR.' },
+  { name:'United Methodist Community House (SE)', address:'904 Giddings Ave SE', phone:'(616) 452-3226', hours:'M-F 8am-5pm', cat:'Nonprofit', catClass:'cat-nonprofit', score:76, leave:'both', week:2, note:'Community org with active events calendar. Fundraiser catering, community dinners. Ask for Executive Director.' },
+
+  { name:'JP Studios', address:'1870 Breton Rd SE Suite F', phone:'N/A', hours:'Tu-Sa 9am-8pm', cat:'Salon', catClass:'cat-salon', score:75, leave:'event', week:2, note:'5-star hair salon, same street. Clients are the bridal shower and birthday celebration audience. Drop event cards for them to share with clients.' },
+  { name:'OAM Physical Therapy Southeast', address:'2520 Burton St SE', phone:'(616) 459-7101', hours:'M-F 7am-6pm', cat:'Healthcare', catClass:'cat-health', score:74, leave:'cater', week:2, note:'4.9-star, 95 reviews, same block. Monthly staff lunches and team appreciation events. Ask for office manager.' },
+  { name:'Beauty By K Salon &amp; Head Spa', address:'2516 Burton St SE', phone:'(616) 901-7594', hours:'M-Su varies', cat:'Salon', catClass:'cat-salon', score:73, leave:'event', week:2, note:'5-star, 163 reviews. Bridal parties, birthday treatments, girls days. Drop event cards at front desk for clients.' },
+  { name:'Edward Jones (Cascade)', address:'5808 Broadmoor Ave SE #200', phone:'(616) 956-4550', hours:'M-F 8:30am-5pm', cat:'Professional Services', catClass:'cat-prof', score:73, leave:'both', week:2, note:'Financial advisor office. Client appreciation events built into their model. Owner is the buyer.' },
+  { name:'Mercy Health Hauenstein Neuro (admin)', address:'220 Cherry St SE', phone:'(616) 685-5000', hours:'M-F 8am-5pm', cat:'Healthcare', catClass:'cat-health', score:72, leave:'cater', week:2, note:'Hospital system admin team. Department catering for team events. Ask for Events Coordinator.' },
+  { name:'Forest Hills Public Schools (admin)', address:'6590 Cascade Rd SE', phone:'(616) 493-8800', hours:'M-F 7:30am-4pm', cat:'Corporate', catClass:'cat-corp', score:71, leave:'both', week:3, note:'Public school admin. Faculty appreciation, board events, department catering. Ask for Superintendent office.' },
+  { name:'Cascade Township Hall', address:'2865 Thornhills Ave SE', phone:'(616) 949-1500', hours:'M-F 8am-5pm', cat:'Corporate', catClass:'cat-corp', score:70, leave:'both', week:3, note:'Township government staff. Staff appreciation and department meetings. Ask for Clerk office.' },
+  { name:'Local First', address:'1209 Kalamazoo Ave SE', phone:'(616) 808-3788', hours:'M-F 9am-5pm', cat:'Nonprofit', catClass:'cat-nonprofit', score:70, leave:'both', week:3, note:'Local business advocacy org. Member luncheons, board dinners, mixer events. Ask for Executive Director. Shared values pitch.' },
+  { name:'Hungerford Nichols CPAs', address:'2910 Lucerne Dr SE #100', phone:'(616) 949-3200', hours:'M-F 8am-5pm', cat:'Professional Services', catClass:'cat-prof', score:69, leave:'both', week:3, note:'Regional accounting firm. Staff lunches, client appreciation, team events. Ask for Managing Partner or Office Manager.' },
+  { name:'Envision Financial Group (SE office)', address:'2929 Express Court NE', phone:'(616) 825-9990', hours:'M-F 9am-5pm', cat:'Professional Services', catClass:'cat-prof', score:68, leave:'both', week:3, note:'Financial advisory team. Client appreciation and team events. Owner is decision maker.' },
+
+  { name:'Revive and Thrive', address:'1815 Hall St SE', phone:'(616) 606-3314', hours:'Tu 10am-6pm, W 10am-7pm only', cat:'Nonprofit', catClass:'cat-nonprofit', score:67, leave:'both', week:3, note:'5-star nonprofit. Staff lunches, volunteer appreciation. Visit Tuesday or Wednesday only.' },
+  { name:'Spectrum Health Rehab (SE)', address:'4069 Lake Dr SE', phone:'(616) 267-5600', hours:'M-F 7am-6pm', cat:'Healthcare', catClass:'cat-health', score:66, leave:'cater', week:3, note:'Rehab clinic. Team lunches and appreciation events. Ask for clinic director.' },
+  { name:'Keystone Community Church (admin)', address:'2121 Celebration Dr NE', phone:'(616) 956-9377', hours:'M-F 8:30am-4:30pm', cat:'Nonprofit', catClass:'cat-nonprofit', score:65, leave:'both', week:3, note:'Large church staff. Staff events, volunteer appreciation, small group catering. Ask for Events Coordinator.' },
+  { name:'Lacks Enterprises (SE offices)', address:'4436 Broadmoor Ave SE', phone:'(616) 698-0707', hours:'M-F 8am-5pm', cat:'Corporate', catClass:'cat-corp', score:65, leave:'cater', week:3, note:'Manufacturing. Leadership team catering and department events. Ask for HR.' },
+  { name:'Ada Christian School', address:'7190 Headley St SE', phone:'(616) 676-1289', hours:'M-F 7:30am-3:30pm', cat:'Nonprofit', catClass:'cat-nonprofit', score:64, leave:'both', week:3, note:'Private school. Faculty appreciation, board dinners. Ask for Principal.' },
+  { name:'Right At Home (SE office)', address:'2900 Charlevoix Dr SE #225', phone:'(616) 956-4200', hours:'M-F 8am-5pm', cat:'Healthcare', catClass:'cat-health', score:63, leave:'cater', week:4, note:'In-home care agency. Staff appreciation and caregiver team events. Ask for Office Manager.' },
+  { name:'Disability Advocates of Kent County', address:'3600 Camelot Dr SE', phone:'(616) 949-1100', hours:'M-F 8:30am-5pm', cat:'Nonprofit', catClass:'cat-nonprofit', score:62, leave:'both', week:4, note:'Advocacy nonprofit. Fundraisers and community events. Ask for Executive Director.' },
+  { name:'Beaumont Urgent Care (Breton)', address:'2061 Breton Rd SE', phone:'(616) 559-7800', hours:'Daily 8am-8pm', cat:'Healthcare', catClass:'cat-health', score:61, leave:'cater', week:4, note:'Urgent care, 40+ staff. Staff lunches. Ask for clinic manager.' },
+  { name:'Remax of Grand Rapids (SE office)', address:'2040 East Paris Ave SE', phone:'(616) 956-2300', hours:'M-F 9am-6pm', cat:'Professional Services', catClass:'cat-prof', score:60, leave:'both', week:4, note:'Real estate office. Closing parties, agent team catering. Ask for Broker.' },
+  { name:'Heart of West Michigan United Way (SE events)', address:'118 Commerce Ave SW', phone:'(616) 752-8001', hours:'M-F 8:30am-5pm', cat:'Nonprofit', catClass:'cat-nonprofit', score:59, leave:'both', week:4, note:'Major philanthropic org. Staff events, donor appreciation, community catering. Ask for Events Manager.' },
+
+  { name:'Kent County Health Department (SE office)', address:'700 Fuller Ave NE', phone:'(616) 632-7100', hours:'M-F 8am-5pm', cat:'Corporate', catClass:'cat-corp', score:58, leave:'cater', week:4, note:'Government office staff. Department team lunches and events. Ask for Admin Services.' },
+  { name:'Grand Trails (Burton Heights)', address:'2360 Division Ave S', phone:'(616) 224-0000', hours:'M-F 9am-5pm', cat:'Nonprofit', catClass:'cat-nonprofit', score:57, leave:'both', week:4, note:'Trails org with community events. Volunteer appreciation and fundraiser catering.' },
+  { name:'Westminister Presbyterian Church (admin)', address:'47 Jefferson Ave SE', phone:'(616) 459-4629', hours:'M-F 9am-5pm', cat:'Nonprofit', catClass:'cat-nonprofit', score:56, leave:'both', week:4, note:'Large congregation with active events calendar. Community dinners, volunteer appreciation. Ask for Office Manager.' },
+  { name:'Pine Rest Christian Mental Health Services', address:'300 68th St SE', phone:'(616) 455-5000', hours:'M-F 8am-5pm', cat:'Healthcare', catClass:'cat-health', score:55, leave:'cater', week:4, note:'Large mental health org. Staff appreciation and team events. Ask for HR.' },
+  { name:'Guiding Light Mission (SE events)', address:'255 Jefferson Ave SE', phone:'(616) 456-4563', hours:'M-F 8am-5pm', cat:'Nonprofit', catClass:'cat-nonprofit', score:54, leave:'cater', week:4, note:'Faith-based nonprofit. Staff events and fundraiser catering. Ask for Executive Director.' },
+  { name:'Rehmann (SE accounting office)', address:'5800 Foremost Dr SE #100', phone:'(616) 975-4100', hours:'M-F 8am-5pm', cat:'Professional Services', catClass:'cat-prof', score:54, leave:'both', week:4, note:'Regional accounting firm. Staff events and client appreciation. Ask for Managing Partner.' },
+  { name:'Cornerstone University (admin)', address:'1001 E Beltline Ave NE', phone:'(616) 949-5300', hours:'M-F 8am-5pm', cat:'Corporate', catClass:'cat-corp', score:53, leave:'both', week:4, note:'Private university. Faculty events, alumni dinners, department catering. Ask for Conference Services.' },
+  { name:'Southeast Area Neighbors (SEAN)', address:'634 Sigsbee St SE', phone:'(616) 574-0430', hours:'M-Th 9am-4pm', cat:'Nonprofit', catClass:'cat-nonprofit', score:52, leave:'both', week:4, note:'Neighborhood association. Community events and gatherings. Warm Brand Roots pitch.' },
+  { name:'Byron Center State Bank (SE branch)', address:'3801 Breton Rd SE', phone:'(616) 878-1818', hours:'M-F 9am-5pm, Sa 9am-noon', cat:'Corporate', catClass:'cat-corp', score:51, leave:'cater', week:4, note:'Community bank. Staff lunches and branch events. Ask for Branch Manager.' },
+  { name:'Forest Hills School of Music', address:'5130 Park Lake Dr SE', phone:'(616) 676-0900', hours:'M-Sa varies', cat:'Nonprofit', catClass:'cat-nonprofit', score:49, leave:'event', week:4, note:'Music school. Student recital receptions, holiday events. Ask for Director.' },
+],
+
+// ══════════════════════════════════════════════════════
+// EAST BELTLINE 1001 — 40 TARGETS
+// ══════════════════════════════════════════════════════
+'1001': [
+  { name:'Riley Planning &amp; Investments', address:'1600 E Beltline Ave NE #114', phone:'(616) 486-6174', hours:'M-Th 9am-5pm', cat:'Professional Services', catClass:'cat-prof', score:92, leave:'both', week:1, note:'5-star women-owned firm, same building as MB East Beltline. Client appreciation events and team lunches. Drop by in person today.' },
+  { name:'Waypointe Wealth Advisors', address:'1600 E Beltline Ave NE #216', phone:'(616) 600-9905', hours:'M-F 9am-5pm', cat:'Professional Services', catClass:'cat-prof', score:91, leave:'both', week:1, note:'Same building as MB. Financial advisor team. One elevator ride. Client appreciation events and team lunches. Easy first drop.' },
+  { name:'Rinvelt &amp; David LLC', address:'1700 E Beltline Ave NE #150', phone:'(616) 957-0022', hours:'M-F 8am-5pm', cat:'Professional Services', catClass:'cat-prof', score:89, leave:'both', week:1, note:'5-star firm with strong personal relationship culture. Client events and team lunches adjacent to MB Beltline.' },
+  { name:'Eagle Crest Office Park', address:'3312 Eagle Park Dr NE', phone:'Building Mgr on-site', hours:'M-F 8am-5pm', cat:'Corporate', catClass:'cat-corp', score:87, leave:'cater', week:1, note:'Multi-tenant professional park walking distance from MB. One stop, 10+ businesses. Ask building manager for largest tenants. Most efficient drop in the system.' },
+  { name:'The Pines Office Park', address:'4829 E Beltline Ave NE', phone:'Building Mgr on-site', hours:'M-F 8am-5pm', cat:'Corporate', catClass:'cat-corp', score:86, leave:'cater', week:1, note:'Three professional buildings in one visit. Dozens of businesses. Ask building manager for largest tenants. Batch this with Eagle Crest for a single morning route.' },
+  { name:'Advent Physical Therapy', address:'1471 E Beltline Ave NE #104', phone:'(616) 577-8341', hours:'M-F 7am-7pm', cat:'Healthcare', catClass:'cat-health', score:84, leave:'cater', week:1, note:'4.9-star, 119 reviews, on the Beltline. Monthly team lunches built into clinic culture. Ask for clinic director.' },
+  { name:'Woodhouse Spa', address:'2060 E Beltline Ave NE', phone:'(616) 216-2077', hours:'M-Su varies', cat:'Healthcare', catClass:'cat-health', score:83, leave:'event', week:1, note:'4.6-star luxury spa, 486 reviews. Bridal parties, birthday celebrations, girls days. Drop event cards. Warmest celebration-audience target on Beltline.' },
+  { name:'Priority Health (NE offices)', address:'1231 E Beltline Ave NE', phone:'(616) 942-0954', hours:'M-F 8am-5pm', cat:'Corporate', catClass:'cat-corp', score:82, leave:'both', week:1, note:'Major GR health insurer. Large admin team. Corporate catering for department meetings and leadership events. Ask for HR or Facilities.' },
+  { name:'Urban You Medical Aesthetics', address:'3152 Peregrine Dr NE #100', phone:'(616) 570-0228', hours:'M-Sa varies', cat:'Healthcare', catClass:'cat-health', score:81, leave:'event', week:1, note:'4.8-star med spa, 338 reviews. Bachelorette and girls day clients constantly. Drop event cards at front desk.' },
+  { name:'Grand Rapids Charter Township Hall', address:'1836 E Beltline Ave NE', phone:'(616) 361-7391', hours:'M-F 8am-5pm', cat:'Corporate', catClass:'cat-corp', score:79, leave:'both', week:2, note:'Right next to MB East Beltline. Township staff events, community gatherings, department catering. Ask for Township Manager.' },
+
+  { name:'Macatawa Bank (Beltline branch)', address:'1265 E Beltline Ave NE', phone:'(616) 820-1444', hours:'M-F 9am-5pm, Sa 9am-noon', cat:'Corporate', catClass:'cat-corp', score:78, leave:'both', week:2, note:'Community bank. Branch staff team lunches, client appreciation. Ask for Branch Manager.' },
+  { name:'Edward Jones (Beltline area)', address:'1600 E Beltline Ave NE #104', phone:'(616) 361-5000', hours:'M-F 8:30am-5pm', cat:'Professional Services', catClass:'cat-prof', score:77, leave:'both', week:2, note:'Financial advisor. Client appreciation events and team lunches. Owner is the buyer.' },
+  { name:'Kent County Circuit Court (admin)', address:'180 Ottawa Ave NW', phone:'(616) 632-5220', hours:'M-F 8am-5pm', cat:'Corporate', catClass:'cat-corp', score:76, leave:'cater', week:2, note:'County government. Large admin team. Department lunches and staff events. Ask for Court Administrator.' },
+  { name:'Consumers Energy (NE offices)', address:'2460 E Paris Ave SE', phone:'(616) 241-6455', hours:'M-F 8am-5pm', cat:'Corporate', catClass:'cat-corp', score:75, leave:'cater', week:2, note:'Utility company, large regional office. Department team lunches and staff appreciation. Ask for Facilities or HR.' },
+  { name:'Davenport University (main campus)', address:'6191 Kraft Ave SE', phone:'(616) 451-3511', hours:'M-F 8am-5pm', cat:'Corporate', catClass:'cat-corp', score:74, leave:'both', week:2, note:'Private university. Faculty events, alumni dinners, department catering for admin team. Ask for Conference and Events Services.' },
+  { name:'Cornerstone University', address:'1001 E Beltline Ave NE', phone:'(616) 949-5300', hours:'M-F 8am-5pm', cat:'Corporate', catClass:'cat-corp', score:73, leave:'both', week:2, note:'Private university adjacent to Beltline. Faculty events, leadership dinners, board catering. Ask for Conference Services.' },
+  { name:'Spectrum Health (East Beltline clinic)', address:'1975 E Paris Ave SE', phone:'(616) 267-5600', hours:'M-F 8am-5pm', cat:'Healthcare', catClass:'cat-health', score:72, leave:'cater', week:2, note:'Spectrum outpatient clinic. 50+ staff. Department team lunches. Ask for Practice Manager.' },
+  { name:'Mercy Health (NE clinic)', address:'220 Cherry St SE', phone:'(616) 685-5000', hours:'M-F 8am-5pm', cat:'Healthcare', catClass:'cat-health', score:71, leave:'cater', week:3, note:'Healthcare system. Department catering and team events. Ask for Admin Coordinator.' },
+  { name:'Hungerford Nichols CPAs', address:'2910 Lucerne Dr SE #100', phone:'(616) 949-3200', hours:'M-F 8am-5pm', cat:'Professional Services', catClass:'cat-prof', score:70, leave:'both', week:3, note:'Regional accounting firm. Staff lunches, client events. Ask for Managing Partner.' },
+  { name:'West Michigan Nursery &amp; Landscape Assoc.', address:'7185 Dodd St', phone:'(616) 784-5657', hours:'M-F 9am-5pm', cat:'Corporate', catClass:'cat-corp', score:69, leave:'both', week:3, note:'Industry association. Member events, board dinners, luncheons. Ask for Executive Director.' },
+
+  { name:'Storehouse of Community Resources', address:'4411 Plainfield Ave NE', phone:'(616) 855-1700', hours:'M-Tu 9am-2pm, W-Th 9am-noon', cat:'Nonprofit', catClass:'cat-nonprofit', score:68, leave:'both', week:3, note:'Nonprofit serving nonprofits. Staff catering and fundraiser events. Limited hours. Warm community partner.' },
+  { name:'Christian Neighbors (NE)', address:'4390 Remembrance Rd NW', phone:'(616) 785-0900', hours:'M-F 9am-5pm', cat:'Nonprofit', catClass:'cat-nonprofit', score:67, leave:'cater', week:3, note:'Faith-based food pantry. Staff and volunteer appreciation events. Ask for Executive Director.' },
+  { name:'Forest Hills School (admin)', address:'6590 Cascade Rd SE', phone:'(616) 493-8800', hours:'M-F 7:30am-4pm', cat:'Corporate', catClass:'cat-corp', score:66, leave:'both', week:3, note:'Public school admin. Faculty appreciation, board events. Ask for Superintendent office.' },
+  { name:'Dematic (NE offices)', address:'507 Plymouth Ave NE', phone:'(616) 913-7200', hours:'M-F 8am-5pm', cat:'Corporate', catClass:'cat-corp', score:65, leave:'cater', week:3, note:'Tech manufacturing company. Engineering and admin team. Quarterly staff events and team lunches. Ask for HR.' },
+  { name:'Grand Valley State University (Kennedy Hall)', address:'401 W Fulton St', phone:'(616) 331-2090', hours:'M-F 8am-5pm', cat:'Corporate', catClass:'cat-corp', score:65, leave:'both', week:3, note:'University admin. Department catering for faculty events and leadership meetings. Ask for Conference Services.' },
+  { name:'Advent Physical Therapy (2nd NE location)', address:'3066 E Beltline Ave NE #150', phone:'(616) 977-0018', hours:'M-F 7am-7pm', cat:'Healthcare', catClass:'cat-health', score:64, leave:'cater', week:3, note:'Second Advent PT location in radius. Same team lunch buyer profile. Ask for clinic director.' },
+  { name:'Freedom Village of Holland (NE admin)', address:'145 Columbia Ave (Holland office)', phone:'(616) 546-1110', hours:'M-F 8am-5pm', cat:'Healthcare', catClass:'cat-health', score:63, leave:'cater', week:3, note:'Senior living. Staff team lunches and department events. Ask for Dining Director.' },
+  { name:'Kent Intermediate School District (admin)', address:'2930 Knapp St NE', phone:'(616) 364-1333', hours:'M-F 7:30am-4:30pm', cat:'Corporate', catClass:'cat-corp', score:62, leave:'both', week:4, note:'School district admin. Staff events, leadership catering. Ask for Superintendent office.' },
+  { name:'Dyer Ives Foundation', address:'1 Vandenberg Center #520', phone:'(616) 454-1402', hours:'M-F 9am-5pm', cat:'Nonprofit', catClass:'cat-nonprofit', score:61, leave:'both', week:4, note:'Local foundation. Board meetings and donor events. Ask for Executive Director.' },
+  { name:'Ada Christian Reformed Church (admin)', address:'7120 Headley St SE', phone:'(616) 676-1698', hours:'M-F 9am-4pm', cat:'Nonprofit', catClass:'cat-nonprofit', score:60, leave:'both', week:4, note:'Large congregation. Staff events, volunteer appreciation, community dinners. Ask for Church Administrator.' },
+
+  { name:'Rockford Public Schools (admin)', address:'350 N Main St, Rockford', phone:'(616) 863-6358', hours:'M-F 7:30am-4pm', cat:'Corporate', catClass:'cat-corp', score:59, leave:'both', week:4, note:'Suburban district admin. Faculty appreciation, board catering. Ask for Superintendent.' },
+  { name:'Schnitzler Insurance Group', address:'4800 E Beltline Ave NE #210', phone:'(616) 361-5960', hours:'M-F 8:30am-5pm', cat:'Professional Services', catClass:'cat-prof', score:58, leave:'both', week:4, note:'Insurance agency. Client events and team lunches. Owner is the buyer.' },
+  { name:'Resurrection Life Church (admin)', address:'Grandville campus admin contact', phone:'(616) 530-4020', hours:'M-F 9am-5pm', cat:'Nonprofit', catClass:'cat-nonprofit', score:57, leave:'both', week:4, note:'Large congregation. Ministry team events, volunteer appreciation. Ask for Church Events Coordinator.' },
+  { name:'Eastbrook Church (admin)', address:'9047 36th Ave', phone:'(616) 698-1680', hours:'M-F 8:30am-5pm', cat:'Nonprofit', catClass:'cat-nonprofit', score:56, leave:'both', week:4, note:'Large church staff and volunteer teams. Community dinners, staff appreciation, leadership events. Ask for Church Administrator.' },
+  { name:'Christian Reformed Church in NA (admin)', address:'1700 28th St SE', phone:'(616) 241-1691', hours:'M-F 8am-5pm', cat:'Nonprofit', catClass:'cat-nonprofit', score:55, leave:'cater', week:4, note:'Denominational org with admin staff. Team lunches and leadership events. Ask for Office Manager.' },
+  { name:'Grandville Avenue Arts &amp; Humanities', address:'1345 Grandville Ave SW', phone:'(616) 808-4040', hours:'M-F 9am-5pm', cat:'Nonprofit', catClass:'cat-nonprofit', score:54, leave:'both', week:4, note:'Arts nonprofit. Donor events, community programs, catering for receptions. Ask for Executive Director.' },
+  { name:'Heart of West Michigan United Way', address:'118 Commerce Ave SW', phone:'(616) 752-8001', hours:'M-F 8:30am-5pm', cat:'Nonprofit', catClass:'cat-nonprofit', score:53, leave:'both', week:4, note:'Major philanthropic org. Staff events, donor appreciation. Ask for Events Manager.' },
+  { name:'Immanuel Lutheran Church (NE admin)', address:'3975 Brownfield Dr NE', phone:'(616) 874-8255', hours:'M-F 9am-4pm', cat:'Nonprofit', catClass:'cat-nonprofit', score:52, leave:'cater', week:4, note:'Congregation with active community program. Staff and volunteer appreciation events. Ask for Church Administrator.' },
+  { name:'Spectrum Health (outpatient admin)', address:'25 Michigan St NE', phone:'(616) 391-1774', hours:'M-F 8am-5pm', cat:'Healthcare', catClass:'cat-health', score:51, leave:'cater', week:4, note:'System-wide outpatient admin. Department catering and team events. Ask for Catering Coordinator.' },
+  { name:'Ada Township Hall', address:'7194 Headley St SE', phone:'(616) 676-9191', hours:'M-F 8am-5pm', cat:'Corporate', catClass:'cat-corp', score:50, leave:'cater', week:4, note:'Township government. Staff appreciation and meeting catering. Ask for Clerk office.' },
+]
+};
+
+// ══════════════════════════════════════════════════════
+// STATE + STORAGE
+// ══════════════════════════════════════════════════════
+const STORAGE_KEY = 'mb_drop_tracker_v2';
+let state = {};
+
+function loadState() {
+  try { state = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; } catch(e) { state = {}; }
+}
+function saveState() {
+  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch(e) {}
+}
+function getRow(loc, idx) {
+  if (!state[loc]) state[loc] = {};
+  if (!state[loc][idx]) state[loc][idx] = { dropped: false, contactName: '', contactPhone: '', notes: '' };
+  return state[loc][idx];
+}
+
+// ══════════════════════════════════════════════════════
+// RENDER
+// ══════════════════════════════════════════════════════
+let currentFilter = 'all';
+let currentSearch = '';
+
+function scoreClass(s) { return s >= 80 ? 'high' : s >= 65 ? 'med' : 'low'; }
+function leaveLabel(l) {
+  if (l === 'both') return '<span class=&quot;leave-badge leave-both&quot;>Menu + One-Pager</span>';
+  if (l === 'cater') return '<span class=&quot;leave-badge leave-cater&quot;>Catering Menu</span>';
+  return '<span class=&quot;leave-badge leave-event&quot;>Events One-Pager</span>';
+}
+function catBadge(cat, cls) { return `<span class=&quot;cat-badge ${cls}&quot;>${cat}</span>`; }
+
+function renderTable(locId) {
+  const tbody = document.getElementById('tbody-' + locId);
+  if (!tbody) return;
+  const items = DATA[locId];
+  let html = '';
+  items.forEach((item, i) => {
+    const row = getRow(locId, i);
+    const sc = scoreClass(item.score);
+    const rankClass = i < 10 ? 'rank-top' : i < 20 ? 'rank-mid' : '';
+    const droppedClass = row.dropped ? 'dropped' : '';
+    const filterPass = checkFilter(row, item);
+    const searchPass = checkSearch(item);
+    const hidden = (!filterPass || !searchPass) ? 'hidden-row' : '';
+    html += `<tr class=&quot;${droppedClass} ${hidden}&quot; data-loc=&quot;${locId}&quot; data-idx=&quot;${i}&quot;>
+      <td><div class=&quot;rank-num ${rankClass}&quot;>${i+1}</div></td>
+      <td>
+        <div class=&quot;biz-name&quot;>${item.name}</div>
+        <div class=&quot;biz-address&quot;>${item.address}</div>
+        <div class=&quot;biz-phone&quot;>${item.phone}</div>
+        <div class=&quot;biz-hours&quot;>${item.hours}</div>
+      </td>
+      <td>${catBadge(item.cat, item.catClass)}</td>
+      <td>
+        <div class=&quot;score-bar-wrap&quot;>
+          <span class=&quot;score-num ${sc}&quot;>${item.score}</span>
+          <div class=&quot;score-mini&quot;><div class=&quot;score-fill ${sc}&quot; style=&quot;width:${item.score}%&quot;></div></div>
+        </div>
+      </td>
+      <td>${leaveLabel(item.leave)}</td>
+      <td class=&quot;center&quot; style=&quot;white-space:nowrap; font-size:12px; color:var(--teal); font-weight:600;&quot;>Wk ${item.week}</td>
+      <td class=&quot;center&quot;>
+        <div class=&quot;drop-check ${row.dropped ? 'checked' : ''}&quot; onclick=&quot;toggleDrop('${locId}',${i})&quot;>
+          <svg viewBox=&quot;0 0 24 24&quot;><polyline points=&quot;20 6 9 18 4 13&quot;/></svg>
+        </div>
+      </td>
+      <td>
+        <div class=&quot;contact-cell&quot;>
+          <input class=&quot;contact-input ${row.contactName ? 'filled' : ''}&quot; type=&quot;text&quot; placeholder=&quot;Contact name&quot; value=&quot;${esc(row.contactName)}&quot; onchange=&quot;saveContact('${locId}',${i},'contactName',this.value)&quot;>
+          <input class=&quot;contact-input ${row.contactPhone ? 'filled' : ''}&quot; type=&quot;text&quot; placeholder=&quot;Phone number&quot; value=&quot;${esc(row.contactPhone)}&quot; onchange=&quot;saveContact('${locId}',${i},'contactPhone',this.value)&quot;>
+        </div>
+      </td>
+      <td>
+        <textarea class=&quot;notes-input ${row.notes ? 'filled' : ''}&quot; placeholder=&quot;${item.note.substring(0,60)}...&quot; onchange=&quot;saveContact('${locId}',${i},'notes',this.value)&quot;>${esc(row.notes)}</textarea>
+      </td>
+    </tr>`;
+  });
+  tbody.innerHTML = html;
+}
+
+function esc(s) { return (s||'').replace(/&quot;/g,'&amp;quot;').replace(/</g,'&amp;lt;').replace(/>/g,'&amp;gt;'); }
+
+function checkFilter(row, item) {
+  if (currentFilter === 'all') return true;
+  if (currentFilter === 'pending') return !row.dropped;
+  if (currentFilter === 'dropped') return row.dropped;
+  if (currentFilter === 'contacted') return row.contactName || row.contactPhone;
+  return true;
+}
+function checkSearch(item) {
+  if (!currentSearch) return true;
+  const q = currentSearch.toLowerCase();
+  return item.name.toLowerCase().includes(q) || item.address.toLowerCase().includes(q) || item.cat.toLowerCase().includes(q);
+}
+
+function toggleDrop(loc, idx) {
+  const row = getRow(loc, idx);
+  row.dropped = !row.dropped;
+  saveState();
+  const tr = document.querySelector(`tr[data-loc=&quot;${loc}&quot;][data-idx=&quot;${idx}&quot;]`);
+  if (tr) {
+    tr.classList.toggle('dropped', row.dropped);
+    const chk = tr.querySelector('.drop-check');
+    if (chk) chk.classList.toggle('checked', row.dropped);
+    if (!checkFilter(row, DATA[loc][idx])) tr.classList.add('hidden-row');
+  }
+  updateProgress();
+}
+
+function saveContact(loc, idx, field, val) {
+  const row = getRow(loc, idx);
+  row[field] = val;
+  saveState();
+  const tr = document.querySelector(`tr[data-loc=&quot;${loc}&quot;][data-idx=&quot;${idx}&quot;]`);
+  if (tr) {
+    tr.querySelectorAll('.contact-input').forEach(inp => {
+      inp.classList.toggle('filled', !!inp.value);
+    });
+    tr.querySelectorAll('.notes-input').forEach(ta => {
+      ta.classList.toggle('filled', !!ta.value);
+    });
+    if (!checkFilter(row, DATA[loc][idx])) tr.classList.add('hidden-row');
+  }
+  updateProgress();
+}
+
+// ══════════════════════════════════════════════════════
+// NAVIGATION + FILTER
+// ══════════════════════════════════════════════════════
+function toggleSection(id) {
+  const hdr = document.getElementById('hdr-' + id);
+  const body = document.getElementById('body-' + id);
+  const isOpen = body.classList.contains('open');
+  body.classList.toggle('open', !isOpen);
+  hdr.classList.toggle('open', !isOpen);
+}
+function expandAll() {
+  ['1001','1002','1003','1004'].forEach(id => {
+    document.getElementById('body-' + id).classList.add('open');
+    document.getElementById('hdr-' + id).classList.add('open');
+  });
+}
+function collapseAll() {
+  ['1001','1002','1003','1004'].forEach(id => {
+    document.getElementById('body-' + id).classList.remove('open');
+    document.getElementById('hdr-' + id).classList.remove('open');
+  });
+}
+
+function setFilter(f, btn) {
+  currentFilter = f;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  rerenderAll();
+}
+function doSearch(val) {
+  currentSearch = val;
+  rerenderAll();
+}
+function rerenderAll() {
+  ['1001','1002','1003','1004'].forEach(renderTable);
+}
+
+// ══════════════════════════════════════════════════════
+// PROGRESS
+// ══════════════════════════════════════════════════════
+function updateProgress() {
+  let totalDropped = 0, totalContacted = 0;
+  ['1001','1002','1003','1004'].forEach(loc => {
+    let dropped = 0, contacted = 0;
+    (DATA[loc] || []).forEach((item, i) => {
+      const row = getRow(loc, i);
+      if (row.dropped) { dropped++; totalDropped++; }
+      if (row.contactName || row.contactPhone) { contacted++; totalContacted++; }
+    });
+    const total = (DATA[loc] || []).length;
+    const el = document.getElementById('prog' + loc);
+    const bar = document.getElementById('bar' + loc);
+    const badge = document.getElementById('badge' + loc);
+    if (el) el.innerHTML = `${dropped} <span>/ ${total}</span>`;
+    if (bar) bar.style.width = (total > 0 ? (dropped/total*100) : 0) + '%';
+    if (badge) badge.textContent = `${dropped} / ${total} dropped`;
+  });
+  const allTotal = 160;
+  document.getElementById('statTotal').textContent = allTotal;
+  document.getElementById('statDropped').textContent = totalDropped;
+  document.getElementById('statContacted').textContent = totalContacted;
+  document.getElementById('statPct').textContent = Math.round(totalDropped/allTotal*100) + '%';
+}
+
+// ══════════════════════════════════════════════════════
+// EXPORT CSV
+// ══════════════════════════════════════════════════════
+function exportCSV(loc) {
+  const items = DATA[loc];
+  const locNames = { '1001':'East Beltline', '1002':'Bridge Street', '1003':'Breton Village', '1004':'Standale' };
+  let csv = 'Rank,Business,Address,Phone,Category,Score,Leave,Week,Dropped,Contact Name,Contact Phone,Notes\n';
+  items.forEach((item, i) => {
+    const row = getRow(loc, i);
+    csv += [i+1, item.name, item.address, item.phone, item.cat, item.score, item.leave, item.week,
+      row.dropped ? 'Yes' : 'No', row.contactName || '', row.contactPhone || '', (row.notes||'').replace(/,/g,';').replace(/\n/g,' ')
+    ].map(v => `&quot;${v}&quot;`).join(',') + '\n';
+  });
+  const blob = new Blob([csv], {type:'text/csv'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = `MB_Drop_Tracker_${locNames[loc]}_${new Date().toISOString().slice(0,10)}.csv`;
+  a.click();
+}
+
+function clearLoc(loc) {
+  if (!confirm('Clear all drop data for this location? This cannot be undone.')) return;
+  state[loc] = {};
+  saveState();
+  renderTable(loc);
+  updateProgress();
+}
+
+// ══════════════════════════════════════════════════════
+// INIT
+// ══════════════════════════════════════════════════════
+loadState();
+['1001','1002','1003','1004'].forEach(renderTable);
+updateProgress();
+</script>
+
+<script>
+function reportHeight() {
+  var h = document.body.scrollHeight;
+  window.parent.postMessage({trackerHeight: h}, '*');
+}
+window.addEventListener('load', reportHeight);
+window.addEventListener('resize', reportHeight);
+// Also report after any DOM change (row renders, expand/collapse)
+var mo = new MutationObserver(function() { setTimeout(reportHeight, 100); });
+mo.observe(document.body, {childList: true, subtree: true, attributes: true});
+</script>
+</body>
+</html>
+"
+          style="width:100%; border:none; display:block; min-height:600px;"
+          scrolling="no"
+          title="Local Business Drop Tracker"
+        ></iframe>
+        <script>
+        window.addEventListener('message', function(e) {
+          if (e.data && e.data.trackerHeight) {
+            var iframe = document.getElementById('tracker-iframe');
+            if (iframe) iframe.style.height = (e.data.trackerHeight + 20) + 'px';
+          }
+        });
+        </script>
       </div>
     </div>
   </div>
@@ -1704,6 +2327,8 @@ function toggle(btn) {
   var isOpen = btn.classList.contains('open');
   btn.classList.toggle('open', !isOpen);
   body.classList.toggle('open', !isOpen);
+  if (!isOpen) body.style.overflow = 'visible';
+  else body.style.overflow = 'hidden';
 }
 
 function showLoc(id) {
